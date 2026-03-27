@@ -1,0 +1,83 @@
+Bitte überarbeite die bestehende Website mit folgenden Änderungen:
+
+## 1. Logo professionell aus dem hochgeladenen Bild extrahieren
+
+Ich werde ein Bild hochladen, das ein komplettes Branding-Board enthält. Darauf ist das CleanWeb Agency Logo mehrfach zu sehen.
+
+Deine Aufgabe:
+
+* erkenne das eigentliche Hauptlogo bzw. das Logo-Icon aus dem hochgeladenen Bild
+* schneide das Logo bzw. bevorzugt das reine Logo-Icon sauber und professionell aus
+* entferne unnötigen Hintergrund so gut wie möglich
+* verwende das extrahierte Logo anschließend direkt in der Website
+* falls mehrere Varianten sichtbar sind, nutze die hochwertigste und klarste Version
+* falls möglich, erstelle daraus eine saubere transparente PNG-ähnliche Darstellung innerhalb des Projekts
+* achte darauf, dass das Logo scharf, sauber und professionell wirkt
+* das Logo darf nicht verzerrt, gestaucht oder unscharf dargestellt werden
+
+## 2. Hero-Bereich anpassen
+
+Im Hero-Bereich steht aktuell „Premium Webdesign Agentur“.
+Das gefällt mir nicht und soll vollständig ersetzt werden.
+
+Bitte:
+
+* entferne diese Formulierung komplett
+* platziere stattdessen mein Logo relativ weit oben und mittig im Hero-Bereich
+* das Logo soll der visuelle Mittelpunkt des oberen Bereichs sein
+* unter dem Logo soll eine starke, moderne und hochwertige Headline stehen
+* die Headline soll professionell, klar und premium wirken, aber nicht generisch
+
+Verwende stattdessen zum Beispiel eine dieser Headline-Richtungen:
+
+* „Moderne Websites für Unternehmen mit Anspruch.“
+* „Websites, die Vertrauen schaffen und Kunden gewinnen.“
+* „Ein starker Online-Auftritt für moderne Unternehmen.“
+* „Modernes Webdesign, das professionell verkauft.“
+
+Wähle die Variante, die am hochwertigsten und am besten zur Marke CleanWeb Agency passt.
+
+## 3. Logo-Effekt im Hero-Bereich
+
+Ich möchte, dass das Logo im Hero-Bereich einen modernen, interessanten und hochwertigen Effekt bekommt.
+
+WICHTIG:
+Der Effekt soll premium und dezent wirken — nicht verspielt, nicht kitschig, nicht zu stark.
+
+Geeignete Effekte sind zum Beispiel:
+
+* ein sehr subtiler Glow in Markenfarbe
+* ein sanftes Schweben/Floating
+* ein leichter Parallax-ähnlicher Eindruck ohne Performance-Probleme
+* ein weiches, langsames Einblenden beim Laden
+* ein dezenter Licht- oder Schimmer-Effekt
+* ein sehr leichter Hover-Effekt
+
+## 4. Stilvorgaben
+
+Bitte achte auf folgende Punkte:
+
+* alles soll modern, ruhig und hochwertig wirken
+* keine übertriebenen Animationen
+* keine laggy oder performance-lastigen Effekte
+* das Logo soll edel und präsent wirken
+* der Hero-Bereich soll sofort Interesse wecken
+* die Gesamtwirkung soll wie eine hochpreisige Agentur aussehen
+
+## 5. Performance
+
+Bitte optimiere die Umsetzung so, dass:
+
+* die Website flüssig bleibt
+* Animationen sparsam eingesetzt werden
+* keine unnötig schweren Effekte verwendet werden
+* der Hero-Bereich auch auf Mobile gut aussieht
+
+## Ziel
+
+Ziel ist ein Hero-Bereich, der deutlich individueller wirkt:
+
+* Logo oben mittig als Hauptfokus
+* neue hochwertige Headline statt Standardtext
+* dezenter Signature-Effekt auf dem Logo
+* moderne Premium-Ausstrahlung

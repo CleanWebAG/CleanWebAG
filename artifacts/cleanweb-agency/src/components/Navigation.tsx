@@ -31,9 +31,9 @@ export function Navigation() {
           {/* Logo */}
           <a href="#" className="flex-shrink-0 relative z-10">
             <img
-              src={`${import.meta.env.BASE_URL}cleanweb-logo.png`}
-              alt="CleanWeb Agency Logo"
-              className="h-10 w-auto"
+              src={`${import.meta.env.BASE_URL}cleanweb-logo-final.png`}
+              alt="CleanWeb Agency"
+              className="h-9 w-auto"
             />
           </a>
 
@@ -78,6 +78,11 @@ export function Navigation() {
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
+        <img
+          src={`${import.meta.env.BASE_URL}cleanweb-logo-final.png`}
+          alt="CleanWeb Agency"
+          className="h-10 w-auto mb-4"
+        />
         {navLinks.map((link) => (
           <a
             key={link.name}
