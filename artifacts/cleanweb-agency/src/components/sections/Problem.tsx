@@ -1,5 +1,7 @@
 import { AlertCircle, Clock, XCircle } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { motion } from "framer-motion";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Problem() {
   const problems = [
@@ -21,8 +23,22 @@ export function Problem() {
   ];
 
   return (
-    <section className="py-24 bg-light-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-light-bg relative overflow-hidden">
+      <SectionDivider position="top" fillColor="fill-navy-950" />
+      
+      {/* Floating decorative elements */}
+      <motion.div
+        className="absolute top-20 right-20 w-12 h-12 rounded-xl bg-electric/10 rotate-12"
+        animate={{ y: [0, -15, 0], opacity: [0.3, 0.6, 0.3], rotate: [12, 18, 12] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute bottom-20 left-10 w-8 h-8 rounded-full bg-destructive/10"
+        animate={{ y: [0, -15, 0], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-navy-950 mb-4">

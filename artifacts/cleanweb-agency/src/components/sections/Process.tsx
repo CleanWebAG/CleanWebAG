@@ -1,5 +1,7 @@
 import { Search, PenTool, Rocket } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { motion } from "framer-motion";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Process() {
   const steps = [
@@ -21,8 +23,10 @@ export function Process() {
   ];
 
   return (
-    <section id="prozess" className="py-24 bg-navy-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="prozess" className="py-24 bg-navy-950 relative">
+      <SectionDivider position="top" fillColor="fill-white" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -36,16 +40,28 @@ export function Process() {
 
         <div className="relative">
           {/* Connecting line for desktop */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 z-0"></div>
+          <motion.div 
+            className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-electric/50 -translate-y-1/2 z-0"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            style={{ transformOrigin: "left" }}
+            transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
+          />
 
           <div className="grid md:grid-cols-3 gap-12 md:gap-8 relative z-10">
             {steps.map((step, i) => (
               <FadeIn key={i} delay={i * 0.2}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 rounded-2xl bg-navy-900 border border-white/10 shadow-xl flex items-center justify-center mb-6 relative">
+                  <motion.div 
+                    className="w-20 h-20 rounded-2xl bg-navy-900 border border-white/10 shadow-xl flex items-center justify-center mb-6 relative"
+                    whileInView={{ scale: [1, 1.15, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.2 + 0.3 }}
+                  >
                     <div className="absolute inset-0 bg-electric/5 rounded-2xl animate-pulse"></div>
                     {step.icon}
-                  </div>
+                  </motion.div>
                   <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-white/60 leading-relaxed max-w-sm">
                     {step.desc}

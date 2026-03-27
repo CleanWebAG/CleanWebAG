@@ -48,3 +48,39 @@ export function FadeIn({
     </motion.div>
   );
 }
+
+export const StaggerContainer = ({ children, className }: { children: ReactNode; className?: string }) => {
+  const containerVariants = { 
+    hidden: {}, 
+    show: { transition: { staggerChildren: 0.12 } } 
+  };
+
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-10%" }}
+      className={cn(className)}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export const StaggerItem = ({ children, className }: { children: ReactNode; className?: string }) => {
+  const itemVariants = { 
+    hidden: { opacity: 0, y: 24 }, 
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] } 
+    } 
+  };
+
+  return (
+    <motion.div variants={itemVariants} className={cn(className)}>
+      {children}
+    </motion.div>
+  );
+};

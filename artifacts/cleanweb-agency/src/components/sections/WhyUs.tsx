@@ -1,4 +1,6 @@
 import { FadeIn } from "@/components/ui/fade-in";
+import { Card3D } from "@/components/ui/card-3d";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function WhyUs() {
   const features = [
@@ -25,7 +27,9 @@ export function WhyUs() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white relative">
+      <SectionDivider position="top" fillColor="fill-navy-950" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-bold text-navy-950 mb-16 text-center">
@@ -36,15 +40,17 @@ export function WhyUs() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div className="text-6xl font-extrabold text-slate-200 mb-6 font-display">
-                  {feature.num}
+              <Card3D className="h-full">
+                <div className="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+                  <div className="text-6xl font-extrabold text-slate-200 mb-6 font-display">
+                    {feature.num}
+                  </div>
+                  <h3 className="text-xl font-bold text-navy-950 mb-3">{feature.title}</h3>
+                  <p className="text-navy-800/70 leading-relaxed">
+                    {feature.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-navy-950 mb-3">{feature.title}</h3>
-                <p className="text-navy-800/70 leading-relaxed">
-                  {feature.desc}
-                </p>
-              </div>
+              </Card3D>
             </FadeIn>
           ))}
         </div>

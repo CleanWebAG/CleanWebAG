@@ -1,5 +1,7 @@
 import { CheckCircle2, Code2, RefreshCcw, LineChart, ShieldCheck } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { Card3D } from "@/components/ui/card-3d";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Services() {
   const services = [
@@ -30,7 +32,9 @@ export function Services() {
   ];
 
   return (
-    <section id="leistungen" className="py-24 bg-light-bg">
+    <section id="leistungen" className="py-24 bg-light-bg relative">
+      <SectionDivider position="top" fillColor="fill-navy-950" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="mb-16">
@@ -46,23 +50,25 @@ export function Services() {
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="group bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:border-electric/20 transition-all duration-300 h-full">
-                <div className="w-16 h-16 rounded-2xl bg-electric/10 flex items-center justify-center mb-6 group-hover:bg-electric group-hover:text-white transition-colors [&>svg]:transition-colors">
-                  {service.icon}
+              <Card3D className="h-full">
+                <div className="group bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:border-electric/20 transition-all duration-300 h-full">
+                  <div className="w-16 h-16 rounded-2xl bg-electric/10 flex items-center justify-center mb-6 group-hover:bg-electric group-hover:text-white transition-colors [&>svg]:transition-colors">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-navy-950 mb-3">{service.title}</h3>
+                  <p className="text-navy-900/70 mb-8 leading-relaxed">
+                    {service.desc}
+                  </p>
+                  <ul className="space-y-3">
+                    {service.benefits.map((benefit, j) => (
+                      <li key={j} className="flex items-center text-navy-900/80 font-medium">
+                        <CheckCircle2 className="h-5 w-5 text-electric mr-3 flex-shrink-0" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-2xl font-bold text-navy-950 mb-3">{service.title}</h3>
-                <p className="text-navy-900/70 mb-8 leading-relaxed">
-                  {service.desc}
-                </p>
-                <ul className="space-y-3">
-                  {service.benefits.map((benefit, j) => (
-                    <li key={j} className="flex items-center text-navy-900/80 font-medium">
-                      <CheckCircle2 className="h-5 w-5 text-electric mr-3 flex-shrink-0" />
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </Card3D>
             </FadeIn>
           ))}
         </div>

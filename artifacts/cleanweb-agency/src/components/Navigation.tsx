@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { motion, useScroll } from "framer-motion";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { scrollYProgress, scrollY } = useScroll();
+  const [showProgress, setShowProgress] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +16,13 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    return scrollY.on("change", (latest) => {
+      // Show progress bar after scrolling past 10% of window height (or approximate hero height)
+      setShowProgress(latest > window.innerHeight * 0.1);
+    });
+  }, [scrollY]);
 
   const navLinks = [
     { name: "Leistungen", href: "#leistungen" },
@@ -92,6 +102,14 @@ export function Navigation() {
           Kostenlose Beratung
         </Button>
       </div>
+
+      {/* Scroll Progress Indicator */}
+      {showProgress && (
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-[2px] bg-electric origin-left"
+          style={{ scaleX: scrollYProgress }}
+        />
+      )}
     </header>
   );
 }

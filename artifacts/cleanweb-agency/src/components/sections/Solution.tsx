@@ -1,5 +1,7 @@
 import { MonitorPlay, Smartphone, TrendingUp, Zap } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { motion } from "framer-motion";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Solution() {
   const solutions = [
@@ -11,7 +13,7 @@ export function Solution() {
     {
       icon: <MonitorPlay className="h-7 w-7 text-electric" />,
       title: "Modernes Design",
-      desc: "Hochwertige Optik, die sofort Vertrauen aufbaut und Besucher begeistert.",
+      desc: "Hochwertige Optik, die sofort Vertrauen aufbaut und begeistert.",
     },
     {
       icon: <Smartphone className="h-7 w-7 text-electric" />,
@@ -26,8 +28,22 @@ export function Solution() {
   ];
 
   return (
-    <section className="py-24 bg-navy-950 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-navy-950 border-t border-white/5 relative overflow-hidden">
+      <SectionDivider position="top" fillColor="fill-light-bg" />
+      
+      {/* Floating decorative elements */}
+      <motion.div
+        className="absolute top-10 right-[15%] w-10 h-10 rounded-full border-2 border-electric/30"
+        animate={{ y: [0, -15, 0], opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
+        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute bottom-16 left-[5%] w-6 h-6 rounded-lg bg-cyan-500/20 rotate-45"
+        animate={{ y: [0, -15, 0], opacity: [0.3, 0.6, 0.3], rotate: [45, 60, 45] }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

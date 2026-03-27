@@ -1,4 +1,6 @@
 import { FadeIn } from "@/components/ui/fade-in";
+import { motion } from "framer-motion";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Portfolio() {
   const projects = [
@@ -27,6 +29,8 @@ export function Portfolio() {
 
   return (
     <section id="referenzen" className="py-32 bg-navy-950 relative overflow-hidden">
+      <SectionDivider position="top" fillColor="fill-light-bg" />
+      
       {/* Decorative gradient blob */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-electric/20 blur-[120px] rounded-full pointer-events-none" />
 
@@ -48,14 +52,30 @@ export function Portfolio() {
               <div className={`flex flex-col gap-8 md:gap-16 items-center ${i % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
                 {/* Image / Mockup Side */}
                 <div className="w-full md:w-3/5">
-                  <div className={`relative rounded-3xl overflow-hidden aspect-[16/10] shadow-2xl border border-white/10 group`}>
+                  <motion.div 
+                    className={`relative rounded-3xl overflow-hidden aspect-[16/10] shadow-2xl border border-white/10 group cursor-pointer`}
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ ease: [0.21, 0.47, 0.32, 0.98], duration: 0.4 }}
+                  >
                     <div className={`absolute inset-0 bg-gradient-to-tr ${project.color} mix-blend-overlay z-10 opacity-60 group-hover:opacity-20 transition-opacity duration-500`}></div>
                     <img 
                       src={`${import.meta.env.BASE_URL}images/${project.image}`}
                       alt={`${project.title} Website Preview`}
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                  </div>
+                    
+                    {/* Depth Reveal Overlay */}
+                    <motion.div 
+                      className="absolute inset-0 z-20 bg-gradient-to-r from-navy-950/90 to-transparent flex items-center p-8 md:p-12"
+                      initial={{ x: '-100%' }}
+                      whileHover={{ x: 0 }}
+                      transition={{ ease: "easeOut", duration: 0.4 }}
+                    >
+                      <span className="text-white font-bold text-xl md:text-2xl tracking-tight flex items-center gap-2">
+                        Zum Projekt <span className="text-electric">→</span>
+                      </span>
+                    </motion.div>
+                  </motion.div>
                 </div>
 
                 {/* Text Side */}

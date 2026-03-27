@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Testimonials() {
   const reviews = [
@@ -21,8 +22,10 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-light-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-light-bg relative">
+      <SectionDivider position="top" fillColor="fill-navy-950" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-navy-950 mb-4">
