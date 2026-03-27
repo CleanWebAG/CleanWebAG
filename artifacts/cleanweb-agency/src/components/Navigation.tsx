@@ -1,28 +1,18 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { motion, useScroll } from "framer-motion";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { scrollYProgress, scrollY } = useScroll();
-  const [showProgress, setShowProgress] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    return scrollY.on("change", (latest) => {
-      // Show progress bar after scrolling past 10% of window height (or approximate hero height)
-      setShowProgress(latest > window.innerHeight * 0.1);
-    });
-  }, [scrollY]);
 
   const navLinks = [
     { name: "Leistungen", href: "#leistungen" },
@@ -40,9 +30,9 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex-shrink-0 relative z-10">
-            <img 
-              src={`${import.meta.env.BASE_URL}cleanweb-logo.png`} 
-              alt="CleanWeb Agency Logo" 
+            <img
+              src={`${import.meta.env.BASE_URL}cleanweb-logo.png`}
+              alt="CleanWeb Agency Logo"
               className="h-10 w-auto"
             />
           </a>
@@ -58,7 +48,15 @@ export function Navigation() {
                 {link.name}
               </a>
             ))}
-            <Button variant={scrolled ? "primary" : "glass"} size="sm" onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button
+              variant={scrolled ? "primary" : "glass"}
+              size="sm"
+              onClick={() =>
+                document
+                  .getElementById("kontakt")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               Kostenlose Beratung
             </Button>
           </nav>
@@ -90,26 +88,20 @@ export function Navigation() {
             {link.name}
           </a>
         ))}
-        <Button 
-          variant="primary" 
-          size="lg" 
+        <Button
+          variant="primary"
+          size="lg"
           className="mt-4"
           onClick={() => {
             setMobileMenuOpen(false);
-            document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' });
+            document
+              .getElementById("kontakt")
+              ?.scrollIntoView({ behavior: "smooth" });
           }}
         >
           Kostenlose Beratung
         </Button>
       </div>
-
-      {/* Scroll Progress Indicator */}
-      {showProgress && (
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[2px] bg-electric origin-left"
-          style={{ scaleX: scrollYProgress }}
-        />
-      )}
     </header>
   );
 }
