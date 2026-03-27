@@ -1,0 +1,87 @@
+Erstelle eine moderne, hochwertige und stark verkaufsoptimierte Website für eine Digitalagentur namens "CleanWeb Agency".
+Ziel:
+Die Website soll Vertrauen aufbauen, professionell wirken und Besucher (kleine und mittelständische Unternehmen) in Anfragen/Leads umwandeln.
+Zielgruppe:
+Kleine und mittelständische Unternehmen
+Unternehmen mit veralteter oder keiner Website
+Unternehmer, die Wert auf Professionalität, Klarheit und Ergebnisse legen
+Positionierung:
+CleanWeb Agency erstellt moderne, leistungsstarke Websites, die Unternehmen dabei helfen, online professionell aufzutreten und mehr Kunden zu gewinnen – schnell, unkompliziert und effektiv.
+Designstil:
+Modern, minimalistisch, hochwertig (ähnlich Apple/High-End SaaS)
+Viel Weißraum (cleanes Layout)
+Dezente Schatten und weiche Übergänge
+Hochwertige, moderne Schriftarten (Sans-Serif)
+Subtile Animationen (Fade-ins, Hover-Effekte)
+Farbpalette:
+Primär: Dunkelblau / Schwarz
+Sekundär: Weiß / Hellgrau
+Akzent: Dezentes Blau oder Cyan
+Seitenstruktur:
+1. Hero Section
+Headline:
+„Moderne Websites, die dir wirklich Kunden bringen.“
+Subheadline:
+„Schnell umgesetzt, professionell gestaltet und auf Ergebnisse ausgelegt.“
+Call-to-Action:
+„Kostenlose Beratung sichern“ oder „Website erstellen lassen“
+Hintergrund:
+Minimalistisch (Gradient, abstrakte Formen oder leichte Animation)
+2. Problem-Sektion
+Zeige typische Probleme der Zielgruppe:
+Veraltete Website
+Kein professioneller Online-Auftritt
+Kunden gehen zur Konkurrenz
+Kurz, klar und emotional verständlich formuliert.
+3. Lösungs-Sektion
+Wie CleanWeb Agency diese Probleme löst:
+Schnelle Umsetzung
+Modernes, professionelles Design
+Optimiert für mobile Geräte
+Fokus auf Kundengewinnung
+4. Leistungen
+Website Erstellung
+Website Redesign
+Conversion-Optimierung
+Wartung & Updates
+Jede Leistung kurz und nutzenorientiert beschreiben (Ergebnis im Fokus, nicht Technik).
+5. Referenzen / Beispiele
+Moderne Website-Beispiele (Mockups)
+Vorher/Nachher Gefühl vermitteln
+Hochwertige Darstellung
+6. Warum CleanWeb?
+Schnelle Umsetzung
+Klare Kommunikation
+Hochwertiges Design
+Fokus auf Ergebnisse
+7. Prozess (sehr wichtig für Vertrauen)
+Einfacher 3-Schritte-Prozess:
+Analyse deines Unternehmens
+Erstellung deiner Website
+Mehr Kunden gewinnen
+8. Testimonials (Platzhalter möglich)
+9. Abschluss-Sektion (CTA)
+Starke Aussage:
+„Dein Unternehmen verdient eine moderne Website.“
+CTA:
+„Jetzt starten“ oder „Kostenlose Beratung sichern“
+Tonalität:
+Selbstbewusst
+Klar und verständlich
+Professionell
+Direkt (keine unnötigen Fachbegriffe)
+Ergebnisorientiert
+Technische Anforderungen:
+Vollständig responsive (Mobile-First)
+Schnelle Ladezeiten
+SEO-freundliche Struktur
+Saubere Navigation
+Smooth Scrolling
+Extras:
+Dezente Animationen für modernen Eindruck
+Hochwertige UI-Komponenten (Cards, Sections, klare Abstände)
+Die Website soll wie eine Premium-Agentur wirken (kein Baukasten-Look)
+WICHTIG:
+Die Website soll den Eindruck einer hochpreisigen Agentur vermitteln (2.000€ – 5.000€ pro Projekt). Vermeide alles, was günstig, generisch oder wie ein Template wirkt.
+Output:
+Erstelle die komplette Website-Struktur inklusive Textinhalten, Layout-Vorschlägen und Designhinweisen.

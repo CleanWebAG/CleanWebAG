@@ -1,0 +1,23 @@
+packages:
+  "framer-motion": "For premium smooth scroll animations, fade-ins, and interactive hover states"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility for merging tailwind classes without style conflicts"
+
+images:
+  - path: "artifacts/cleanweb-agency/public/images/hero-bg.png"
+    description: "Deep dark navy blue abstract geometric mesh background with subtle soft light leaks, premium apple-like minimalism, 8k resolution"
+    aspect_ratio: "16:9"
+  - path: "artifacts/cleanweb-agency/public/images/portfolio-1.png"
+    description: "Premium law firm website mockup displayed on a sleek modern laptop, professional dark theme, highly detailed UI, 3d render"
+    aspect_ratio: "16:9"
+  - path: "artifacts/cleanweb-agency/public/images/portfolio-2.png"
+    description: "Luxury car dealership website mockup on a high-end monitor screen, modern automotive UI, dark mode, studio lighting"
+    aspect_ratio: "16:9"
+  - path: "artifacts/cleanweb-agency/public/images/portfolio-3.png"
+    description: "Health wellness physiotherapy website mockup displayed on a modern tablet, warm inviting professional layout, 3d render"
+    aspect_ratio: "16:9"
+
+notes:
+  - "This is a frontend-only marketing landing page, no API integration needed."
+  - "Using framer-motion for IntersectionObserver-based reveal animations."
+  - "Navigation uses smooth scrolling to hash anchors."
