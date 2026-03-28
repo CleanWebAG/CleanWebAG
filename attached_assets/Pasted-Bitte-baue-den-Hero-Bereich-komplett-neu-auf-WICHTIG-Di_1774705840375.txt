@@ -1,0 +1,180 @@
+Bitte baue den Hero-Bereich komplett neu auf.
+
+WICHTIG:
+Die bisherige Umsetzung mit dem stilisierten Laptop-/Browser-Mockup trifft nicht die gewünschte Richtung.
+Ich möchte stattdessen eine deutlich realistischere, cinematischere und hochwertigere Hero-Inszenierung.
+
+## ZIELBILD
+
+Der Hero soll so wirken, als würde im Hintergrund bzw. zentral im Hero **ein echtes originales MacBook** stehen.
+Nicht wie ein simples UI-Mockup, nicht wie eine gezeichnete Karte, sondern wie ein reales MacBook als visuelles Hauptobjekt.
+
+Das MacBook soll:
+
+* realistisch wirken
+* hochwertig und modern aussehen
+* dunkel / elegant / originalgetreu wirken
+* wie ein physisches Gerät im Raum inszeniert sein
+* subtil von hinten oder unten angeleuchtet werden
+* mit weichem Licht / Glow vom Hintergrund getrennt sein
+* optisch stark und glaubwürdig wirken
+
+## 1. STARTANIMATION: AUFKLAPPENDES MACBOOK
+
+Ich möchte eine neue Anfangsanimation:
+
+* Zu Beginn soll ein **zugeklapptes oder halb sichtbares MacBook** erscheinen
+* Danach soll es sich **cinematisch öffnen / aufklappen**
+* Die Animation soll hochwertig, ruhig und smooth wirken
+* Kein billiger Transform-Effekt
+* Der Moment soll sich wie ein hochwertiger Einstieg in die Website anfühlen
+
+Nach dem Aufklappen des MacBooks geht die Animation direkt flüssig in den Hero über.
+
+WICHTIG:
+Der Übergang muss elegant und nahtlos sein.
+Kein harter Cut.
+Es soll sich wie ein zusammenhängender Hero-Entry anfühlen.
+
+## 2. MACBOOK ALS ECHTES HERO-OBJEKT
+
+Nach der Startanimation bleibt das MacBook im Hero bestehen.
+
+Wichtig:
+
+* Das MacBook soll möglichst original und real wirken
+* eher wie ein echtes Produktfoto / realistisches 3D-Objekt
+* nicht wie ein flaches Illustration-Element
+* mit realistischer Perspektive
+* mit Tiefe, Schatten und Licht
+* gerne leicht frontal oder minimal perspektivisch
+* der Bildschirm soll sichtbar und hochwertig leuchten
+* hinter dem MacBook soll ein subtiler Lichtschein / Glow sein
+
+Falls ein vollständig fotorealistisches MacBook nicht direkt möglich ist, dann bitte die realistischste und hochwertigste technische Umsetzung wählen, die einem echten MacBook sehr nahekommt.
+
+## 3. INHALT AUF DEM MACBOOK-BILDSCHIRM
+
+Auf dem Bildschirm des MacBooks soll keine statische Grafik sein.
+
+Ich möchte eine **animierte Website-Bearbeitungsszene**:
+
+* es soll wirken, als würde aktiv an einer Website gearbeitet werden
+* Cursor bewegt sich
+* Bereiche werden bearbeitet
+* Textblöcke / Layouts / Buttons / Sections entstehen
+* Scrollbewegungen oder Interface-Änderungen können vorkommen
+* alles soll lebendig, modern und hochwertig wirken
+* ruhig und professionell, nicht hektisch
+
+WICHTIG:
+Es soll aussehen, als würde auf dem MacBook wirklich eine Website gebaut oder bearbeitet werden.
+
+## 4. HEADLINE + BUTTONS AUF DEM SCREEN ENTSTEHEN LASSEN
+
+Während diese Website-Bearbeitung im MacBook-Bildschirm läuft, soll folgendes passieren:
+
+* im Bildschirm des MacBooks erscheinen animiert die Hero-Headline
+* danach erscheinen die Buttons
+* alles soll so wirken, als würde genau dieser Hero gerade live erstellt oder aktiviert werden
+* die Inhalte sollen sich sinnvoll aus der Bearbeitung ergeben
+* nicht einfach nur plötzlich eingeblendet, sondern organisch und hochwertig inszeniert
+
+Beispiel:
+
+* zuerst UI-Strukturen / Layout
+* dann Headline
+* dann CTA-Buttons
+* dann finaler fertiger Hero-Zustand
+
+## 5. FUNKTIONALE BUTTONS
+
+Ganz wichtig:
+Die Buttons, die im Hero sichtbar sind, sollen echte funktionierende Buttons der Website bleiben.
+
+Das bedeutet:
+
+* sie dürfen visuell Teil des MacBook-Screens sein
+* aber sie müssen trotzdem anklickbar und funktional sein
+* sie sollen korrekt zu den vorgesehenen Bereichen oder Aktionen führen
+* achte darauf, dass Design und Funktion technisch sauber miteinander verbunden sind
+
+## 6. HINTERGRUND DES HEROS
+
+Der Hintergrund des Hero-Bereichs soll dunkel und hochwertig sein.
+
+Bitte:
+
+* dunkle Premium-Farbwelt
+* subtile Lichttiefe
+* weiche Verläufe
+* eventuell sehr dezente Tech-/Ambient-Struktur
+* nichts Überladenes
+* der Fokus bleibt auf dem MacBook
+
+Optional:
+
+* leichter Nebel / diffuse Lichttiefe
+* dezente Vignette
+* sanfte Lichtstrahlen oder weiche Aura hinter dem Gerät
+
+## 7. LOGO UND BRANDING
+
+Falls das Logo im Hero zusätzlich integriert wird:
+
+* dann bitte dezent und hochwertig
+* nicht zu dominant über dem MacBook
+* sauber eingebunden in die Gesamtinszenierung
+
+## 8. HEADER / NAVBAR WEITER VERBESSERN
+
+Die obere Leiste / Navbar soll ebenfalls weiter verbessert werden.
+
+Bitte:
+
+* hochwertiger und eigenständiger gestalten
+* nicht wie Standard-Template-Navigation
+* halbtransparent oder leicht glasartig
+* feinere Linien / bessere Abstände / elegantere Hovers
+* modern, clean, premium
+* sie soll sich visuell dem Hero anpassen
+
+## 9. WICHTIGE ABGRENZUNG
+
+Bitte NICHT:
+
+* nur ein flaches Browserfenster oder simples UI-Mockup bauen
+* nur einen stilisierten Laptop-Rahmen bauen
+* nur eine rechteckige Bildschirmkarte mit Schatten darstellen
+* eine generische SaaS-Illustration verwenden
+
+Ich möchte:
+
+* ein realistisches, originales MacBook-Gefühl
+* cineastische Hero-Inszenierung
+* hochwertige Übergänge
+* Website-Bearbeitung auf dem Screen
+* Headline und Buttons entstehen im Screen
+* funktionierende CTA-Buttons
+
+## 10. PERFORMANCE
+
+Trotzdem bitte performant umsetzen:
+
+* flüssige Animationen
+* keine laggy Effekte
+* sparsame, hochwertige Motion
+* Mobile-Version sinnvoll anpassen
+* auf kleineren Displays darf die Szene vereinfacht werden, aber die Grundidee soll erhalten bleiben
+
+## ENDZIEL
+
+Der Hero soll sich anfühlen wie eine hochwertige Produkt-/Markeninszenierung:
+
+* Start mit aufklappendem MacBook
+* fließender Übergang in den Hero
+* realistisches MacBook mit Glow
+* lebendige Website-Bearbeitung auf dem Bildschirm
+* Headline und Buttons entstehen auf dem Screen
+* Buttons funktionieren real
+* alles modern, hochwertig, ruhig und beeindruckend

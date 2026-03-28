@@ -88,6 +88,12 @@
   }
 }
 
+/* ── MacBook build-in animation (single shot, used in building phase) ── */
+@keyframes macBuildIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ── MacBook website creation scene animations (14s loop) ── */
 @keyframes macNav {
   0%, 5%  { opacity: 0; transform: translateY(-3px); }
