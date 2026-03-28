@@ -1,0 +1,101 @@
+Bitte ändere die Hero-Umsetzung wie folgt:
+
+## 1. Künstliche MacBook-Aufklapp-Animation entfernen
+
+Die bisherige Animation, bei der das MacBook per Code aufklappen soll, trifft nicht die gewünschte Qualität.
+
+Bitte:
+
+* entferne die künstliche Aufklapp-Animation komplett
+* ersetze sie durch ein echtes Bild eines originalen MacBooks, das ich ins Projekt hochlade
+
+## 2. Hochgeladenes MacBook-Bild professionell verwenden
+
+Ich lade ein Bild eines echten MacBooks hoch.
+
+Bitte:
+
+* schneide das MacBook aus dem Bild sauber aus
+* entferne unnötigen Hintergrund so gut wie möglich
+* nutze das MacBook als realistisches Hero-Objekt
+* es soll hochwertig, sauber und glaubwürdig wirken
+* das Gerät soll zentral im Hero stehen
+* hinter dem MacBook darf ein subtiler Glow / Lichtschein sein
+* das MacBook soll nicht wie ein Mockup oder Illustration wirken, sondern wie ein echtes Gerät
+
+## 3. Bildschirm des MacBooks weiterhin animieren
+
+WICHTIG:
+Im Bildschirm des MacBooks sollen weiterhin die bisherigen Screen-Animationen stattfinden.
+
+Bitte beibehalten:
+
+* Coding-Animation im Screen
+* danach die Headline per Drag-and-drop
+* danach die CTA-Buttons per Drag-and-drop
+
+Wichtig:
+
+* Headline und Buttons sollen groß und klar lesbar sein
+* der Ablauf soll flüssig und hochwertig bleiben
+* der MacBook-Screen selbst soll stabil an einer festen Position bleiben
+* keine hektischen Bewegungen des Geräts oder Bildschirms
+
+## 4. Anfangs-Logo beibehalten
+
+Das Anfangslogo gefällt mir grundsätzlich und soll erhalten bleiben.
+
+Bitte:
+
+* Logo weiterhin mittig zu Beginn anzeigen
+* hochwertig und ruhig
+* danach Übergang zum Hero mit dem echten MacBook
+
+## 5. Shine-Effekt auf dem Logo verbessern
+
+Der Shine-Effekt auf dem Anfangslogo ist noch nicht gut genug.
+Er wirkt aktuell zu kastig.
+
+Bitte korrigieren:
+
+* der Shine darf nicht wie ein Rechteck oder Kasten aussehen
+* keine harten Kanten
+* keine sichtigen Ecken
+* der Shine soll weich, flüssig und natürlich aussehen
+* eher wie ein echter Lichtreflex
+* mit weichen Verläufen
+* sauber von links nach rechts über das Logo laufen
+* langsam genug, damit es hochwertig wirkt
+* danach flüssig auslaufen und vollständig verschwinden
+
+WICHTIG:
+Der Shine soll nur auf dem Logo sichtbar sein und wie ein echter Premium-Schimmer wirken.
+
+## 6. Übergang vom Logo zum Hero
+
+Der Übergang vom Anfangslogo zum Hero mit dem echten MacBook soll weich und hochwertig sein.
+
+Bitte:
+
+* kein harter Cut
+* kein abruptes Umschalten
+* der Übergang soll ruhig, modern und cineastisch wirken
+
+## 7. Im MacBook-Screen keine doppelte Header-Leiste
+
+Bitte achte weiterhin darauf:
+
+* im MacBook-Bildschirm keine eigene Header-/Navigationsleiste anzeigen
+* keine doppelte obere Leiste
+* Fokus nur auf Coding, Headline und CTA-Buttons
+
+## 8. Ziel
+
+Das Ziel ist:
+
+* echtes originales MacBook im Hero
+* sauber ausgeschnitten und hochwertig integriert
+* animierter Screen-Inhalt bleibt erhalten
+* Anfangslogo bleibt erhalten
+* Shine auf dem Logo deutlich verbessern
+* Gesamtwirkung ruhig, realistisch, modern und premium

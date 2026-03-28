@@ -318,20 +318,7 @@ function ScreenPhaseWebsite() {
       <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.07) 1px, transparent 0)", backgroundSize: "20px 20px", pointerEvents: "none" }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(37,99,235,0.05) 0%, transparent 100%)", pointerEvents: "none" }} />
 
-      {/* Mini website nav */}
-      <div style={{ height: 32, background: "rgba(8,14,24,0.95)", borderBottom: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 20px", flexShrink: 0 }}>
-        <img src={`${import.meta.env.BASE_URL}cleanweb-logo-final.png`} alt="CleanWeb" style={{ height: 18 }} />
-        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-          <span style={{ fontSize: 8.5, color: "rgba(255,255,255,0.38)", fontFamily: "sans-serif" }}>Leistungen</span>
-          <span style={{ fontSize: 8.5, color: "rgba(255,255,255,0.38)", fontFamily: "sans-serif" }}>Referenzen</span>
-          <button onClick={() => scrollTo("kontakt")}
-            style={{ padding: "4px 10px", background: "#2563eb", border: "none", borderRadius: 5, fontSize: 8, color: "white", cursor: "pointer", fontWeight: 600, fontFamily: "sans-serif" }}>
-            Beratung
-          </button>
-        </div>
-      </div>
-
-      {/* Hero content */}
+      {/* Hero content — no nav/header inside the screen */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "0 24px", textAlign: "center", position: "relative", gap: 0 }}>
 
         {/* Code tag */}
@@ -400,66 +387,76 @@ function ScreenPhaseWebsite() {
   );
 }
 
-/* ─── MacBook screen: phase content only, no outer chrome ─── */
-function MacScreen({ phase }: { phase: ScreenPhase }) {
+/* ─── Real MacBook photo with animated screen overlay ──────── */
+function RealMacBook({ phase }: { phase: ScreenPhase }) {
+  const glowIntensity = { dark: 0, editor: 0.06, website: 0.16 }[phase] ?? 0;
   return (
-    <div style={{ position: "absolute", inset: 0, background: "#09101c", overflow: "hidden" }}>
-      <AnimatePresence mode="sync">
-        {phase === "dark" && <ScreenPhaseDark />}
-        {phase === "editor" && <ScreenPhaseEditor />}
-        {phase === "website" && <ScreenPhaseWebsite />}
-      </AnimatePresence>
-    </div>
-  );
-}
+    <div className="relative w-full select-none" style={{ maxWidth: 820 }}>
 
-/* ─── MacBook 3D frame ───────────────────────────────────── */
-function MacBook3D({ phase, macEntered }: { phase: ScreenPhase; macEntered: boolean }) {
-  const glowIntensity = { dark: 0, editor: 0.055, website: 0.13 }[phase] ?? 0;
-  return (
-    <div className="relative w-full" style={{ maxWidth: 840 }}>
-      <motion.div animate={{ opacity: glowIntensity }} transition={{ duration: 2.0, ease: "easeOut" }}
-        style={{ position: "absolute", top: "-32%", left: "-22%", right: "-22%", bottom: "-32%", background: "radial-gradient(ellipse 58% 52% at 50% 48%, rgba(37,99,235,1) 0%, transparent 100%)", pointerEvents: "none", zIndex: 0 }} />
-      <div style={{ perspective: "1100px", perspectiveOrigin: "50% 10%", position: "relative", zIndex: 1 }}>
-        <div style={{ transformStyle: "preserve-3d", transform: "rotateX(4deg)", position: "relative" }}>
-          {/* Lid hinges at its bottom edge — only starts moving once MacBook is visible */}
-          <motion.div style={{ transformOrigin: "50% 100%", position: "relative", transformStyle: "preserve-3d" }}
-            initial={{ rotateX: -95 }}
-            animate={{ rotateX: macEntered ? -9 : -95 }}
-            transition={{ duration: 2.9, ease: [0.42, 0, 0.18, 1] }}>
-            <div style={{ position: "relative", background: "linear-gradient(175deg, #3e3e42 0%, #2e2e31 30%, #242426 65%, #1c1c1e 100%)", borderRadius: "14px 14px 3px 3px", padding: "13px 13px 0", boxShadow: "0 0 0 1px rgba(255,255,255,0.09), inset 0 1px 0 rgba(255,255,255,0.11), 0 -2px 6px rgba(0,0,0,0.5)" }}>
-              <div style={{ position: "absolute", top: 0, left: "8%", right: "8%", height: 1, background: "rgba(255,255,255,0.18)", borderRadius: "0 0 4px 4px" }} />
-              <div style={{ position: "absolute", top: 5, left: "50%", transform: "translateX(-50%)", width: 5, height: 5, borderRadius: "50%", background: "#1a1a1c", border: "1px solid rgba(255,255,255,0.07)" }} />
-              <div style={{ background: "#111116", borderRadius: "7px 7px 2px 2px", padding: "2px 2px 0", overflow: "hidden" }}>
-                <div style={{ overflow: "hidden", borderRadius: "5px 5px 0 0", aspectRatio: "16/10", position: "relative" }}>
-                  <MacScreen phase={phase} />
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(130deg, rgba(255,255,255,0.022) 0%, transparent 50%)", pointerEvents: "none", zIndex: 30 }} />
-                </div>
-              </div>
-              <motion.div animate={{ opacity: glowIntensity * 7 }} transition={{ duration: 2.0 }}
-                style={{ position: "absolute", inset: 0, borderRadius: "14px 14px 0 0", background: "radial-gradient(ellipse 80% 40% at 50% 5%, rgba(37,99,235,0.18) 0%, transparent 60%)", pointerEvents: "none" }} />
-              <motion.div animate={{ opacity: glowIntensity * 3.5 }} transition={{ duration: 2 }}
-                style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -55%)", width: 30, height: 30, background: "radial-gradient(circle, rgba(37,99,235,0.3) 0%, transparent 70%)", pointerEvents: "none" }} />
-            </div>
-          </motion.div>
-          <div style={{ height: 4, background: "linear-gradient(90deg, #181818, #484850, #181818)", flexShrink: 0 }} />
-          <div style={{ position: "relative", background: "linear-gradient(180deg, #2e2e31 0%, #222224 55%, #1c1c1e 100%)", height: 34, borderRadius: "0 0 11px 11px", boxShadow: "0 14px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)", flexShrink: 0 }}>
-            <div style={{ position: "absolute", top: 5, left: 24, right: 24, display: "flex", flexDirection: "column", gap: 2, opacity: 0.6 }}>
-              {[14, 14, 12].map((cols, row) => (
-                <div key={row} style={{ display: "flex", gap: 2 }}>
-                  {Array.from({ length: cols }).map((_, i) => (
-                    <div key={i} style={{ flex: 1, height: 3, borderRadius: 2, background: "rgba(255,255,255,0.05)" }} />
-                  ))}
-                </div>
-              ))}
-            </div>
-            <div style={{ position: "absolute", bottom: 3, left: "50%", transform: "translateX(-50%)", width: 110, height: 9, borderRadius: 5, background: "#262628", border: "1px solid rgba(255,255,255,0.05)" }} />
-          </div>
+      {/* Ambient glow behind the device — breathes with screen content */}
+      <motion.div
+        animate={{ opacity: glowIntensity }}
+        transition={{ duration: 2.2, ease: "easeOut" }}
+        style={{
+          position: "absolute",
+          top: "5%", left: "-8%", right: "-8%", bottom: "30%",
+          background: "radial-gradient(ellipse 70% 65% at 50% 42%, rgba(37,99,235,0.85) 0%, transparent 100%)",
+          filter: "blur(38px)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+
+      {/* Container — natural aspect ratio of the MacBook photo */}
+      <div style={{ position: "relative", zIndex: 1 }}>
+
+        {/* ── Screen animation overlay — sits exactly over the MacBook display ── */}
+        {/* 736×406 PNG: screen starts ~4% from top, 8% from sides, height ~68% of total */}
+        <div style={{
+          position: "absolute",
+          top: "4%",
+          left: "8%",
+          width: "84%",
+          height: "68%",
+          overflow: "hidden",
+          clipPath: "inset(0 round 4px)",
+          borderRadius: "4px 4px 2px 2px",
+          background: "#09101c",
+          zIndex: 4,
+        }}>
+          {/* Subtle glare sheen on the glass */}
+          <div style={{
+            position: "absolute", inset: 0, zIndex: 30, pointerEvents: "none",
+            background: "linear-gradient(135deg, rgba(255,255,255,0.028) 0%, transparent 55%)",
+          }} />
+          <AnimatePresence mode="sync">
+            {phase === "dark" && <ScreenPhaseDark />}
+            {phase === "editor" && <ScreenPhaseEditor />}
+            {phase === "website" && <ScreenPhaseWebsite />}
+          </AnimatePresence>
         </div>
+
+        {/* Real MacBook photo (background removed) */}
+        <img
+          src={`${import.meta.env.BASE_URL}macbook-real.png`}
+          alt="MacBook Pro"
+          draggable={false}
+          style={{
+            width: "100%",
+            display: "block",
+            position: "relative",
+            zIndex: 3,
+            filter: "drop-shadow(0 28px 55px rgba(0,0,0,0.72)) drop-shadow(0 6px 18px rgba(0,0,0,0.5))",
+          }}
+        />
       </div>
-      <div style={{ position: "absolute", bottom: -28, left: "12%", right: "12%", height: 44, background: "radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.72) 0%, transparent 70%)", filter: "blur(18px)", pointerEvents: "none", zIndex: 0 }} />
-      <motion.div animate={{ opacity: glowIntensity * 0.85 }} transition={{ duration: 2 }}
-        style={{ position: "absolute", bottom: -36, left: "20%", right: "20%", height: 30, background: "radial-gradient(ellipse at 50% 100%, rgba(37,99,235,0.55) 0%, transparent 70%)", filter: "blur(12px)", pointerEvents: "none", zIndex: 0 }} />
+
+      {/* Floor shadow */}
+      <div style={{
+        position: "absolute", bottom: -20, left: "15%", right: "15%", height: 40,
+        background: "radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.65) 0%, transparent 70%)",
+        filter: "blur(16px)", pointerEvents: "none", zIndex: 0,
+      }} />
     </div>
   );
 }
@@ -510,18 +507,18 @@ export function Hero() {
         {!logoGone && <LogoIntro shineActive={shineActive} />}
       </AnimatePresence>
 
-      {/* ── MacBook content — snaps in (nearly instant) so lid starts visibly closed ── */}
+      {/* ── MacBook content — smooth cinematic fade-in after logo ── */}
       <motion.div
         className="relative z-40 w-full flex flex-col items-center px-4 sm:px-6 lg:px-8 py-8"
-        initial={{ opacity: 0, y: 14 }}
-        animate={{ opacity: macEntered ? 1 : 0, y: macEntered ? 0 : 14 }}
-        transition={{ duration: 0.13, ease: "linear" }}
+        initial={{ opacity: 0, y: 22 }}
+        animate={{ opacity: macEntered ? 1 : 0, y: macEntered ? 0 : 22 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* Label above MacBook */}
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: macEntered ? 1 : 0, y: macEntered ? 0 : -8 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.9, delay: 0.25 }}
           className="mb-6 text-center"
         >
           <span style={{ fontFamily: "monospace", fontSize: "0.72rem", letterSpacing: "0.22em", color: "rgba(255,255,255,0.18)", textTransform: "uppercase" }}>
@@ -529,8 +526,8 @@ export function Hero() {
           </span>
         </motion.div>
 
-        {/* MacBook */}
-        <MacBook3D phase={phase} macEntered={macEntered} />
+        {/* Real MacBook photo with animated screen overlay */}
+        <RealMacBook phase={phase} />
 
         {/* Scroll hint after website phase */}
         <AnimatePresence>
