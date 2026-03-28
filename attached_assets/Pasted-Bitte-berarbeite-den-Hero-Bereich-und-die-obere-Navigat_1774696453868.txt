@@ -1,0 +1,102 @@
+Bitte überarbeite den Hero-Bereich und die obere Navigationsleiste der Website, damit sie deutlich individueller, moderner und weniger mainstream wirken.
+
+## Ziel
+
+Die Website soll sich wie eine eigenständige Premium-Marke anfühlen – nicht wie eine typische Agentur-Template-Seite.
+
+## 1. Hero-Bereich: neue animierte Headline mit Tech-/Code-Charakter
+
+Der Hero-Bereich soll eine deutlich interessantere, modernere und markantere Headline bekommen.
+
+WICHTIG:
+Die Headline soll nicht wie klassischer Werbetext wirken, sondern technisch, modern und hochwertig – inspiriert von Webentwicklung, Code, Interfaces und digitaler Präzision.
+
+Bitte setze eine Headline-Animation um, die mit Coding-/Webdesign-Ästhetik arbeitet, zum Beispiel:
+
+* Typewriter-Effekt
+* Code-Reveal
+* Syntax-inspirierte Textanimation
+* Terminal-artiger Einstieg mit modernem Premium-Look
+* Text, der sich von Code zu Klartext entwickelt
+
+Die Animation soll:
+
+* hochwertig
+* ruhig
+* flüssig
+* modern
+* performant
+  sein.
+
+Sie darf nicht billig, verspielt oder kitschig wirken.
+
+## 2. Headline-Idee
+
+Nutze eine hochwertige Kombination aus technischer Anmutung und klarer Botschaft.
+
+Zum Beispiel eine Richtung wie:
+
+* <build trust. generate customers. />
+* Initializing digital presence...
+* const result = "Mehr Vertrauen. Mehr Kunden.";
+* Websites, die Vertrauen schaffen und Kunden gewinnen.
+
+WICHTIG:
+Die Animation darf technisch starten, aber soll am Ende in eine klare, starke und professionelle Botschaft münden.
+
+## 3. Hero-Hintergrund verbessern
+
+Der Hero-Bereich soll zusätzlich subtil interessanter wirken durch:
+
+* dezentes Grid
+* sehr leichte Scanline- oder Interface-Struktur
+* sanften radialen Glow
+* minimale technische Tiefe
+* ruhige moderne Lichtwirkung
+
+WICHTIG:
+Keine Performance-Probleme, keine schweren Effekte, keine überladenen Animationen.
+
+## 4. Obere Leiste / Navbar / Header interessanter machen
+
+Die aktuelle obere Leiste soll hochwertiger und weniger Standard wirken.
+
+Bitte gestalte die Navbar moderner mit:
+
+* halbtransparenter oder leicht glasartiger Optik
+* dezentem Blur
+* feiner Border oder Lichtkante
+* ruhiger Floating-Wirkung
+* hochwertigerem Spacing
+* eleganter Link-Hover-Animation
+* einem modernen CTA-Button
+* sanftem Shrink-Effekt beim Scrollen
+
+Die Navbar soll wirken wie ein Premium-Interface, nicht wie eine Standard-Menüleiste.
+
+## 5. Stilrichtung
+
+Designrichtung:
+
+* Premium Tech
+* moderner Minimalismus
+* elegante digitale Agentur
+* ruhig, souverän, hochwertig
+* nicht verspielt
+* nicht überladen
+
+## 6. Performance
+
+Bitte achte darauf:
+
+* flüssige Animationen
+* sparsame Effekte
+* gute Mobile-Darstellung
+* keine laggy Übergänge
+* keine unnötig schweren Bibliotheken
+
+## Endziel
+
+Der Hero-Bereich soll sofort Eindruck machen und eigenständig wirken.
+Die Navbar soll hochwertiger und moderner aussehen.
+Die Website soll sich klar von typischen Agentur-Websites abheben.

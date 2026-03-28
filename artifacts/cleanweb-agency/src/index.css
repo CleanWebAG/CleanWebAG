@@ -88,7 +88,13 @@
   }
   
   .glass-nav {
-    @apply bg-navy-950/80 backdrop-blur-lg border-b border-white/10;
+    background: rgba(11, 18, 32, 0.88);
+    backdrop-filter: blur(24px) saturate(1.8);
+    -webkit-backdrop-filter: blur(24px) saturate(1.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow:
+      0 1px 0 rgba(37, 99, 235, 0.14),
+      0 6px 28px rgba(0, 0, 0, 0.45);
   }
   
   .gradient-text {
