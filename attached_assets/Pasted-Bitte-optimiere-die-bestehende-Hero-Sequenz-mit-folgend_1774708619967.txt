@@ -1,0 +1,99 @@
+Bitte optimiere die bestehende Hero-Sequenz mit folgenden gezielten Änderungen.
+
+Die bisherigen Übergänge sind bereits deutlich besser geworden.
+Jetzt geht es um präzises Feintuning und eine noch hochwertigere Dramaturgie.
+
+## 1. LOGO ALS ERSTER EINSTIEG VOR DEM MACBOOK
+
+Bevor das MacBook sichtbar aufgeht, soll zuerst mein Logo alleine mittig im Hero-Bereich erscheinen.
+
+Bitte so umsetzen:
+
+* das CleanWeb Logo steht zuerst allein mittig im Bildschirm
+* Dauer: ca. 2 bis 3 Sekunden
+* das Logo soll ruhig, präsent und hochwertig wirken
+* danach läuft ein kurzer, eleganter Shine-/Schimmer-Effekt über das Logo
+* der Schimmer soll von links nach rechts verlaufen
+* sehr hochwertig, dezent und clean
+* kein kitschiger Glanz-Effekt
+
+WICHTIG:
+Der Effekt soll wie ein kurzer Premium-Lichtreflex wirken.
+
+## 2. ÜBERGANG VOM LOGO ZUM AUFKLAPPENDEN MACBOOK
+
+Nach dem Logo-Moment soll das MacBook aufklappen.
+
+Bitte:
+
+* das MacBook soll so erscheinen, dass es das mittige Logo beim Aufklappen sauber überdeckt
+* das Logo soll nicht hart verschwinden
+* die MacBook-Öffnung soll visuell über das Logo hinweggehen
+* dadurch soll es so wirken, als würde das Logo in die Hero-Szene überführt werden
+* der Ablauf muss flüssig und cineastisch wirken
+
+Ziel:
+Logo zuerst als Markensignal, dann übernimmt das MacBook die Bühne.
+
+## 3. LETZTE PHASE: HEADLINE UND BUTTONS WIRKLICH PER DRAG AND DROP
+
+In der finalen Phase soll die Headline und danach die Buttons wirklich per Drag-and-drop in die Website eingesetzt werden.
+
+WICHTIG:
+
+* hier soll KEIN zusätzlicher Übergang mehr entstehen
+* kein Einblenden
+* kein Morphing
+* kein weicher Wechsel
+* sondern sichtbar und direkt per Drag-and-drop / Platzierungsbewegung eingesetzt
+
+Bitte so:
+
+* zuerst wird die Headline sichtbar per Drag-and-drop in die Website gezogen und an ihre finale Position gesetzt
+* danach werden die Buttons ebenfalls per Drag-and-drop eingesetzt
+* das soll der letzte Schritt der gesamten Hero-Sequenz sein
+* nach dem Einsetzen bleibt der finale Hero einfach stehen
+
+Es soll so wirken, als würde jemand im Editor die finalen Hero-Elemente wirklich in die Website hineinziehen.
+
+## 4. HEADLINE UND BUTTONS AUF DESKTOP DEUTLICH GRÖSSER
+
+Bitte erhöhe im Desktop-Modus die visuelle Größe deutlich.
+
+Genau:
+
+* Headline deutlich größer
+* mehr Präsenz
+* selbstbewusster und hochwertiger
+* Buttons ebenfalls größer
+* klarer CTA-Fokus
+* bessere Lesbarkeit und stärkere Wirkung
+
+WICHTIG:
+Nur im Desktop-Modus deutlich größer skalieren.
+Mobile kann weiterhin kompakter bleiben.
+
+## 5. FLÜSSIGKEIT UND STABILITÄT BEIBEHALTEN
+
+Bitte darauf achten:
+
+* der gesamte Ablauf bleibt flüssig
+* keine Ruckler
+* keine hektischen Übergänge
+* MacBook und Screen bleiben stabil
+* Logo, MacBook und Screen-Sequenz sollen wie aus einem Guss wirken
+
+## GEWÜNSCHTE REIHENFOLGE
+
+1. Logo mittig erscheint
+2. Logo bleibt ca. 2–3 Sekunden sichtbar
+3. kurzer Shine-Effekt läuft von links nach rechts über das Logo
+4. MacBook klappt auf und überdeckt das Logo sauber
+5. Coding / Aufbau / Website-Bearbeitung läuft wie bisher
+6. als letzter Schritt wird die Headline per Drag-and-drop eingesetzt
+7. danach werden die Buttons per Drag-and-drop eingesetzt
+8. finaler Hero bleibt stehen
+
+## WICHTIG
+
+Bitte den letzten Schritt wirklich als sichtbares Platzieren umsetzen, nicht als Übergang oder Einblendung.
