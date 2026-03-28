@@ -1,0 +1,101 @@
+Bitte optimiere die bestehende Hero-Animation mit folgenden gezielten Korrekturen.
+
+Die aktuelle Umsetzung ist bereits sehr gut.
+Jetzt sollen nur noch einige Details sauber verbessert werden, damit die Animation vollständig flüssig und hochwertig wirkt.
+
+## 1. SHINE-EFFEKT AUF DEM LOGO KORRIGIEREN
+
+Der Shine-/Schimmer-Effekt auf dem Logo soll nur direkt über das Logo laufen.
+
+Bitte:
+
+* der Shine darf NICHT über den ganzen Bildschirm oder Hero-Bereich laufen
+* der Effekt soll ausschließlich auf das Logo begrenzt sein
+* der Lichtschein soll sauber von links nach rechts über das Logo gleiten
+* er darf nirgendwo hängen bleiben
+* er soll flüssig erscheinen und flüssig wieder verschwinden
+* kein abruptes Ende
+* kein sichtbarer Rest des Shine-Effekts nach Abschluss
+
+WICHTIG:
+Der Effekt soll wie ein kurzer, hochwertiger Lichtreflex nur auf dem Logo wirken.
+
+## 2. ZWEITE ANIMATION IM MACBOOK ENTFERNEN
+
+Die zweite Animation im MacBook, in der eine Website bearbeitet wird, wird nicht mehr benötigt.
+
+Bitte:
+
+* entferne diese Phase komplett
+* keine zusätzliche „Website wird bearbeitet“-Szene mehr
+* reduziere die Hero-Sequenz auf die wirklich nötigen Phasen
+
+Die Sequenz soll dadurch klarer und hochwertiger werden.
+
+## 3. KEIN HÄNGER NACH DEM CODING
+
+Die erste Animation im MacBook mit dem Coding ist grundsätzlich gut.
+
+Problem:
+Am Ende der Coding-Phase gibt es aktuell einen kurzen Hänger von ca. 1–2 Sekunden.
+
+Bitte:
+
+* entferne diesen Hänger komplett
+* sobald das Coding fertig ist, muss direkt die nächste Animation beginnen
+* kein Stillstand
+* keine künstliche Pause
+* keine Verzögerung zwischen Ende des Codings und dem nächsten Schritt
+
+Der Ablauf muss durchgehend flüssig bleiben.
+
+## 4. AUFKLAPP-ANIMATION DES MACBOOKS WIEDER KLAR EINBAUEN
+
+Ich wollte die Anfangsanimation so, dass das Logo durch das Aufklappen des MacBooks verschwindet bzw. überdeckt wird.
+
+Aktuell ist die Aufklapp-Animation des MacBooks nicht mehr so vorhanden, wie sie sein soll.
+
+Bitte:
+
+* bring die Animation des aufklappenden MacBooks wieder klar in die Hero-Sequenz zurück
+* das MacBook soll sich sichtbar öffnen
+* dabei soll es das mittige Logo sauber überdecken
+* das Logo soll dadurch visuell verschwinden
+* kein harter Cut zwischen Logo und MacBook
+* die Überdeckung soll logisch, hochwertig und flüssig wirken
+
+WICHTIG:
+Die Aufklapp-Animation muss ein sichtbarer Bestandteil des Hero-Einstiegs bleiben.
+
+## 5. NEUE GEWÜNSCHTE ABFOLGE
+
+Bitte die Hero-Sequenz auf diese Reihenfolge bringen:
+
+1. Logo mittig sichtbar
+2. kurzer Shine-Effekt nur auf dem Logo
+3. MacBook klappt sichtbar auf und überdeckt das Logo
+4. Coding-Animation läuft im MacBook
+5. direkt ohne Hänger folgt die nächste Phase
+6. finale Headline und Buttons werden wie bisher per Drag-and-drop eingesetzt
+7. finaler Hero bleibt stehen
+
+## 6. WICHTIG FÜR DIE GESAMTQUALITÄT
+
+Bitte achte darauf:
+
+* alles bleibt flüssig
+* keine Hänger
+* keine unnötigen Zwischenschritte
+* keine überflüssigen Szenen
+* MacBook, Logo und Screen-Sequenz sollen wie aus einem Guss wirken
+* hochwertige Ease und Timing verwenden
+
+## ZIEL
+
+Die Hero-Animation soll reduziert, klar, flüssig und hochwertig sein:
+
+* Shine nur auf dem Logo
+* keine unnötige zweite Bearbeitungsanimation
+* kein Hänger nach dem Coding
+* sichtbare MacBook-Aufklapp-Animation bleibt erhalten
+* Übergänge bleiben sauber und cineastisch

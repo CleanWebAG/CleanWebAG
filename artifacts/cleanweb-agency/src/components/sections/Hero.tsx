@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 /* ─── Types ──────────────────────────────────────────────── */
-type ScreenPhase = "dark" | "editor" | "building" | "website";
+type ScreenPhase = "dark" | "editor" | "website";
 
 /* ─── Floating background code ───────────────────────────── */
 const BG_CODE = [
@@ -63,39 +63,39 @@ function LogoIntro({ shineActive }: { shineActive: boolean }) {
   return (
     <motion.div
       key="logo-intro"
-      className="absolute inset-0 z-50 flex flex-col items-center justify-center"
+      className="absolute inset-0 z-30 flex flex-col items-center justify-center"
       initial={{ opacity: 0, scale: 0.92 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96, transition: { duration: 1.0, ease: "easeInOut" } }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
     >
-      {/* Logo with shine container */}
-      <div style={{ position: "relative" }}>
+      {/* Logo with shine container — overflow:hidden clips the sweep to logo bounds */}
+      <div style={{ position: "relative", overflow: "hidden", borderRadius: 4 }}>
         <img
           src={`${import.meta.env.BASE_URL}cleanweb-logo-final.png`}
           alt="CleanWeb Agency"
           style={{
             height: 86,
             width: "auto",
+            display: "block",
             filter: "drop-shadow(0 0 28px rgba(37,99,235,0.22)) drop-shadow(0 4px 16px rgba(0,0,0,0.5))",
           }}
         />
-        {/* Shine sweep — left to right */}
+        {/* Shine sweep — clipped to logo, no bleed */}
         <AnimatePresence>
           {shineActive && (
             <motion.div
               key="shine"
               style={{
                 position: "absolute",
-                top: -6, bottom: -6, left: -10, right: -10,
-                background: "linear-gradient(105deg, transparent 25%, rgba(255,255,255,0.38) 50%, transparent 75%)",
+                inset: 0,
+                background: "linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.42) 50%, transparent 80%)",
                 pointerEvents: "none",
-                borderRadius: 4,
               }}
-              initial={{ x: "-140%" }}
-              animate={{ x: "220%" }}
+              initial={{ x: "-110%" }}
+              animate={{ x: "200%" }}
               exit={{}}
-              transition={{ duration: 0.65, ease: [0.33, 1, 0.68, 1] }}
+              transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
             />
           )}
         </AnimatePresence>
@@ -246,81 +246,6 @@ function ScreenPhaseEditor() {
       <div style={{ height: 14, background: "#2563eb", display: "flex", alignItems: "center", padding: "0 8px", gap: 12, flexShrink: 0 }}>
         <span style={{ fontSize: 6.5, color: "rgba(255,255,255,0.75)", fontFamily: "sans-serif" }}>main</span>
         <span style={{ fontSize: 6.5, color: "rgba(255,255,255,0.5)", fontFamily: "sans-serif" }}>Hero.tsx — 44 lines · TypeScript</span>
-      </div>
-    </motion.div>
-  );
-}
-
-/* ── Building: design editor view ─────────────────────────── */
-function SelectionCorner({ pos }: { pos: "tl" | "tr" | "bl" | "br" }) {
-  const s: React.CSSProperties = {
-    position: "absolute", width: 4, height: 4, background: "white",
-    border: "1px solid #2563eb", borderRadius: 0.5, zIndex: 10,
-    ...(pos === "tl" ? { top: -2, left: -2 } : {}),
-    ...(pos === "tr" ? { top: -2, right: -2 } : {}),
-    ...(pos === "bl" ? { bottom: -2, left: -2 } : {}),
-    ...(pos === "br" ? { bottom: -2, right: -2 } : {}),
-  };
-  return <div style={s} />;
-}
-
-function ScreenPhaseBuilding() {
-  const bi = (delay: string): React.CSSProperties => ({ animation: `macBuildIn 0.55s ease-out both`, animationDelay: delay });
-  return (
-    <motion.div key="building" className="absolute inset-0" style={{ background: "#09101c", transformOrigin: "center center" }}
-      initial={{ opacity: 0, scale: 0.88 }} animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 1.03, transition: { duration: 0.6 } }}
-      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}>
-      <div style={{ height: 20, background: "#101828", borderBottom: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", gap: 10, padding: "0 8px" }}>
-        {["Pages", "Assets", "Components", "Settings"].map((t, i) => (
-          <span key={t} style={{ fontSize: 7, color: i === 0 ? "rgba(255,255,255,0.75)" : "rgba(255,255,255,0.25)", borderBottom: i === 0 ? "1px solid #2563eb" : "none", paddingBottom: 2, fontFamily: "sans-serif" }}>{t}</span>
-        ))}
-        <div style={{ marginLeft: "auto" }}>
-          <div style={{ width: 36, height: 12, borderRadius: 3, background: "#2563eb", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <span style={{ fontSize: 6, color: "white", fontFamily: "sans-serif" }}>Publish</span>
-          </div>
-        </div>
-      </div>
-      <div style={{ position: "absolute", top: 20, left: 0, right: 0, bottom: 0 }}>
-        <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 20, background: "#0d1420", borderRight: "1px solid rgba(255,255,255,0.05)" }}>
-          {["□", "T", "⬡", "◻"].map((icon, i) => (
-            <div key={i} style={{ height: 20, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 7, color: "rgba(255,255,255,0.2)", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>{icon}</div>
-          ))}
-        </div>
-        <div style={{ position: "absolute", left: 20, top: 0, right: 0, bottom: 0 }}>
-          <div style={{ ...bi("0.2s"), position: "absolute", top: 0, left: 0, right: 0, height: 26, background: "rgba(8,15,27,0.98)", borderBottom: "1px solid rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 14px", outline: "1px solid rgba(37,99,235,0.5)" }}>
-            <SelectionCorner pos="tl" /><SelectionCorner pos="tr" /><SelectionCorner pos="bl" /><SelectionCorner pos="br" />
-            <div style={{ width: 42, height: 7, borderRadius: 3, background: "rgba(255,255,255,0.55)" }} />
-            <div style={{ display: "flex", gap: 8 }}>
-              <div style={{ width: 22, height: 5, borderRadius: 3, background: "rgba(255,255,255,0.16)" }} />
-              <div style={{ width: 22, height: 5, borderRadius: 3, background: "rgba(255,255,255,0.16)" }} />
-              <div style={{ width: 36, height: 12, borderRadius: 3, background: "#2563eb" }} />
-            </div>
-          </div>
-          <div style={{ ...bi("0.55s"), position: "absolute", top: 26, left: 0, right: 0, bottom: 0, background: "linear-gradient(140deg, #080e1c 0%, #0c1428 55%, #0f1e3d 100%)" }}>
-            <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.06) 1px, transparent 0)", backgroundSize: "18px 18px" }} />
-            <div style={{ ...bi("0.9s"), position: "absolute", top: "18%", left: "50%", transform: "translateX(-50%)", width: "75%", outline: "1px dashed rgba(37,99,235,0.6)", padding: "4px 6px" }}>
-              <SelectionCorner pos="tl" /><SelectionCorner pos="tr" /><SelectionCorner pos="bl" /><SelectionCorner pos="br" />
-              <div style={{ height: 9, width: "90%", borderRadius: 3, background: "rgba(255,255,255,0.6)", marginBottom: 5 }} />
-              <div style={{ height: 9, width: "78%", borderRadius: 3, background: "rgba(37,99,235,0.65)" }} />
-            </div>
-            <div style={{ ...bi("1.3s"), position: "absolute", top: "46%", left: "50%", transform: "translateX(-50%)", width: "55%", display: "flex", flexDirection: "column", gap: 3 }}>
-              <div style={{ height: 5, width: "100%", borderRadius: 3, background: "rgba(255,255,255,0.18)" }} />
-              <div style={{ height: 5, width: "75%", borderRadius: 3, background: "rgba(255,255,255,0.12)" }} />
-            </div>
-            <div style={{ ...bi("1.65s"), position: "absolute", top: "60%", left: "50%", transform: "translateX(-50%)", display: "flex", gap: 6 }}>
-              <div style={{ width: 60, height: 17, borderRadius: 5, background: "#2563eb", outline: "1px solid rgba(37,99,235,0.8)", position: "relative" }}><SelectionCorner pos="tl" /><SelectionCorner pos="br" /></div>
-              <div style={{ width: 52, height: 17, borderRadius: 5, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.2)" }} />
-            </div>
-            <motion.div animate={{ x: [0, 80, 80, 0, -40, -40, 0], y: [0, -20, 30, 30, 10, -10, 0] }}
-              transition={{ duration: 3.5, delay: 0.8, ease: "easeInOut" }}
-              style={{ position: "absolute", top: "35%", left: "38%", width: 10, height: 16, pointerEvents: "none", zIndex: 20 }}>
-              <svg viewBox="0 0 10 16" fill="white" style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.8))", width: "100%", height: "100%" }}>
-                <path d="M0 0 L0 12 L3.5 9 L6 14 L7.5 13.5 L5 8.5 L9 8.5 Z" />
-              </svg>
-            </motion.div>
-          </div>
-        </div>
       </div>
     </motion.div>
   );
@@ -488,7 +413,6 @@ function MacScreen({ phase }: { phase: ScreenPhase }) {
         <AnimatePresence mode="sync">
           {phase === "dark" && <ScreenPhaseDark />}
           {phase === "editor" && <ScreenPhaseEditor />}
-          {phase === "building" && <ScreenPhaseBuilding />}
           {phase === "website" && <ScreenPhaseWebsite />}
         </AnimatePresence>
       </div>
@@ -498,7 +422,7 @@ function MacScreen({ phase }: { phase: ScreenPhase }) {
 
 /* ─── MacBook 3D frame ───────────────────────────────────── */
 function MacBook3D({ phase }: { phase: ScreenPhase }) {
-  const glowIntensity = { dark: 0, editor: 0.055, building: 0.09, website: 0.13 }[phase];
+  const glowIntensity = { dark: 0, editor: 0.055, website: 0.13 }[phase] ?? 0;
   return (
     <div className="relative w-full" style={{ maxWidth: 840 }}>
       <motion.div animate={{ opacity: glowIntensity }} transition={{ duration: 2.0, ease: "easeOut" }}
@@ -507,7 +431,7 @@ function MacBook3D({ phase }: { phase: ScreenPhase }) {
         <div style={{ transformStyle: "preserve-3d", transform: "rotateX(3deg)", position: "relative" }}>
           <motion.div style={{ transformOrigin: "50% 100%", position: "relative", transformStyle: "preserve-3d" }}
             initial={{ rotateX: -75 }} animate={{ rotateX: -8 }}
-            transition={{ duration: 2.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}>
+            transition={{ duration: 2.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}>
             <div style={{ position: "relative", background: "linear-gradient(175deg, #3e3e42 0%, #2e2e31 30%, #242426 65%, #1c1c1e 100%)", borderRadius: "14px 14px 3px 3px", padding: "13px 13px 0", boxShadow: "0 0 0 1px rgba(255,255,255,0.09), inset 0 1px 0 rgba(255,255,255,0.11), 0 -2px 6px rgba(0,0,0,0.5)" }}>
               <div style={{ position: "absolute", top: 0, left: "8%", right: "8%", height: 1, background: "rgba(255,255,255,0.18)", borderRadius: "0 0 4px 4px" }} />
               <div style={{ position: "absolute", top: 5, left: "50%", transform: "translateX(-50%)", width: 5, height: 5, borderRadius: "50%", background: "#1a1a1c", border: "1px solid rgba(255,255,255,0.07)" }} />
@@ -553,12 +477,16 @@ export function Hero() {
   const [phase, setPhase] = useState<ScreenPhase>("dark");
 
   useEffect(() => {
+    // t=0:    logo appears
+    // t=1.35: shine sweeps the logo
+    // t=2.0:  MacBook enters (covers logo), logo fades out
+    // t=2.6:  editor/coding phase starts (MacBook is opening its lid)
+    // t=5.1:  website phase immediately after last code line — no pause
     const t0 = setTimeout(() => setShineActive(true), 1350);
     const t1 = setTimeout(() => { setLogoGone(true); setMacEntered(true); }, 2000);
-    const t2 = setTimeout(() => setPhase("editor"), 2800);
-    const t3 = setTimeout(() => setPhase("building"), 7200);
-    const t4 = setTimeout(() => setPhase("website"), 11000);
-    return () => { clearTimeout(t0); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); };
+    const t2 = setTimeout(() => setPhase("editor"), 2600);
+    const t3 = setTimeout(() => setPhase("website"), 5100);
+    return () => { clearTimeout(t0); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
   return (
@@ -589,10 +517,10 @@ export function Hero() {
 
       {/* ── MacBook content — fades in after logo ── */}
       <motion.div
-        className="relative z-10 w-full flex flex-col items-center px-4 sm:px-6 lg:px-8 py-8"
+        className="relative z-40 w-full flex flex-col items-center px-4 sm:px-6 lg:px-8 py-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: macEntered ? 1 : 0 }}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* Label above MacBook */}
         <motion.div
