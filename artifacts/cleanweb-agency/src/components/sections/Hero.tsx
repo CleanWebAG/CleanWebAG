@@ -81,22 +81,26 @@ function LogoIntro({ shineActive }: { shineActive: boolean }) {
             filter: "drop-shadow(0 0 28px rgba(37,99,235,0.22)) drop-shadow(0 4px 16px rgba(0,0,0,0.5))",
           }}
         />
-        {/* Shine sweep — soft gradient, clipped to logo, slow and premium */}
+        {/* Shine sweep — soft oval light blob, no hard edges, clipped to logo bounds */}
         <AnimatePresence>
           {shineActive && (
             <motion.div
               key="shine"
               style={{
                 position: "absolute",
-                inset: 0,
-                background: "linear-gradient(105deg, transparent 0%, transparent 18%, rgba(255,255,255,0.04) 32%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.04) 68%, transparent 82%, transparent 100%)",
-                filter: "blur(2px)",
+                top: "-55%",
+                left: 0,
+                width: "42%",
+                height: "210%",
+                background: "radial-gradient(ellipse at center, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.18) 30%, rgba(255,255,255,0.06) 58%, transparent 78%)",
+                filter: "blur(7px)",
                 pointerEvents: "none",
+                mixBlendMode: "screen",
               }}
               initial={{ x: "-130%" }}
-              animate={{ x: "200%" }}
+              animate={{ x: "330%" }}
               exit={{}}
-              transition={{ duration: 1.15, ease: "easeInOut" }}
+              transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
             />
           )}
         </AnimatePresence>
