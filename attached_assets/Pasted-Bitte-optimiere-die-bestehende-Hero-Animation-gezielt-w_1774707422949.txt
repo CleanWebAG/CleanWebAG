@@ -1,0 +1,213 @@
+Bitte optimiere die bestehende Hero-Animation gezielt weiter.
+Die aktuelle Richtung ist gut, besonders das Öffnen des MacBooks.
+Jetzt geht es darum, die Übergänge deutlich sauberer, ruhiger und hochwertiger zu machen.
+
+## WICHTIGES ZIEL
+
+Die gesamte Hero-Sequenz soll sich wie ein flüssiger, cineastischer Ablauf anfühlen:
+
+1. MacBook öffnet sich
+2. auf dem Bildschirm wird sichtbar „codiert“
+3. aus dem Coding entsteht eine bearbeitete Website
+4. daraus entstehen per Animation Headline, Buttons und finaler Hero-Zustand
+
+Alles soll logisch, weich und hochwertig ineinander übergehen.
+Keine hektischen Sprünge. Keine abrupten Wechsel.
+
+---
+
+## 1. CODING-PHASE VERBESSERN
+
+Die aktuelle Coding-Phase zeigt zu wenig Code bzw. zu wenig Schrift.
+
+Bitte:
+
+* deutlich mehr Code-Zeilen im Bildschirm anzeigen
+* der Screen soll voller und aktiver wirken
+* es soll wie echte Arbeit an einer Website / Komponente aussehen
+* mehrere Zeilen Code sichtbar machen
+* ruhig leicht scrollend oder nacheinander aufgebaut
+* modernes, hochwertiges Coding-Gefühl erzeugen
+* Syntax-Hervorhebung dezent und professionell
+
+WICHTIG:
+Nicht nur wenige Zeilen oder ein leer wirkender Editor.
+Der Bildschirm soll sichtbar „arbeiten“.
+
+---
+
+## 2. ÜBERGANG VON CODE → WEBSITE-BEARBEITUNG VERBESSERN
+
+Der aktuelle Übergang ist noch zu hektisch.
+
+Bitte:
+
+* die bearbeitete Website soll NICHT plötzlich erscheinen
+* sie soll zunächst klein im MacBook-Bildschirm entstehen
+* dann sauber und flüssig in die finale Größe skalieren
+* die Skalierung soll logisch und elegant wirken
+* keine harten Schnitte
+* keine plötzlichen Layout-Sprünge
+
+Ziel:
+Es soll so wirken, als würde sich die Website direkt aus dem Coding heraus aufbauen und in den Screen hineinwachsen.
+
+Wichtige Stilrichtung:
+
+* smooth scale-up
+* sanfte opacity transitions
+* weiches morphing / build-in Gefühl
+* hochwertig, nicht hektisch
+
+---
+
+## 3. WEBSITE-BEARBEITUNG ALS ZWISCHENPHASE KLARER MACHEN
+
+Zwischen Coding und finalem Hero soll eine sichtbare Phase der „Website-Bearbeitung“ entstehen.
+
+Bitte:
+
+* zeige eine echte Zwischenphase, in der die Website noch bearbeitet wird
+* diese Phase soll nicht zu kurz sein
+* es soll klar sichtbar sein, dass Elemente platziert, geordnet oder aufgebaut werden
+* die Szene soll wie ein UI-/Website-Editor wirken
+* ruhig und hochwertig, nicht chaotisch
+
+---
+
+## 4. HEADLINE PER DRAG-AND-DROP / BUILD-IN ERSCHEINEN LASSEN
+
+Nach der bearbeiteten Website soll die Headline nicht einfach nur eingeblendet werden.
+
+Bitte:
+
+* die Headline soll mit einer hochwertigen Animation erscheinen, als würde sie aktiv in die Website eingesetzt werden
+* idealerweise per Drag-and-drop-Gefühl, Build-in-Animation oder gezieltem Platzieren
+* die Entstehung soll sichtbar und elegant sein
+* erst Struktur / dann Headline / dann Buttons
+
+WICHTIG:
+Die Animation soll hochwertig wirken, nicht verspielt.
+
+---
+
+## 5. HEADLINE UND BUTTONS DEUTLICH GRÖSSER MACHEN
+
+Die Headline und die CTA-Buttons sollen im MacBook-Screen deutlich präsenter wirken.
+
+Bitte:
+
+* Headline größer skalieren
+* Buttons größer und hochwertiger darstellen
+* bessere visuelle Gewichtung
+* stärkere Lesbarkeit
+* mehr Premium-Wirkung
+
+Der finale Hero im MacBook soll klar und selbstbewusst wirken.
+
+---
+
+## 6. LOGO IM SCREEN SICHTBAR INTEGRIEREN
+
+Mein Logo soll im Hero bzw. im MacBook-Screen sichtbar eingebunden sein.
+
+Bitte:
+
+* integriere das CleanWeb Logo sauber in die Website-Ansicht
+* idealerweise in der Navigation / im Header des Screens
+* es soll klar erkennbar, aber hochwertig und nicht überdominant sein
+* keine unscharfe oder zu kleine Darstellung
+
+---
+
+## 7. HERO-HINTERGRUND MIT ANIMIERTEN KODIERUNGEN
+
+Der Hintergrund des Hero-Bereichs soll erweitert werden.
+
+Bitte:
+
+* Hintergrundfarbe grundsätzlich beibehalten
+* zusätzlich leicht transparente, animierte Code-Zeilen / Kodierungen im Hintergrund einbauen
+* diese sollen dezent und hochwertig wirken
+* kein starker Matrix- oder Hacker-Look
+* eher moderne, subtile technische Atmosphäre
+* die Kodierungen sollen ruhig animiert sein
+* nur als unterstützende Tiefe im Hintergrund
+
+WICHTIG:
+Der Hintergrund soll interessanter werden, aber nicht vom MacBook ablenken.
+
+---
+
+## 8. MACBOOK-SCREEN MUSS STABIL BLEIBEN
+
+Sehr wichtig:
+Bei den Übergängen darf sich der Bildschirm des MacBooks nicht leicht verschieben oder bewegen.
+
+Bitte achte darauf:
+
+* der MacBook-Screen bleibt während aller Übergänge exakt stabil
+* keine kleinen Positionssprünge
+* keine leichte Bewegung bei jedem Szenenwechsel
+* alle Animationen sollen innerhalb des Screens stattfinden
+* das Gerät selbst soll ruhig und fixiert bleiben
+
+Der Eindruck soll sein:
+Das MacBook steht stabil im Raum, nur der Inhalt im Bildschirm verändert sich.
+
+---
+
+## 9. GESAMTE ANIMATION FLÜSSIGER MACHEN
+
+Bitte optimiere die komplette Hero-Sequenz auf einen flüssigen, hochwertigen Ablauf.
+
+Wichtig:
+
+* keine hektischen Wechsel
+* keine abrupten Schnitte
+* mehr Timing-Ruhe
+* bessere Übergänge zwischen den Phasen
+* klare visuelle Dramaturgie
+* alles soll wie eine zusammenhängende Inszenierung wirken
+
+Empfohlene Reihenfolge:
+
+1. MacBook öffnet sich
+2. mehr Code-Zeilen erscheinen
+3. Code arbeitet / baut Struktur auf
+4. kleine Website-Ansicht entsteht im Screen
+5. diese skaliert sauber hoch
+6. Website-Bearbeitung wird sichtbar
+7. Headline wird eingebaut / erscheint per Build-in oder Drag-and-drop
+8. Buttons erscheinen danach
+9. finaler Hero-Zustand steht
+
+---
+
+## 10. PERFORMANCE
+
+Trotz aller Verbesserungen:
+
+* Animationen flüssig halten
+* keine unnötig schweren Effekte
+* lieber saubere Motion als zu viele Effekte
+* Desktop und Mobile berücksichtigen
+* hochwertige Ease, Timing und Übergänge verwenden
+
+---
+
+## ENDZIEL
+
+Die Hero-Szene soll sich hochwertig, technisch, ruhig und beeindruckend anfühlen.
+
+Wichtigste Korrekturen:
+
+* mehr Coding sichtbar
+* ruhigerer Übergang von Code zur Website
+* Website skaliert aus klein sauber in den Screen
+* Headline wird hochwertig aufgebaut, nicht einfach eingeblendet
+* Buttons größer
+* Logo sichtbar
+* animierte Kodierungen im Hintergrund
+* MacBook bleibt stabil
+* alle Übergänge flüssig
