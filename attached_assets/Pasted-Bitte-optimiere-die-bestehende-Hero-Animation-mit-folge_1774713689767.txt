@@ -1,0 +1,157 @@
+Bitte optimiere die bestehende Hero-Animation mit folgenden gezielten Korrekturen.
+
+Die aktuelle Richtung ist grundsätzlich gut, aber einige Details wirken noch nicht sauber oder hochwertig genug.
+Bitte verbessere exakt diese Punkte:
+
+## 1. SHINE-EFFEKT AUF DEM LOGO DEUTLICH VERBESSERN
+
+Der aktuelle Shine-Effekt über dem Logo wirkt noch nicht wie ein echter Shine, sondern eher wie ein Kasten mit Kanten.
+
+Bitte korrigiere das so:
+
+* der Shine soll weich, rund und hochwertig wirken
+* keine sichtbaren Ecken oder harten Kanten
+* kein rechteckiger oder kastiger Lichtbalken
+* der Effekt soll wie ein echter Lichtreflex aussehen
+* nur innerhalb bzw. direkt auf dem Logo sichtbar
+* der Shine soll etwas langsamer über das Logo ziehen
+* nicht zu schnell
+* flüssig erscheinen, flüssig über das Logo laufen und flüssig wieder verschwinden
+* kein Hängenbleiben
+* kein Rest-Effekt nach dem Durchlauf
+
+WICHTIG:
+Der Shine soll dezent, hochwertig und glaubwürdig wirken — wie ein echter Premium-Lichtreflex auf dem Logo.
+
+## 2. ÜBERGANG VON CODING ZUR DRAG-AND-DROP-PHASE WEICHER MACHEN
+
+Der Übergang vom Coding zur Headline-/Button-Phase ist aktuell noch zu hart.
+
+Bitte verbessere das so:
+
+* zwischen dem Ende des Codings und der Drag-and-drop-Phase soll ein sauberer Übergang entstehen
+* kein abrupter Szenenwechsel
+* keine harte Umschaltung
+* die Drag-and-drop-Szene soll zunächst sehr klein im MacBook-Screen entstehen
+* danach soll sie sauber und flüssig auf ihre finale Größe hochskalieren
+* die Skalierung soll hochwertig und kontrolliert wirken
+* die Bewegung soll logisch und cineastisch sein
+
+Ziel:
+Die Drag-and-drop-Phase soll nicht plötzlich da sein, sondern sich sichtbar aus dem vorherigen Zustand entwickeln.
+
+## 3. MACBOOK-SCREEN MUSS NACH DEM AUFKLAPPEN STABIL BLEIBEN
+
+Das ist sehr wichtig:
+
+* nach dem Aufklappen muss der MacBook-Bildschirm stabil an einer Stelle stehen
+* bei den Übergängen darf sich der Screen nicht hektisch bewegen
+* keine kleinen Sprünge
+* kein leichtes Wackeln
+* keine Positionsverschiebungen bei Szenenwechseln
+* alle Übergänge sollen innerhalb des Screens stattfinden
+* das Gerät selbst bleibt ruhig und fixiert
+
+Ziel:
+Das MacBook steht stabil im Raum, nur der Inhalt im Screen verändert sich.
+
+## 4. AUFKLAPPEN DES MACBOOKS REALISTISCHER MACHEN
+
+Die aktuelle Aufklapp-Animation wirkt noch nicht so, als würde sich das MacBook wirklich öffnen.
+
+Bitte korrigiere das so:
+
+* das MacBook soll sichtbar und glaubwürdig aufklappen
+* der Bildschirm soll sich wie ein echter Laptop-Deckel öffnen
+* nicht einfach nur erscheinen
+* nicht nur ein Fade-in oder ein plötzlich sichtbares Gerät
+* die Bewegung soll klar als physisches Aufklappen erkennbar sein
+* das Öffnen soll ruhig, hochwertig und realistisch wirken
+* die Bewegung soll sich wie ein echtes Scharnier anfühlen
+
+WICHTIG:
+Das MacBook soll das anfangs mittig sichtbare Logo beim Aufklappen sauber überdecken.
+
+Das bedeutet:
+
+* das Logo bleibt zuerst mittig sichtbar
+* dann klappt das MacBook auf
+* beim Öffnen verschwindet das Logo hinter dem MacBook
+* kein harter Cut
+* kein einfaches Ausblenden des Logos
+* das Logo soll visuell durch das Aufklappen verdeckt werden
+
+## 5. KEINE HEADER-LEISTE IM MACBOOK-SCREEN
+
+Im MacBook-Bildschirm soll keine eigene Header-Leiste sichtbar sein.
+
+Bitte:
+
+* entferne die Header-/Navigationsleiste innerhalb des MacBook-Screens
+* keine doppelte Navigation
+* keine doppelte obere Leiste
+* der Screen-Inhalt soll sich auf Coding, Drag-and-drop, Headline und Buttons konzentrieren
+
+Die echte Website-Navigation außerhalb des MacBooks bleibt natürlich bestehen.
+
+## 6. DRAG-AND-DROP-PHASE WEITERHIN BEIBEHALTEN
+
+Die Headline und Buttons sollen weiterhin als letzter Schritt per Drag-and-drop eingesetzt werden.
+
+Bitte dabei beachten:
+
+* Headline zuerst
+* danach Buttons
+* kein zusätzliches Einblenden
+* kein neuer harter Übergang
+* sauberer Übergang aus der skalierten Szene heraus
+* danach finaler Hero-Zustand
+
+## 7. QUALITÄTSZIEL
+
+Die gesamte Hero-Sequenz soll:
+
+* flüssig
+* hochwertig
+* ruhig
+* technisch
+* cineastisch
+* glaubwürdig
+
+wirken.
+
+Nicht:
+
+* hektisch
+* kastig
+* sprunghaft
+* künstlich
+* unruhig
+
+## 8. GEWÜNSCHTE REIHENFOLGE
+
+1. Logo mittig sichtbar
+2. weicher, langsamer Shine nur auf dem Logo
+3. MacBook klappt sichtbar und realistisch auf
+4. dabei verschwindet das Logo hinter dem MacBook
+5. Coding läuft im stabilen Screen
+6. Übergang zur Drag-and-drop-Phase entsteht weich
+7. Drag-and-drop-Szene startet klein im Screen und skaliert sauber hoch
+8. Headline wird eingesetzt
+9. Buttons werden eingesetzt
+10. finaler Hero bleibt stehen
+
+## ENDZIEL
+
+Bitte bringe die bestehende Hero-Animation auf ein deutlich höheres Qualitätsniveau, ohne die Grundidee zu verändern.
+
+Wichtigste Korrekturen:
+
+* echter weicher Shine statt kastenförmigem Effekt
+* langsamerer Shine
+* weicherer Übergang von Coding zu Drag-and-drop
+* kleine Szene skaliert sauber hoch
+* MacBook-Screen bleibt stabil
+* MacBook klappt glaubwürdig auf
+* Logo verschwindet dabei hinter dem Gerät
+* keine Header-Leiste im MacBook-Screen

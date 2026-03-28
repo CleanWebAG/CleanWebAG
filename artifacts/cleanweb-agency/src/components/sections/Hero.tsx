@@ -81,7 +81,7 @@ function LogoIntro({ shineActive }: { shineActive: boolean }) {
             filter: "drop-shadow(0 0 28px rgba(37,99,235,0.22)) drop-shadow(0 4px 16px rgba(0,0,0,0.5))",
           }}
         />
-        {/* Shine sweep — clipped to logo, no bleed */}
+        {/* Shine sweep — soft gradient, clipped to logo, slow and premium */}
         <AnimatePresence>
           {shineActive && (
             <motion.div
@@ -89,13 +89,14 @@ function LogoIntro({ shineActive }: { shineActive: boolean }) {
               style={{
                 position: "absolute",
                 inset: 0,
-                background: "linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.42) 50%, transparent 80%)",
+                background: "linear-gradient(105deg, transparent 0%, transparent 18%, rgba(255,255,255,0.04) 32%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.04) 68%, transparent 82%, transparent 100%)",
+                filter: "blur(2px)",
                 pointerEvents: "none",
               }}
-              initial={{ x: "-110%" }}
+              initial={{ x: "-130%" }}
               animate={{ x: "200%" }}
               exit={{}}
-              transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
+              transition={{ duration: 1.15, ease: "easeInOut" }}
             />
           )}
         </AnimatePresence>
@@ -202,7 +203,7 @@ function ScreenPhaseEditor() {
       style={{ background: "#1e1e2e", fontFamily: "'Fira Code','JetBrains Mono',monospace", display: "flex", flexDirection: "column" }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.9 } }}
+      exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.7, ease: "easeIn" } }}
       transition={{ duration: 0.7 }}
     >
       <div style={{ height: 22, background: "#13131f", borderBottom: "1px solid rgba(255,255,255,0.05)", display: "flex", alignItems: "center", paddingLeft: 10, gap: 6, flexShrink: 0 }}>
@@ -305,10 +306,10 @@ function ScreenPhaseWebsite() {
       key="website"
       className="absolute inset-0 flex flex-col"
       style={{ background: "linear-gradient(140deg, #080e1c 0%, #0c1428 55%, #0f1e3d 100%)", transformOrigin: "center center" }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, scale: 0.3 }}
+      animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
     >
       <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.07) 1px, transparent 0)", backgroundSize: "20px 20px", pointerEvents: "none" }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(37,99,235,0.05) 0%, transparent 100%)", pointerEvents: "none" }} />
@@ -335,9 +336,9 @@ function ScreenPhaseWebsite() {
           {"<build trust. generate customers. />"}
         </motion.div>
 
-        {/* Headline 1 — dragged in from upper-left, FULL OPACITY, fires after phase is visible */}
+        {/* Headline 1 — dragged in from upper-left, fires after scale-up is complete */}
         <div style={{ marginBottom: 4, textAlign: "center" }}>
-          <DragIn from={{ x: -90, y: -42, rotate: -3 }} delay={0.7}>
+          <DragIn from={{ x: -90, y: -42, rotate: -3 }} delay={1.45}>
             <div style={{ fontSize: 34, fontWeight: 800, color: "white", lineHeight: 1.08, fontFamily: "'Montserrat', sans-serif", whiteSpace: "nowrap" }}>
               Wir bauen keine Websites.
             </div>
@@ -346,7 +347,7 @@ function ScreenPhaseWebsite() {
 
         {/* Headline 2 — dragged in from lower-right */}
         <div style={{ marginBottom: 16, textAlign: "center" }}>
-          <DragIn from={{ x: 82, y: 36, rotate: 2.5 }} delay={1.15}>
+          <DragIn from={{ x: 82, y: 36, rotate: 2.5 }} delay={1.9}>
             <div style={{ fontSize: 34, fontWeight: 800, color: "#2563eb", lineHeight: 1.08, fontFamily: "'Montserrat', sans-serif", whiteSpace: "nowrap" }}>
               Wir bauen Wettbewerbsvorteile.
             </div>
@@ -354,13 +355,13 @@ function ScreenPhaseWebsite() {
         </div>
 
         {/* Subtext — simple fade, appears while user watches the second headline settle */}
-        <motion.p initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5, duration: 0.6 }}
+        <motion.p initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.1, duration: 0.6 }}
           style={{ fontSize: 9.5, color: "rgba(255,255,255,0.38)", lineHeight: 1.7, maxWidth: 295, marginBottom: 22, fontFamily: "sans-serif" }}>
           Strategisches Design. Schnelle Umsetzung. Messbare Ergebnisse — für Unternehmen, die keine Kompromisse machen.
         </motion.p>
 
         {/* Buttons — dropped from above, clearly visible while falling */}
-        <DragIn from={{ x: 0, y: -72, rotate: 0 }} delay={1.7}>
+        <DragIn from={{ x: 0, y: -72, rotate: 0 }} delay={2.45}>
           <div style={{ display: "flex", gap: 11, justifyContent: "center" }}>
             <button
               onClick={() => scrollTo("kontakt")}
@@ -383,7 +384,7 @@ function ScreenPhaseWebsite() {
       </div>
 
       {/* Stats footer */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.9, duration: 0.7 }}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.8, duration: 0.7 }}
         style={{ display: "flex", justifyContent: "center", gap: 24, padding: "9px 0", borderTop: "1px solid rgba(255,255,255,0.07)", flexShrink: 0 }}>
         {[["50+", "Projekte"], ["3×", "mehr Anfragen"], ["100 %", "Zufriedenheit"]].map(([n, l]) => (
           <span key={l} style={{ fontSize: 8, color: "rgba(255,255,255,0.25)", fontFamily: "sans-serif" }}>
@@ -395,27 +396,15 @@ function ScreenPhaseWebsite() {
   );
 }
 
-/* ─── MacBook screen: browser chrome + phase content ──────── */
+/* ─── MacBook screen: phase content only, no outer chrome ─── */
 function MacScreen({ phase }: { phase: ScreenPhase }) {
   return (
     <div style={{ position: "absolute", inset: 0, background: "#09101c", overflow: "hidden" }}>
-      <div style={{ height: 22, background: "#101828", borderBottom: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", padding: "0 10px", gap: 5, flexShrink: 0, position: "relative", zIndex: 20 }}>
-        <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: "rgba(255,95,87,0.65)" }} />
-        <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: "rgba(254,188,46,0.65)" }} />
-        <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: "rgba(40,200,64,0.65)" }} />
-        <div style={{ marginLeft: 8, flex: 1, maxWidth: 190, height: 11, borderRadius: 11, background: "rgba(255,255,255,0.06)", display: "flex", alignItems: "center", paddingLeft: 7 }}>
-          <span style={{ fontSize: 6, color: "rgba(255,255,255,0.22)", fontFamily: "monospace" }}>
-            {phase === "editor" ? "code — Hero.tsx — CleanWeb" : "cleanweb.agency"}
-          </span>
-        </div>
-      </div>
-      <div style={{ position: "absolute", top: 22, left: 0, right: 0, bottom: 0, overflow: "hidden" }}>
-        <AnimatePresence mode="sync">
-          {phase === "dark" && <ScreenPhaseDark />}
-          {phase === "editor" && <ScreenPhaseEditor />}
-          {phase === "website" && <ScreenPhaseWebsite />}
-        </AnimatePresence>
-      </div>
+      <AnimatePresence mode="sync">
+        {phase === "dark" && <ScreenPhaseDark />}
+        {phase === "editor" && <ScreenPhaseEditor />}
+        {phase === "website" && <ScreenPhaseWebsite />}
+      </AnimatePresence>
     </div>
   );
 }
@@ -430,8 +419,8 @@ function MacBook3D({ phase }: { phase: ScreenPhase }) {
       <div style={{ perspective: "1400px", perspectiveOrigin: "50% 12%", position: "relative", zIndex: 1 }}>
         <div style={{ transformStyle: "preserve-3d", transform: "rotateX(3deg)", position: "relative" }}>
           <motion.div style={{ transformOrigin: "50% 100%", position: "relative", transformStyle: "preserve-3d" }}
-            initial={{ rotateX: -75 }} animate={{ rotateX: -8 }}
-            transition={{ duration: 2.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}>
+            initial={{ rotateX: -82 }} animate={{ rotateX: -8 }}
+            transition={{ duration: 2.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}>
             <div style={{ position: "relative", background: "linear-gradient(175deg, #3e3e42 0%, #2e2e31 30%, #242426 65%, #1c1c1e 100%)", borderRadius: "14px 14px 3px 3px", padding: "13px 13px 0", boxShadow: "0 0 0 1px rgba(255,255,255,0.09), inset 0 1px 0 rgba(255,255,255,0.11), 0 -2px 6px rgba(0,0,0,0.5)" }}>
               <div style={{ position: "absolute", top: 0, left: "8%", right: "8%", height: 1, background: "rgba(255,255,255,0.18)", borderRadius: "0 0 4px 4px" }} />
               <div style={{ position: "absolute", top: 5, left: "50%", transform: "translateX(-50%)", width: 5, height: 5, borderRadius: "50%", background: "#1a1a1c", border: "1px solid rgba(255,255,255,0.07)" }} />
