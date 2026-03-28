@@ -4,6 +4,7 @@ import { WhyUs } from "@/components/sections/WhyUs";
 import { Problem } from "@/components/sections/Problem";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Services } from "@/components/sections/Services";
+import { Pakete } from "@/components/sections/Pakete";
 import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaSection } from "@/components/sections/CtaSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <Problem />
       <Portfolio />
       <Services />
+      <Pakete />
       <Process />
       <Testimonials />
       <CtaSection />

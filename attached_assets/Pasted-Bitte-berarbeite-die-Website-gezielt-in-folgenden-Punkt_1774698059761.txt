@@ -1,0 +1,126 @@
+Bitte überarbeite die Website gezielt in folgenden Punkten, damit sie hochwertiger, interessanter und weniger mainstream wirkt.
+
+## 1. Hero-Headline-Animation langsamer und hochwertiger machen
+
+Die aktuelle Animation im Hero gefällt mir grundsätzlich, aber sie läuft noch zu schnell.
+
+Bitte:
+
+* verlangsame die Headline-Animation spürbar
+* gib den einzelnen Animationsschritten mehr Ruhe und mehr Zeit
+* nutze weichere Übergänge
+* lasse die Animation souveräner und hochwertiger wirken
+* achte darauf, dass sie modern und technisch bleibt, aber nicht hektisch wirkt
+
+Die Animation soll sich premium und kontrolliert anfühlen.
+
+## 2. Logo im Hero deutlich größer und präsenter machen
+
+Das Logo im Hero soll größer, markanter und interessanter inszeniert werden.
+
+Bitte:
+
+* vergrößere das Logo deutlich
+* mache es zum klaren visuellen Mittelpunkt des Hero-Bereichs
+* positioniere es hochwertig und präsent
+* achte darauf, dass es nicht einfach nur wie ein Bild wirkt, sondern wie ein Markenobjekt
+
+## 3. Leuchteffekte / Glow um das Logo verbessern
+
+Die aktuellen Leuchteffekte um das Logo wirken noch nicht hochwertig genug und sollen überarbeitet werden.
+
+Bitte:
+
+* entferne billige oder zu harte Glow-Effekte
+* ersetze sie durch deutlich edlere und subtilere Lichtwirkungen
+* nutze lieber weiche radiale Lichtscheine, Tiefe, feine Aura und kontrollierte Highlights
+* der Effekt soll modern, elegant und hochwertig wirken
+* kein kitschiger Neon-Look
+* keine übertriebenen Lichtwolken
+
+Das Logo soll kraftvoll und premium wirken.
+
+## 4. Hero-Hintergrund deutlich interessanter machen
+
+Wenn technisch möglich, soll der Hero-Hintergrund deutlich spannender und moderner gestaltet werden.
+
+Idee:
+Ein KI-artig wirkender animierter Hintergrund, der Website-Erstellung, Interfaces, Browser-Layouts, Code, Webdesign oder digitale Systeme visuell andeutet.
+
+WICHTIG:
+Falls ein echtes KI-generiertes Video nicht direkt möglich ist, dann baue stattdessen eine hochwertige animierte Background-Szene mit diesen Elementen:
+
+* subtile Browser- oder UI-Frames
+* technische Linien oder Grid-Strukturen
+* sanfte Interface-Bewegungen
+* moderne Webdesign-Optik
+* ruhige digitale Tiefe
+* leichte Motion im Hintergrund
+
+Der Hintergrund soll hochwertig, technisch und modern wirken, ohne die Performance zu verschlechtern.
+
+## 5. Neue Premium-Sektion mit animierten Demo-Websites + Paketen
+
+Erstelle eine neue hochwertige Sektion, in der animierte Demo-Websites mit den angebotenen Paketen kombiniert werden.
+
+Die Sektion soll modern und klar aufgebaut sein:
+
+### Linke Seite:
+
+* animierte Demo-Websites oder Website-Vorschauen
+* die Demos sollen lebendig wirken
+* z. B. Browser-Mockups, Geräteansichten, Scroll-Vorschauen oder wechselnde Webdesign-Beispiele
+* die Animationen sollen hochwertig, flüssig und dezent sein
+
+### Rechte Seite:
+
+* die Pakete bzw. Angebote
+* hochwertig dargestellte Paketkarten
+* klar strukturiert
+* modern und premium
+* keine Standard-Preistabelle im Baukasten-Stil
+
+Optional:
+
+* wenn ein Paket ausgewählt oder gehovert wird, soll sich die Demo-Ansicht links passend verändern
+* so wirkt die Sektion interaktiver und individueller
+
+## 6. Gesamtstil
+
+Die gesamte Umsetzung soll:
+
+* modern
+* hochwertig
+* technisch
+* souverän
+* ruhig
+* premium
+  wirken.
+
+Nicht:
+
+* verspielt
+* überladen
+* kitschig
+* laggy
+* standardmäßig
+
+## 7. Performance
+
+Bitte achte unbedingt darauf:
+
+* flüssige Animationen
+* sparsame Effekte
+* gute Mobile-Darstellung
+* keine schweren Animationen, die die Website langsam machen
+* lieber wenige starke Premium-Effekte als viele kleine Standard-Effekte
+
+## Ziel
+
+Ziel ist eine deutlich stärkere Premium-Inszenierung:
+
+* langsamere und bessere Hero-Animation
+* größeres und interessanteres Logo
+* hochwertigere Licht-/Glow-Effekte
+* spannender techiger Hero-Hintergrund
+* starke neue Sektion mit animierten Demo-Websites und Paketen

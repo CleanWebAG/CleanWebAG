@@ -23,7 +23,7 @@ export function Process() {
 
   return (
     <section id="prozess" className="py-32 bg-navy-950 relative overflow-hidden">
-      <SectionDivider position="top" fillColor="fill-white" />
+      <SectionDivider position="top" fillColor="fill-navy-950" />
 
       {/* Subtle dot grid */}
       <div
