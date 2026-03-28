@@ -329,34 +329,34 @@ function ScreenPhaseWebsite() {
 
         {/* Headline 1 — dragged in from upper-left, fires after scale-up is complete */}
         <div style={{ marginBottom: 4, textAlign: "center" }}>
-          <DragIn from={{ x: -90, y: -42, rotate: -3 }} delay={1.45}>
-            <div style={{ fontSize: 34, fontWeight: 800, color: "white", lineHeight: 1.08, fontFamily: "'Montserrat', sans-serif", whiteSpace: "nowrap" }}>
+          <DragIn from={{ x: -65, y: -32, rotate: -3 }} delay={1.45}>
+            <div style={{ fontSize: 28, fontWeight: 800, color: "white", lineHeight: 1.08, fontFamily: "'Montserrat', sans-serif", whiteSpace: "nowrap" }}>
               Wir bauen keine Websites.
             </div>
           </DragIn>
         </div>
 
         {/* Headline 2 — dragged in from lower-right */}
-        <div style={{ marginBottom: 16, textAlign: "center" }}>
-          <DragIn from={{ x: 82, y: 36, rotate: 2.5 }} delay={1.9}>
-            <div style={{ fontSize: 34, fontWeight: 800, color: "#2563eb", lineHeight: 1.08, fontFamily: "'Montserrat', sans-serif", whiteSpace: "nowrap" }}>
+        <div style={{ marginBottom: 14, textAlign: "center" }}>
+          <DragIn from={{ x: 60, y: 28, rotate: 2.5 }} delay={1.9}>
+            <div style={{ fontSize: 28, fontWeight: 800, color: "#2563eb", lineHeight: 1.08, fontFamily: "'Montserrat', sans-serif", whiteSpace: "nowrap" }}>
               Wir bauen Wettbewerbsvorteile.
             </div>
           </DragIn>
         </div>
 
-        {/* Subtext — simple fade, appears while user watches the second headline settle */}
+        {/* Subtext — simple fade */}
         <motion.p initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.1, duration: 0.6 }}
-          style={{ fontSize: 9.5, color: "rgba(255,255,255,0.38)", lineHeight: 1.7, maxWidth: 295, marginBottom: 22, fontFamily: "sans-serif" }}>
+          style={{ fontSize: 9, color: "rgba(255,255,255,0.38)", lineHeight: 1.7, maxWidth: 280, marginBottom: 20, fontFamily: "sans-serif" }}>
           Strategisches Design. Schnelle Umsetzung. Messbare Ergebnisse — für Unternehmen, die keine Kompromisse machen.
         </motion.p>
 
-        {/* Buttons — dropped from above, clearly visible while falling */}
-        <DragIn from={{ x: 0, y: -72, rotate: 0 }} delay={2.45}>
-          <div style={{ display: "flex", gap: 11, justifyContent: "center" }}>
+        {/* Buttons — dropped from above */}
+        <DragIn from={{ x: 0, y: -58, rotate: 0 }} delay={2.45}>
+          <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
             <button
               onClick={() => scrollTo("kontakt")}
-              style={{ padding: "12px 24px", background: "#2563eb", color: "white", border: "none", borderRadius: 7, fontSize: 11.5, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, fontFamily: "sans-serif", boxShadow: "0 4px 20px rgba(37,99,235,0.38)", transition: "transform 0.15s, box-shadow 0.15s" }}
+              style={{ padding: "11px 22px", background: "#2563eb", color: "white", border: "none", borderRadius: 7, fontSize: 11, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, fontFamily: "sans-serif", boxShadow: "0 4px 20px rgba(37,99,235,0.38)", transition: "transform 0.15s, box-shadow 0.15s" }}
               onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 6px 26px rgba(37,99,235,0.52)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 4px 20px rgba(37,99,235,0.38)"; }}
             >
@@ -364,7 +364,7 @@ function ScreenPhaseWebsite() {
             </button>
             <button
               onClick={() => scrollTo("pakete")}
-              style={{ padding: "12px 24px", background: "rgba(255,255,255,0.07)", color: "white", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 7, fontSize: 11.5, fontWeight: 600, cursor: "pointer", fontFamily: "sans-serif", transition: "background 0.15s" }}
+              style={{ padding: "11px 22px", background: "rgba(255,255,255,0.07)", color: "white", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 7, fontSize: 11, fontWeight: 600, cursor: "pointer", fontFamily: "sans-serif", transition: "background 0.15s" }}
               onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.13)"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
             >
@@ -387,75 +387,120 @@ function ScreenPhaseWebsite() {
   );
 }
 
-/* ─── Real MacBook photo with animated screen overlay ──────── */
+/* ─── Angled MacBook photo with perspective-matched screen overlay ─────── */
+/*
+ * The photo (macbook-angled.png, 1200×1600) shows a MacBook Pro photographed
+ * from the LEFT at ~33° Y-angle, screen filling the top ~54% of the image.
+ *
+ * Screen corners in the photo (as % of 1200×1600):
+ *   Top-left    ≈ (2%,  2%)
+ *   Top-right   ≈ (95%, 5%)
+ *   Bottom-right≈ (97%, 54%)
+ *   Bottom-left ≈ (3%,  51%)
+ *
+ * Strategy: one clip-path polygon on the screen overlay (absolute inset:0)
+ * clips the animated screen content to exactly match the physical display.
+ * A depth-gradient inside fakes the perspective shading on the right side.
+ */
 function RealMacBook({ phase }: { phase: ScreenPhase }) {
-  const glowIntensity = { dark: 0, editor: 0.06, website: 0.16 }[phase] ?? 0;
-  return (
-    <div className="relative w-full select-none" style={{ maxWidth: 820 }}>
+  const glowIntensity = { dark: 0, editor: 0.05, website: 0.14 }[phase] ?? 0;
 
-      {/* Ambient glow behind the device — breathes with screen content */}
+  return (
+    <div className="relative w-full select-none" style={{ maxWidth: 640 }}>
+
+      {/* Ambient blue glow — breathes with screen phase */}
       <motion.div
         animate={{ opacity: glowIntensity }}
-        transition={{ duration: 2.2, ease: "easeOut" }}
+        transition={{ duration: 2.4, ease: "easeOut" }}
         style={{
           position: "absolute",
-          top: "5%", left: "-8%", right: "-8%", bottom: "30%",
-          background: "radial-gradient(ellipse 70% 65% at 50% 42%, rgba(37,99,235,0.85) 0%, transparent 100%)",
-          filter: "blur(38px)",
+          top: "0%", left: "-10%", right: "-10%", bottom: "44%",
+          background: "radial-gradient(ellipse 80% 70% at 50% 40%, rgba(37,99,235,0.9) 0%, transparent 100%)",
+          filter: "blur(48px)",
           pointerEvents: "none",
           zIndex: 0,
         }}
       />
 
-      {/* Container — natural aspect ratio of the MacBook photo */}
-      <div style={{ position: "relative", zIndex: 1 }}>
+      {/* Image + overlay wrapper — show screen + thin keyboard sliver         */}
+      {/* maxHeight: 72vh keeps the screen visible and crops most of keyboard */}
+      <div style={{
+        position: "relative",
+        zIndex: 1,
+        overflow: "hidden",
+        maxHeight: "72vh",
+        borderRadius: "0 0 12px 12px",
+      }}>
 
-        {/* ── Screen animation overlay — sits exactly over the MacBook display ── */}
-        {/* 736×406 PNG: screen starts ~4% from top, 8% from sides, height ~68% of total */}
-        <div style={{
-          position: "absolute",
-          top: "4%",
-          left: "8%",
-          width: "84%",
-          height: "68%",
-          overflow: "hidden",
-          clipPath: "inset(0 round 4px)",
-          borderRadius: "4px 4px 2px 2px",
-          background: "#09101c",
-          zIndex: 4,
-        }}>
-          {/* Subtle glare sheen on the glass */}
-          <div style={{
-            position: "absolute", inset: 0, zIndex: 30, pointerEvents: "none",
-            background: "linear-gradient(135deg, rgba(255,255,255,0.028) 0%, transparent 55%)",
-          }} />
-          <AnimatePresence mode="sync">
-            {phase === "dark" && <ScreenPhaseDark />}
-            {phase === "editor" && <ScreenPhaseEditor />}
-            {phase === "website" && <ScreenPhaseWebsite />}
-          </AnimatePresence>
-        </div>
-
-        {/* Real MacBook photo (background removed) */}
+        {/* MacBook photo — rendered first so overlay can paint on top via DOM */}
         <img
-          src={`${import.meta.env.BASE_URL}macbook-real.png`}
+          src={`${import.meta.env.BASE_URL}macbook-angled.png`}
           alt="MacBook Pro"
           draggable={false}
           style={{
             width: "100%",
             display: "block",
-            position: "relative",
-            zIndex: 3,
-            filter: "drop-shadow(0 28px 55px rgba(0,0,0,0.72)) drop-shadow(0 6px 18px rgba(0,0,0,0.5))",
+            filter: "drop-shadow(0 24px 50px rgba(0,0,0,0.80)) drop-shadow(0 4px 14px rgba(0,0,0,0.55))",
           }}
         />
+
+        {/* ── Screen animation overlay ─────────────────────────────────────────
+            Rendered AFTER the image in DOM order so it paints on top.
+            clip-path polygon maps the angled screen in the photo.
+
+            The photo (1200×1600) renders at 640px width → 853px tall.
+            At maxHeight 72vh (≈518px @ 720p), the container clips at 518px.
+            Screen bottom in the photo ≈ 460px displayed → 88.8% of 518px.
+            The dock at the base of the screen ≈ 426-461px = 82-89% of 518px.
+            Polygon corners (% of container 640×518):
+              TL (4%,2%)  TR (95%,6%)  BR (97%,100%)  BL (4%,96%)           ── */}
+        <div style={{
+          position: "absolute",
+          top: 0, left: 0, right: 0, bottom: 0,
+          background: "#09101c",
+          /*
+           * Polygon covers the MacBook screen in the angled photo.
+           * Camera is LEFT+above — left edge appears lower in the image.
+           *   TL (0%,  0%) — flush with container top-left (includes bezel)
+           *   TR (95%, 5%) — top-right, far side tilts slightly down
+           *   BR (95%, 100%)— bottom-right at full container height
+           *   BL (0%,  100%)— bottom-left at full container height
+           * Screen + dock fill ~95% of container width, ~99% of height.
+           */
+          clipPath: "polygon(0% 0%, 95% 5%, 95% 100%, 0% 100%)",
+        }}>
+          {/* Inner content box: fills the screen bounding box */}
+          <div style={{
+            position: "absolute",
+            top: "2%", left: "4%",
+            width: "90%", height: "98%",
+            overflow: "hidden",
+          }}>
+            {/* Perspective depth — left edge darker (closer), right lighter   */}
+            <div style={{
+              position: "absolute", inset: 0, zIndex: 40, pointerEvents: "none",
+              background: "linear-gradient(to right, rgba(0,0,0,0.18) 0%, transparent 28%, rgba(0,0,0,0.10) 100%)",
+            }} />
+            {/* Glass glare on upper-left corner                               */}
+            <div style={{
+              position: "absolute", inset: 0, zIndex: 41, pointerEvents: "none",
+              background: "linear-gradient(145deg, rgba(255,255,255,0.055) 0%, transparent 42%)",
+            }} />
+
+            <AnimatePresence mode="sync">
+              {phase === "dark"    && <ScreenPhaseDark    />}
+              {phase === "editor"  && <ScreenPhaseEditor  />}
+              {phase === "website" && <ScreenPhaseWebsite />}
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
 
-      {/* Floor shadow */}
+      {/* Floor shadow beneath the device */}
       <div style={{
-        position: "absolute", bottom: -20, left: "15%", right: "15%", height: 40,
-        background: "radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.65) 0%, transparent 70%)",
-        filter: "blur(16px)", pointerEvents: "none", zIndex: 0,
+        position: "absolute", bottom: -16, left: "10%", right: "10%", height: 36,
+        background: "radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.60) 0%, transparent 72%)",
+        filter: "blur(14px)", pointerEvents: "none", zIndex: 0,
       }} />
     </div>
   );

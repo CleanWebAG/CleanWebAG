@@ -1,0 +1,159 @@
+Bitte überarbeite den Hero-Bereich vollständig unter Verwendung des neu hochgeladenen MacBook-Bildes.
+
+## 1. MacBook aus dem Bild professionell integrieren
+
+Ich habe ein realistisches MacBook-Bild hochgeladen.
+
+Bitte:
+
+* schneide das MacBook sauber und professionell aus dem Bild heraus
+* entferne störenden Hintergrund so gut wie möglich
+* erhalte dabei die natürliche Beleuchtung und Perspektive
+* das MacBook soll realistisch und hochwertig wirken, nicht wie ein Mockup
+* nutze das Gerät als zentrales Hero-Element
+
+Optional:
+
+* leichter Glow oder Lichtschein hinter dem MacBook für mehr Fokus
+* subtil, nicht übertrieben
+
+---
+
+## 2. Bildschirm als echte Arbeitsfläche nutzen (SEHR WICHTIG)
+
+Der Bildschirm des MacBooks soll als aktive Fläche genutzt werden.
+
+WICHTIG:
+Alle Animationen müssen exakt in den Bildschirm eingepasst werden.
+
+Bitte:
+
+* erkenne die Perspektive des Screens korrekt
+* passe die Inhalte perspektivisch an
+* nichts darf über den Bildschirm hinausgehen
+* keine flache Overlay-Optik
+
+Die Animation soll wirken, als würde sie wirklich im MacBook stattfinden.
+
+---
+
+## 3. Leichter 3D / Perspektiven-Effekt
+
+Um den Realismus zu verstärken:
+
+* Inhalte im Screen leicht perspektivisch verzerren (subtil)
+* optional minimale Tiefenwirkung
+* evtl. ganz leichter Parallax-Effekt beim Scrollen
+* alles sehr dezent
+
+Ziel:
+Es soll wirken wie echtes UI innerhalb eines echten Displays.
+
+---
+
+## 4. Animation im Bildschirm (beibehalten, aber sauber integriert)
+
+Bitte folgende Sequenz im Screen umsetzen:
+
+### Phase 1 – Coding
+
+* mehrere Code-Zeilen sichtbar
+* lebendig, aber ruhig
+* hochwertiger Editor-Look
+* kein leerer Screen
+
+### Phase 2 – Übergang zur Website
+
+* Website entsteht NICHT plötzlich
+* sie startet klein im Screen
+* skaliert sauber und flüssig hoch
+* wirkt wie aus dem Code entstanden
+
+### Phase 3 – Drag & Drop (LETZTER STEP)
+
+* Headline wird sichtbar per Drag-and-drop eingesetzt
+* danach Buttons ebenfalls per Drag-and-drop
+* KEIN zusätzlicher Übergang danach
+* das ist der finale Zustand
+
+---
+
+## 5. Headline und Buttons größer darstellen
+
+Im Screen:
+
+* Headline deutlich größer
+* mehr Präsenz
+* klarer Fokus
+* Buttons größer und hochwertiger
+* bessere Lesbarkeit
+
+---
+
+## 6. Kein doppelter Header im Screen
+
+Bitte:
+
+* keine Navigationsleiste im MacBook-Screen anzeigen
+* keine doppelte Header-Struktur
+* Fokus nur auf Inhalt (Coding + Hero-Aufbau)
+
+---
+
+## 7. Stabilität des Geräts
+
+Sehr wichtig:
+
+* das MacBook bleibt komplett stabil
+* keine Bewegung bei Übergängen
+* kein Wackeln
+* keine Positionsverschiebung
+* nur der Inhalt im Screen verändert sich
+
+---
+
+## 8. Anfangslogo + Shine beibehalten (aber verbessern)
+
+Bitte beibehalten:
+
+* Logo am Anfang mittig
+* kurzer Shine-Effekt
+
+Aber verbessern:
+
+* Shine darf keine harten Kanten haben
+* kein rechteckiger Balken
+* weicher Lichtverlauf
+* leicht langsamer
+* flüssig rein und raus
+
+---
+
+## 9. Übergang Logo → MacBook
+
+* kein harter Cut
+* sanfter Übergang
+* MacBook erscheint hochwertig
+* Logo verschwindet sauber
+
+---
+
+## 10. Gesamtziel
+
+Die Szene soll wirken wie:
+
+* echtes MacBook
+* echte Arbeit im Screen
+* hochwertige digitale Inszenierung
+* keine Fake-UI
+* keine Template-Optik
+
+Es soll sich anfühlen wie:
+Eine reale Website wird gerade auf einem echten Gerät gebaut.
+
+---
+
+WICHTIG:
+Die Integration des Screen-Inhalts in das MacBook ist der wichtigste Punkt.
+
+Die Animation muss perfekt in den Bildschirm passen, perspektivisch korrekt sein und sich wie echtes Arbeiten im Gerät anfühlen.
