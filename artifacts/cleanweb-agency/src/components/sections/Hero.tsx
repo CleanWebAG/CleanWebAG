@@ -414,17 +414,19 @@ function MacScreen({ phase }: { phase: ScreenPhase }) {
 }
 
 /* ─── MacBook 3D frame ───────────────────────────────────── */
-function MacBook3D({ phase }: { phase: ScreenPhase }) {
+function MacBook3D({ phase, macEntered }: { phase: ScreenPhase; macEntered: boolean }) {
   const glowIntensity = { dark: 0, editor: 0.055, website: 0.13 }[phase] ?? 0;
   return (
     <div className="relative w-full" style={{ maxWidth: 840 }}>
       <motion.div animate={{ opacity: glowIntensity }} transition={{ duration: 2.0, ease: "easeOut" }}
         style={{ position: "absolute", top: "-32%", left: "-22%", right: "-22%", bottom: "-32%", background: "radial-gradient(ellipse 58% 52% at 50% 48%, rgba(37,99,235,1) 0%, transparent 100%)", pointerEvents: "none", zIndex: 0 }} />
-      <div style={{ perspective: "1400px", perspectiveOrigin: "50% 12%", position: "relative", zIndex: 1 }}>
-        <div style={{ transformStyle: "preserve-3d", transform: "rotateX(3deg)", position: "relative" }}>
+      <div style={{ perspective: "1100px", perspectiveOrigin: "50% 10%", position: "relative", zIndex: 1 }}>
+        <div style={{ transformStyle: "preserve-3d", transform: "rotateX(4deg)", position: "relative" }}>
+          {/* Lid hinges at its bottom edge — only starts moving once MacBook is visible */}
           <motion.div style={{ transformOrigin: "50% 100%", position: "relative", transformStyle: "preserve-3d" }}
-            initial={{ rotateX: -82 }} animate={{ rotateX: -8 }}
-            transition={{ duration: 2.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}>
+            initial={{ rotateX: -95 }}
+            animate={{ rotateX: macEntered ? -9 : -95 }}
+            transition={{ duration: 2.9, ease: [0.42, 0, 0.18, 1] }}>
             <div style={{ position: "relative", background: "linear-gradient(175deg, #3e3e42 0%, #2e2e31 30%, #242426 65%, #1c1c1e 100%)", borderRadius: "14px 14px 3px 3px", padding: "13px 13px 0", boxShadow: "0 0 0 1px rgba(255,255,255,0.09), inset 0 1px 0 rgba(255,255,255,0.11), 0 -2px 6px rgba(0,0,0,0.5)" }}>
               <div style={{ position: "absolute", top: 0, left: "8%", right: "8%", height: 1, background: "rgba(255,255,255,0.18)", borderRadius: "0 0 4px 4px" }} />
               <div style={{ position: "absolute", top: 5, left: "50%", transform: "translateX(-50%)", width: 5, height: 5, borderRadius: "50%", background: "#1a1a1c", border: "1px solid rgba(255,255,255,0.07)" }} />
@@ -508,12 +510,12 @@ export function Hero() {
         {!logoGone && <LogoIntro shineActive={shineActive} />}
       </AnimatePresence>
 
-      {/* ── MacBook content — fades in after logo ── */}
+      {/* ── MacBook content — snaps in (nearly instant) so lid starts visibly closed ── */}
       <motion.div
         className="relative z-40 w-full flex flex-col items-center px-4 sm:px-6 lg:px-8 py-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: macEntered ? 1 : 0 }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: macEntered ? 1 : 0, y: macEntered ? 0 : 14 }}
+        transition={{ duration: 0.13, ease: "linear" }}
       >
         {/* Label above MacBook */}
         <motion.div
@@ -528,7 +530,7 @@ export function Hero() {
         </motion.div>
 
         {/* MacBook */}
-        <MacBook3D phase={phase} />
+        <MacBook3D phase={phase} macEntered={macEntered} />
 
         {/* Scroll hint after website phase */}
         <AnimatePresence>
