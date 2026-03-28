@@ -339,15 +339,15 @@ function DragIn({
   return (
     <motion.div
       style={{ position: "relative", display: "inline-block" }}
-      initial={{ x: from.x, y: from.y, rotate: from.rotate ?? 0, opacity: 0.55 }}
+      initial={{ x: from.x, y: from.y, rotate: from.rotate ?? 0, opacity: 1 }}
       animate={{ x: 0, y: 0, rotate: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 190, damping: 22, delay }}
+      transition={{ type: "spring", stiffness: 300, damping: 26, delay }}
     >
-      {/* Selection outline — visible during drag, fades after settling */}
+      {/* Selection outline — fully visible while dragging, fades on landing */}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ delay: delay + 0.85, duration: 0.4 }}
+        transition={{ delay: delay + 0.55, duration: 0.35 }}
         style={{
           position: "absolute", inset: -4,
           border: "1.5px dashed rgba(37,99,235,0.7)",
@@ -362,7 +362,7 @@ function DragIn({
           key={i}
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
-          transition={{ delay: delay + 0.85, duration: 0.4 }}
+          transition={{ delay: delay + 0.55, duration: 0.35 }}
           style={{ position: "absolute", width: 5, height: 5, background: "white", border: "1.5px solid #2563eb", borderRadius: 1, pointerEvents: "none", zIndex: 21, ...pos }}
         />
       ))}
@@ -380,10 +380,10 @@ function ScreenPhaseWebsite() {
       key="website"
       className="absolute inset-0 flex flex-col"
       style={{ background: "linear-gradient(140deg, #080e1c 0%, #0c1428 55%, #0f1e3d 100%)", transformOrigin: "center center" }}
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
     >
       <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.07) 1px, transparent 0)", backgroundSize: "20px 20px", pointerEvents: "none" }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(37,99,235,0.05) 0%, transparent 100%)", pointerEvents: "none" }} />
@@ -410,9 +410,9 @@ function ScreenPhaseWebsite() {
           {"<build trust. generate customers. />"}
         </motion.div>
 
-        {/* Headline 1 — dragged in from upper-left */}
-        <div style={{ marginBottom: 4 }}>
-          <DragIn from={{ x: -70, y: -28, rotate: -2 }} delay={0.35}>
+        {/* Headline 1 — dragged in from upper-left, FULL OPACITY, fires after phase is visible */}
+        <div style={{ marginBottom: 4, textAlign: "center" }}>
+          <DragIn from={{ x: -90, y: -42, rotate: -3 }} delay={0.7}>
             <div style={{ fontSize: 34, fontWeight: 800, color: "white", lineHeight: 1.08, fontFamily: "'Montserrat', sans-serif", whiteSpace: "nowrap" }}>
               Wir bauen keine Websites.
             </div>
@@ -420,22 +420,22 @@ function ScreenPhaseWebsite() {
         </div>
 
         {/* Headline 2 — dragged in from lower-right */}
-        <div style={{ marginBottom: 16 }}>
-          <DragIn from={{ x: 60, y: 24, rotate: 1.8 }} delay={0.75}>
+        <div style={{ marginBottom: 16, textAlign: "center" }}>
+          <DragIn from={{ x: 82, y: 36, rotate: 2.5 }} delay={1.15}>
             <div style={{ fontSize: 34, fontWeight: 800, color: "#2563eb", lineHeight: 1.08, fontFamily: "'Montserrat', sans-serif", whiteSpace: "nowrap" }}>
               Wir bauen Wettbewerbsvorteile.
             </div>
           </DragIn>
         </div>
 
-        {/* Subtext — simple fade */}
-        <motion.p initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.25, duration: 0.7 }}
+        {/* Subtext — simple fade, appears while user watches the second headline settle */}
+        <motion.p initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5, duration: 0.6 }}
           style={{ fontSize: 9.5, color: "rgba(255,255,255,0.38)", lineHeight: 1.7, maxWidth: 295, marginBottom: 22, fontFamily: "sans-serif" }}>
           Strategisches Design. Schnelle Umsetzung. Messbare Ergebnisse — für Unternehmen, die keine Kompromisse machen.
         </motion.p>
 
-        {/* Buttons — dropped from above */}
-        <DragIn from={{ x: 0, y: -52, rotate: 0 }} delay={1.2}>
+        {/* Buttons — dropped from above, clearly visible while falling */}
+        <DragIn from={{ x: 0, y: -72, rotate: 0 }} delay={1.7}>
           <div style={{ display: "flex", gap: 11, justifyContent: "center" }}>
             <button
               onClick={() => scrollTo("kontakt")}
