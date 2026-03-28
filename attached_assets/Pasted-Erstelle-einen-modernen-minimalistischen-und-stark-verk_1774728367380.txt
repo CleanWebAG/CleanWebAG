@@ -1,0 +1,164 @@
+Erstelle einen modernen, minimalistischen und stark verkaufsorientierten Hero-Bereich für die Website "CleanWeb Agency".
+
+## ZIEL
+
+Der Hero soll sofort professionell wirken, Vertrauen aufbauen und sich klar von typischen Agentur-Websites unterscheiden.
+
+Er soll ruhig, hochwertig und technisch wirken – ohne überladene Animationen.
+
+---
+
+## 1. HERO-KONZEPT
+
+Der Hero basiert auf einer klaren Struktur:
+
+* dunkler, moderner Hintergrund
+* subtile animierte Codierungen im Hintergrund
+* große, starke Headline im Mittelpunkt
+* zwei klare CTA-Buttons
+
+Kein MacBook, keine komplexe Szene.
+
+---
+
+## 2. ANIMIERTER BACKGROUND (CODING-STYLE)
+
+Im Hintergrund sollen dezente, animierte Code-Elemente laufen:
+
+* leichte Code-Zeilen (z. B. HTML, CSS oder JS)
+* sehr subtil animiert
+* leicht transparent
+* langsam bewegend oder leicht erscheinend
+
+WICHTIG:
+
+* kein „Hacker“-Look
+* kein Matrix-Effekt
+* keine schnellen Bewegungen
+* keine Überladung
+
+Der Effekt soll nur Tiefe geben und modern wirken.
+
+---
+
+## 3. HEADLINE (SEHR WICHTIG)
+
+Die Headline ist das wichtigste Element im Hero.
+
+Bitte verwende eine starke, klare und nicht generische Headline:
+
+Beispielrichtung:
+„Wir bauen keine Websites.
+Wir bauen Wettbewerbsvorteile.“
+
+ODER:
+„Websites, die Vertrauen schaffen und Kunden gewinnen.“
+
+ODER:
+„Dein Online-Auftritt entscheidet, ob Kunden bleiben.“
+
+WICHTIG:
+
+* groß
+* klar lesbar
+* modern
+* kein Standard-Marketing-Blabla
+
+---
+
+## 4. SUBHEADLINE
+
+Unter der Headline:
+
+* kurze Erklärung
+* einfach verständlich
+* fokus auf Ergebnis
+
+Beispiel:
+„Modernes Webdesign für Unternehmen, die professionell auftreten und mehr Kunden gewinnen wollen.“
+
+---
+
+## 5. CTA BUTTONS
+
+Zwei Buttons:
+
+1. Primär:
+   „Kostenlose Beratung“
+
+2. Sekundär:
+   „Pakete ansehen“
+
+Design:
+
+* größer als Standard
+* abgerundet
+* leichter Glow beim Hover
+* klare Hierarchie (Primär stärker)
+
+---
+
+## 6. DESIGN STIL
+
+* viel Weißraum
+* klare Struktur
+* große Typografie
+* sanfte Animationen
+* keine verspielten Effekte
+
+Farbwelt:
+
+* dunkler Hintergrund
+* helle Schrift
+* Akzentfarbe Blau
+
+---
+
+## 7. NAVBAR
+
+* minimalistisch
+* halbtransparent oder leicht mit Blur
+* hochwertiges Spacing
+* moderner CTA Button
+
+---
+
+## 8. PERFORMANCE
+
+* flüssige Animationen
+* keine Laggs
+* keine schweren Effekte
+* mobile optimiert
+
+---
+
+## 9. WICHTIG
+
+Nicht:
+
+* keine komplexe Szene
+* keine übertriebenen Animationen
+* kein Template-Look
+
+Sondern:
+
+* ruhig
+* hochwertig
+* modern
+* klar
+* verkaufsstark
+
+---
+
+## ENDZIEL
+
+Ein Hero, der sofort vermittelt:
+
+* Professionalität
+* Klarheit
+* Vertrauen
+* Ergebnisorientierung
+
+Der Besucher soll innerhalb von 3 Sekunden verstehen:
+
+„Diese Agentur baut Websites, die wirklich funktionieren.“

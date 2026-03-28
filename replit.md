@@ -91,6 +91,18 @@ Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used b
 
 Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
 
+### `artifacts/cleanweb-agency` (`@workspace/cleanweb-agency`)
+
+Premium single-page marketing website in German for CleanWeb Agency (web design agency targeting SMBs). Built with React + Vite + Framer Motion + Tailwind CSS.
+
+- **Colors**: dark navy (#0B1220), electric blue (#2563EB), light (#F8FAFC)
+- **Fonts**: Montserrat (headings), Inter (body)
+- **Logo**: `public/cleanweb-logo-final.png`
+- **Section order**: Hero → WhyUs → Problem → Portfolio → Services → Pakete → Process → Testimonials → CTA → Footer
+- **Hero**: Clean full-viewport layout with floating BackgroundCode, large typography, two CTAs ("Kostenlose Beratung" + "Pakete ansehen"), stats row (50+, 3×, 100%), bouncing chevron. Uses transform-based animations for performance.
+- **Navigation**: Blur nav bar with mobile hamburger menu, scroll-aware, sticky
+- **Key files**: `src/components/sections/Hero.tsx`, `src/components/Navigation.tsx`, `src/pages/Home.tsx`, `src/index.css`
+
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
