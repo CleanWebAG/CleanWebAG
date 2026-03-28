@@ -176,61 +176,89 @@ export function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
 
-        {/* ── Logo — brand centerpiece, enlarged ── */}
+        {/* ── Logo — brand centerpiece ── */}
         <motion.div
-          className="flex justify-center mb-8"
-          initial={{ opacity: 0, y: 14 }}
+          className="flex justify-center mb-10"
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="relative inline-flex items-center justify-center">
-            {/* Outermost soft aura — large, very transparent */}
+
+            {/* Outermost atmospheric haze — barely visible, white-tinted */}
             <div
               className="absolute pointer-events-none"
               style={{
-                inset: "-80px",
-                background: "radial-gradient(ellipse at center, rgba(37,99,235,0.07) 0%, transparent 68%)",
-                borderRadius: "50%",
-              }}
-            />
-            {/* Inner warm glow */}
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                inset: "-32px",
-                background: "radial-gradient(ellipse at center, rgba(37,99,235,0.13) 0%, transparent 62%)",
-                borderRadius: "50%",
-              }}
-            />
-            {/* Bottom rim highlight */}
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                inset: "-12px",
-                background: "radial-gradient(ellipse 80% 40% at 50% 110%, rgba(37,99,235,0.09) 0%, transparent 55%)",
-                borderRadius: "50%",
+                inset: "-140px -180px",
+                background:
+                  "radial-gradient(ellipse at 50% 55%, rgba(255,255,255,0.04) 0%, rgba(37,99,235,0.025) 45%, transparent 70%)",
               }}
             />
 
+            {/* Mid ambient light — soft overhead simulation */}
+            <div
+              className="absolute pointer-events-none"
+              style={{
+                inset: "-70px -90px",
+                background:
+                  "radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.055) 0%, rgba(37,99,235,0.03) 55%, transparent 75%)",
+              }}
+            />
+
+            {/* Ground reflection — faint blue-white pooling below */}
+            <div
+              className="absolute pointer-events-none"
+              style={{
+                bottom: "-18px",
+                left: "-60px",
+                right: "-60px",
+                height: "28px",
+                background:
+                  "radial-gradient(ellipse at 50% 100%, rgba(37,99,235,0.10) 0%, transparent 68%)",
+                filter: "blur(4px)",
+              }}
+            />
+
+            {/* Futuristic outer ring — barely visible */}
+            <div
+              className="absolute pointer-events-none rounded-full"
+              style={{
+                inset: "-56px",
+                border: "1px solid rgba(37,99,235,0.055)",
+              }}
+            />
+            {/* Inner ring */}
+            <div
+              className="absolute pointer-events-none rounded-full"
+              style={{
+                inset: "-28px",
+                border: "1px solid rgba(255,255,255,0.04)",
+              }}
+            />
+
+            {/* Logo with very slow float */}
             <motion.div
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="relative"
+              animate={{ y: [0, -4, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10"
             >
               <img
                 src={`${import.meta.env.BASE_URL}cleanweb-logo-final.png`}
                 alt="CleanWeb Agency"
-                className="relative w-auto max-h-[110px] md:max-h-[150px] lg:max-h-[180px] z-10"
-                style={{ filter: "drop-shadow(0 6px 28px rgba(37,99,235,0.28)) drop-shadow(0 2px 8px rgba(37,99,235,0.15))" }}
+                className="w-auto max-h-[130px] md:max-h-[180px] lg:max-h-[220px]"
+                style={{
+                  filter:
+                    "drop-shadow(0 12px 48px rgba(255,255,255,0.06)) drop-shadow(0 4px 16px rgba(37,99,235,0.12))",
+                }}
               />
 
-              {/* One-time shimmer sweep */}
+              {/* One-time shimmer sweep — delayed until logo is fully in */}
               <div className="absolute inset-0 z-20 overflow-hidden pointer-events-none">
                 <motion.div
-                  className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/14 to-transparent -skew-x-12"
+                  className="absolute inset-y-0 w-2/5 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
                   initial={{ x: "-100%" }}
-                  animate={{ x: "380%" }}
-                  transition={{ duration: 1.1, delay: 1.0, ease: "easeInOut" }}
+                  animate={{ x: "320%" }}
+                  transition={{ duration: 1.3, delay: 1.4, ease: "easeInOut" }}
                 />
               </div>
             </motion.div>
