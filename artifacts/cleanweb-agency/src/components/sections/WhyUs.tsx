@@ -1,50 +1,62 @@
 import { FadeIn } from "@/components/ui/fade-in";
-import { SectionDivider } from "@/components/ui/section-divider";
 
 export function WhyUs() {
-  const features = [
+  const stats = [
     {
-      num: "01",
-      title: "Schnelle Umsetzung",
-      desc: "Dein Projekt startet sofort. Wir hassen wochenlange Wartezeiten genauso wie du.",
+      number: "50+",
+      label: "Projekte",
+      desc: "Erfolgreich umgesetzt",
     },
     {
-      num: "02",
-      title: "Klare Kommunikation",
-      desc: "Du weißt immer genau, wo dein Projekt steht. Transparenz ohne böse Überraschungen.",
+      number: "3×",
+      label: "Mehr Anfragen",
+      desc: "Im Schnitt nach Relaunch",
     },
     {
-      num: "03",
-      title: "Hochwertiges Design",
-      desc: "Premium-Optik auf Apple-Niveau, die deinen Mitbewerbern visuell meilenweit voraus ist.",
+      number: "2–4",
+      label: "Wochen",
+      desc: "Bis zur Live-Website",
     },
     {
-      num: "04",
-      title: "Fokus auf Ergebnisse",
-      desc: "Wir denken nicht in reinen Pixeln — wir denken in zahlenden Kunden und echtem Umsatz.",
+      number: "100%",
+      label: "Zufriedenheit",
+      desc: "Kundenstimmen",
     },
   ];
 
   return (
-    <section className="py-24 bg-white relative">
-      <SectionDivider position="top" fillColor="fill-navy-950" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-navy-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-950 mb-16 text-center">
-            Warum CleanWeb Agency?
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+            <div>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-electric/60 mb-3 block">
+                CleanWeb in Zahlen
+              </span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+                Ergebnisse, die
+                <br />
+                für sich sprechen.
+              </h2>
+            </div>
+            <p className="text-white/40 max-w-xs text-sm leading-relaxed md:text-right">
+              Echte Zahlen. Echte Kunden.
+              <br />
+              Keine aufgeblasenen Versprechen.
+            </p>
+          </div>
         </FadeIn>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <div className="relative p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
-                <div className="text-6xl font-extrabold text-slate-200 mb-6 font-display">
-                  {feature.num}
+        {/* Stats grid with gap-px separator effect */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/8 rounded-2xl overflow-hidden">
+          {stats.map((stat, i) => (
+            <FadeIn key={i} delay={i * 0.08}>
+              <div className="bg-navy-950 px-8 py-12 lg:py-16 flex flex-col items-start group hover:bg-navy-900/50 transition-colors duration-300">
+                <div className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-electric mb-3 font-display tracking-tight leading-none group-hover:scale-105 transition-transform duration-300 origin-left">
+                  {stat.number}
                 </div>
-                <h3 className="text-xl font-bold text-navy-950 mb-3">{feature.title}</h3>
-                <p className="text-navy-800/70 leading-relaxed">{feature.desc}</p>
+                <div className="text-base font-bold text-white mb-1">{stat.label}</div>
+                <div className="text-xs text-white/35">{stat.desc}</div>
               </div>
             </FadeIn>
           ))}

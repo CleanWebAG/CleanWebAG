@@ -1,4 +1,3 @@
-import { Search, PenTool, Rocket } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { motion } from "framer-motion";
 import { SectionDivider } from "@/components/ui/section-divider";
@@ -6,62 +5,76 @@ import { SectionDivider } from "@/components/ui/section-divider";
 export function Process() {
   const steps = [
     {
-      icon: <Search className="w-8 h-8 text-electric" />,
-      title: "1. Analyse",
-      desc: "Wir analysieren dein Unternehmen, deine Ziele und deine Zielgruppe im Detail.",
+      num: "I",
+      title: "Analyse",
+      desc: "Wir verstehen dein Unternehmen, deine Zielgruppe und deine Ziele im Detail — bevor wir auch nur einen Pixel setzen.",
     },
     {
-      icon: <PenTool className="w-8 h-8 text-electric" />,
-      title: "2. Umsetzung",
-      desc: "Wir erstellen deine neue Website — schnell, extrem professionell und auf Konversionen ausgelegt.",
+      num: "II",
+      title: "Umsetzung",
+      desc: "Deine neue Website entsteht in 2–4 Wochen. Schnell, professionell, konsequent auf dich zugeschnitten.",
     },
     {
-      icon: <Rocket className="w-8 h-8 text-electric" />,
-      title: "3. Wachstum",
-      desc: "Deine neue Website arbeitet ab sofort für dich: 24/7, 365 Tage im Jahr zur Neukundengewinnung.",
+      num: "III",
+      title: "Wachstum",
+      desc: "Deine Website arbeitet 24/7 für dich — und gewinnt täglich neue Kunden, während du dich auf dein Business konzentrierst.",
     },
   ];
 
   return (
-    <section id="prozess" className="py-24 bg-navy-950 relative">
+    <section id="prozess" className="py-32 bg-navy-950 relative overflow-hidden">
       <SectionDivider position="top" fillColor="fill-white" />
+
+      {/* Subtle dot grid */}
+      <div
+        className="absolute inset-0 opacity-[0.018] pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundSize: "40px 40px",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              So einfach funktioniert es
+          <div className="mb-24">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-electric/60 mb-4 block">
+              Der Weg
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.05]">
+              Einfach.
+              <br />
+              <span className="text-white/30">Schnell.</span>
+              <br />
+              <span className="text-electric">Ergebnisorientiert.</span>
             </h2>
-            <p className="text-lg text-white/60">
-              Ein bewährter und transparenter Prozess für deinen digitalen Erfolg.
-            </p>
           </div>
         </FadeIn>
 
-        <div className="relative">
-          {/* Animated connecting line — fires once on scroll-in */}
+        <div className="grid md:grid-cols-3 gap-16 md:gap-8 relative">
+          {/* Connecting line */}
           <motion.div
-            className="hidden md:block absolute top-10 left-[16.5%] w-[67%] h-0.5 bg-electric/40 z-0"
+            className="hidden md:block absolute top-[2.5rem] left-[16%] w-[68%] h-px bg-gradient-to-r from-electric/30 via-electric/60 to-electric/30 z-0"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             style={{ transformOrigin: "left" }}
-            transition={{ duration: 1.0, ease: "easeOut", delay: 0.4 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
           />
 
-          <div className="grid md:grid-cols-3 gap-12 md:gap-8 relative z-10">
-            {steps.map((step, i) => (
-              <FadeIn key={i} delay={i * 0.15}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-20 h-20 rounded-2xl bg-navy-900 border border-white/10 shadow-lg flex items-center justify-center mb-6">
-                    {step.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-white/60 leading-relaxed max-w-sm">{step.desc}</p>
+          {steps.map((step, i) => (
+            <FadeIn key={i} delay={i * 0.15}>
+              <div className="relative z-10">
+                {/* Large Roman numeral */}
+                <div className="text-[6rem] md:text-[8rem] font-extrabold text-white/8 font-display leading-none select-none mb-6 -ml-2">
+                  {step.num}
                 </div>
-              </FadeIn>
-            ))}
-          </div>
+                {/* Electric dot */}
+                <div className="w-3 h-3 rounded-full bg-electric mb-6 ring-4 ring-electric/20" />
+                <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
+                <p className="text-white/50 leading-relaxed text-[0.95rem]">{step.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>

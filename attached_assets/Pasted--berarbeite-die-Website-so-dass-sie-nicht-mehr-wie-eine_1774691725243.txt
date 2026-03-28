@@ -1,0 +1,63 @@
+Überarbeite die Website so, dass sie nicht mehr wie eine typische Agentur-Template-Seite wirkt, sondern wie eine eigenständige Premium-Marke mit starker visueller Identität.
+
+Ziel:
+Die Website soll zu den besten 1 % wirken – hochwertig, markant, modern und sofort wiedererkennbar.
+
+WICHTIG:
+Die Seite darf nicht wie eine Standard-Agenturwebsite aussehen. Vermeide typische Baukasten-Strukturen, generische Layouts und austauschbare Abschnitte.
+
+Bitte setze folgende Änderungen um:
+
+1. Hero-Bereich neu inszenieren
+
+* Das Logo soll relativ weit oben und mittig als klarer Markenfokus stehen
+* Das Logo soll wie ein zentrales Markenobjekt wirken, nicht nur wie ein normales Bild
+* Ergänze einen sehr dezenten Premium-Effekt:
+
+  * sanfter Glow
+  * langsames Floating
+  * weiches Fade-in
+  * subtiler Lichtschimmer
+* Die Animation soll ruhig, hochwertig und performant sein
+
+2. Headline deutlich markanter machen
+
+* Entferne generische Formulierungen
+* Verwende eine Headline mit mehr Identität, Präsenz und Markenwirkung
+* Die Headline soll modern, hochwertig und einprägsam wirken
+* Sie soll nicht wie Standard-Marketingtext klingen
+
+3. Layout weniger vorhersehbar machen
+
+* Vermeide die typische Standard-Reihenfolge aus Hero, Leistungen, Vorteile, Prozess, Kontakt
+* Baue stattdessen mehr visuelle Dramaturgie auf
+* Nutze asymmetrische Kompositionen, großzügige Abstände und starke Typografie
+* Schaffe bewusste Spannungsmomente zwischen den Sektionen
+
+4. Signature Style ausbauen
+
+* Die Website soll einen eigenen CleanWeb-Stil haben
+* dunkles, ruhiges, elegantes Premium-Design
+* subtile Lichttiefe
+* klare Formen
+* viel Weißraum
+* hochwertige Übergänge
+* keine verspielten oder überladenen Effekte
+
+5. Weniger Standard-Kacheln, mehr Markenwirkung
+
+* Reduziere typische 08/15-Service-Boxen
+* Ersetze sie, wenn möglich, durch hochwertigere Showcase- oder Storytelling-Bereiche
+* Die Website soll sich wie eine echte Marke anfühlen, nicht nur wie eine Verkaufsvorlage
+
+6. Performance beachten
+
+* Keine schweren oder laggy Effekte
+* Nur wenige, aber starke Animationen
+* Mobile und Desktop müssen flüssig bleiben
+
+Designrichtung:
+Eine Mischung aus Premium-Tech, Editorial-Minimalismus und moderner Luxus-Digitalagentur.
+
+Gesamteindruck:
+Ruhig. Souverän. Hochwertig. Wiedererkennbar. Nicht mainstream.

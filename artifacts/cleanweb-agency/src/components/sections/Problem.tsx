@@ -1,57 +1,63 @@
-import { AlertCircle, Clock, XCircle } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Problem() {
-  const problems = [
+  const items = [
     {
-      icon: <Clock className="h-8 w-8 text-destructive" />,
-      title: "Veraltete Website",
-      desc: "Deine Website sieht aus wie 2010? Besucher vertrauen dem Design nicht und verlassen sie sofort wieder.",
+      stat: "3 Sek.",
+      title: "Erstes Urteil",
+      desc: "So lange haben Besucher, um zu entscheiden, ob sie bleiben — oder deine Website sofort verlassen.",
     },
     {
-      icon: <XCircle className="h-8 w-8 text-destructive" />,
-      title: "Kein professioneller Auftritt",
-      desc: "Kunden zweifeln an deiner Seriosität, bevor sie dich überhaupt kontaktieren. Der erste Eindruck zählt.",
+      stat: "89 %",
+      title: "Kehren nie zurück",
+      desc: "Der Anteil an Besuchern, die nach einer schlechten Web-Erfahrung nicht mehr wiederkommen.",
     },
     {
-      icon: <AlertCircle className="h-8 w-8 text-destructive" />,
-      title: "Die Konkurrenz schläft nicht",
-      desc: "Während du wartest und überlegst, gewinnt die Konkurrenz mit modernem Auftritt deine potenziellen Kunden.",
+      stat: "∞",
+      title: "Deine Konkurrenz",
+      desc: "Während du überlegst, haben Wettbewerber bereits eine Website, die rund um die Uhr für sie arbeitet.",
     },
   ];
 
   return (
-    <section className="py-24 bg-light-bg relative overflow-hidden">
+    <section className="py-32 bg-light-bg relative overflow-hidden">
       <SectionDivider position="top" fillColor="fill-navy-950" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <FadeIn>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-950 mb-4">
-              Erkennst du dich wieder?
-            </h2>
-            <p className="text-lg text-navy-800/70">
-              Viele Unternehmen verlieren täglich bares Geld durch einen
-              unzureichenden Webauftritt.
-            </p>
-          </div>
-        </FadeIn>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {problems.map((problem, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full">
-                <div className="w-14 h-14 rounded-xl bg-destructive/10 flex items-center justify-center mb-6">
-                  {problem.icon}
+          {/* Left — sticky editorial header */}
+          <FadeIn direction="right">
+            <div className="lg:sticky lg:top-32">
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-electric/70 mb-6 block">
+                Die Realität
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-navy-950 leading-[1.08] text-balance mb-8">
+                Deine Website arbeitet gerade — nur nicht für dich.
+              </h2>
+              <p className="text-navy-800/55 text-lg leading-relaxed max-w-sm">
+                Schlechtes Design kostet nicht nur Ästhetik. Es kostet täglich echte Kunden und echten Umsatz.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Right — editorial stat items */}
+          <div className="space-y-16 lg:pt-2">
+            {items.map((item, i) => (
+              <FadeIn key={i} delay={i * 0.12} direction="left">
+                <div className="flex gap-8 items-start group">
+                  <div className="text-4xl md:text-5xl font-extrabold text-electric/20 font-display w-24 flex-shrink-0 pt-1 group-hover:text-electric/40 transition-colors duration-500 leading-none">
+                    {item.stat}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-navy-950 mb-2">{item.title}</h3>
+                    <p className="text-navy-900/55 leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-navy-950 mb-3">
-                  {problem.title}
-                </h3>
-                <p className="text-navy-900/70 leading-relaxed">{problem.desc}</p>
-              </div>
-            </FadeIn>
-          ))}
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>

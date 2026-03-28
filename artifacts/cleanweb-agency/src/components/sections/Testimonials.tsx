@@ -1,58 +1,77 @@
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { SectionDivider } from "@/components/ui/section-divider";
 
 export function Testimonials() {
   const reviews = [
     {
-      text: "Die neue Website hat unser Geschäft komplett verändert. Die Anfragen haben sich im ersten Monat glatt verdreifacht!",
+      text: "Die neue Website hat unser Geschäft komplett verändert. Die Anfragen haben sich im ersten Monat verdreifacht — ich hätte nicht gedacht, dass ein Relaunch so viel bewegt.",
       author: "Thomas M.",
-      role: "Steuerberater"
+      role: "Steuerberater",
+      featured: true,
     },
     {
-      text: "Professionell, extrem schnell und das Ergebnis übertrifft alle Erwartungen. Absolut empfehlenswerte Agentur.",
+      text: "Professionell, extrem schnell und das Ergebnis übertrifft alle Erwartungen. Absolute Empfehlung.",
       author: "Sandra K.",
-      role: "Inhaberin Online-Shop"
+      role: "Inhaberin Online-Shop",
     },
     {
       text: "Endlich eine Website, auf die ich wirklich stolz bin. CleanWeb hat genau verstanden, was mein Unternehmen braucht.",
       author: "Michael R.",
-      role: "Architekt"
-    }
+      role: "Architekt",
+    },
   ];
 
+  const [featured, ...rest] = reviews;
+
   return (
-    <section className="py-24 bg-light-bg relative">
+    <section className="py-32 bg-light-bg relative overflow-hidden">
       <SectionDivider position="top" fillColor="fill-navy-950" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-950 mb-4">
-              Was unsere Kunden sagen
-            </h2>
-            <p className="text-lg text-navy-800/70">
-              Vertraue den Erfahrungen von Unternehmen, die den Schritt bereits gegangen sind.
-            </p>
-          </div>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-electric/60 mb-16 block">
+            Was Kunden sagen
+          </span>
         </FadeIn>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {reviews.map((review, i) => (
-            <FadeIn key={i} delay={i * 0.15}>
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 h-full flex flex-col relative">
-                <Quote className="absolute top-6 right-6 w-10 h-10 text-slate-100 rotate-180" />
+        {/* Featured large quote */}
+        <FadeIn delay={0.1}>
+          <blockquote className="mb-20">
+            <div className="flex gap-1 mb-8">
+              {[...Array(5)].map((_, j) => (
+                <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+              ))}
+            </div>
+            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-950 leading-tight text-balance max-w-5xl mb-10">
+              „{featured.text}"
+            </p>
+            <footer className="flex items-center gap-4">
+              <div className="w-8 h-px bg-electric" />
+              <span className="font-bold text-navy-950">{featured.author}</span>
+              <span className="text-navy-900/40 text-sm">{featured.role}</span>
+            </footer>
+          </blockquote>
+        </FadeIn>
+
+        {/* Supporting quotes */}
+        <div className="grid md:grid-cols-2 gap-px bg-slate-200/60 rounded-2xl overflow-hidden">
+          {rest.map((review, i) => (
+            <FadeIn key={i} delay={i * 0.12 + 0.2}>
+              <div className="bg-white px-8 py-10 md:px-12 md:py-12">
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-navy-900/80 text-lg leading-relaxed mb-8 flex-grow italic">
-                  "{review.text}"
+                <p className="text-navy-900/70 text-lg leading-relaxed mb-8 italic">
+                  „{review.text}"
                 </p>
-                <div>
-                  <p className="font-bold text-navy-950">{review.author}</p>
-                  <p className="text-sm text-navy-900/60">{review.role}</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-5 h-px bg-electric" />
+                  <span className="font-bold text-navy-950 text-sm">{review.author}</span>
+                  <span className="text-navy-900/40 text-sm">{review.role}</span>
                 </div>
               </div>
             </FadeIn>
