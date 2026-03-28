@@ -1,0 +1,192 @@
+Überarbeite die gesamte Website gezielt, um eine hochwertige, moderne und einzigartige Premium-Experience zu schaffen, die sich klar von typischen Agentur-Websites abhebt.
+
+Nutze Inspiration aus modernen High-End Webdesign-Seiten (z. B. vierless.de), aber entwickle einen eigenen CleanWeb-Stil.
+
+---
+
+## 1. Übergang von Start-Animation → Website (KRITISCH)
+
+Die aktuelle Anfangsanimation ist gut, aber der Übergang zur Website wirkt zu abrupt und schwach.
+
+Bitte:
+
+* entwickle einen flüssigen, visuell beeindruckenden Übergang
+* die Animation soll sich „in die Website hineinziehen“
+* nutze weiche Skalierung, Fade, Blur oder Lichtübergänge
+* baue einen Moment, der sich wie ein „Entry in die digitale Welt“ anfühlt
+* kein harter Cut, sondern ein cineastischer Flow
+
+Ziel:
+Der Nutzer soll das Gefühl haben, in eine hochwertige digitale Umgebung einzutreten.
+
+---
+
+## 2. Neuer Hero: MacBook + Live Website Creation Szene
+
+Ersetze den aktuellen Hero durch eine deutlich stärkere visuelle Inszenierung.
+
+### Konzept:
+
+* zentrales Element: ein modernes MacBook (leicht schräg oder frontal)
+* dunkler, hochwertiger Hintergrund (Tech / Premium / leicht futuristisch)
+* Bildschirm des MacBooks leuchtet subtil
+
+### Im MacBook:
+
+* ein animiertes Video oder eine simulierte Animation einer Website-Erstellung
+* es soll so wirken, als würde aktiv an einer Website gearbeitet werden:
+
+  * Cursor bewegt sich
+  * Elemente werden eingefügt
+  * Layout verändert sich
+  * Scrollbewegungen
+  * UI entsteht Schritt für Schritt
+
+WICHTIG:
+
+* keine statische Darstellung
+* es soll „lebendig“ wirken
+* ruhig, hochwertig, nicht hektisch
+
+### Übergang:
+
+Die Startanimation soll visuell in dieses MacBook übergehen (z. B. Zoom-In oder morphing Effekt)
+
+---
+
+## 3. Hintergrund des Hero verbessern
+
+Der Hintergrund soll nicht leer wirken, sondern subtil Tiefe haben:
+
+* dunkler Premium-Gradient
+* leichte Lichtverläufe
+* optional:
+
+  * sehr dezente Grid-Struktur
+  * minimal bewegte Partikel
+  * ganz leichte digitale Textur
+
+WICHTIG:
+keine Überladung, keine Performance-Probleme
+
+---
+
+## 4. Header / Navbar komplett redesignen
+
+Die aktuelle obere Leiste ist zu Standard.
+
+Bitte:
+
+* entwickle eine deutlich modernere und interessantere Navbar
+* halbtransparent oder leicht glassmorphism
+* dezenter Blur
+* feine Outline oder Lichtkante
+* schwebender Effekt (floating)
+* elegante Hover-Effekte
+* modernes Spacing
+
+Zusätzlich:
+
+* Navbar verändert sich beim Scrollen (wird kleiner / kompakter)
+* CTA Button hochwertiger gestalten (Glow, Tiefe, Premium Look)
+
+Ziel:
+Die Navbar soll wie ein High-End Interface wirken.
+
+---
+
+## 5. Bugfix: Blaue Linie beim Klicken entfernen
+
+Beim Klicken erscheint aktuell eine blaue Linie (Browser Default Outline).
+
+Bitte:
+
+* entferne diese Standard-Markierung
+* ersetze sie ggf. durch einen eigenen subtilen Focus-State
+* stelle sicher, dass es kein störender visueller Effekt mehr ist
+
+---
+
+## 6. Struktur der Website verbessern
+
+Die aktuelle Struktur wirkt noch leicht unruhig und nicht optimal geführt.
+
+Bitte:
+
+* optimiere die Reihenfolge der Sektionen
+* klare visuelle Hierarchie
+* bessere Abstände (Spacing)
+* logischere Dramaturgie
+
+Empfohlene Struktur:
+
+1. Hero (MacBook + Animation)
+2. kurze starke Aussage / Positionierung
+3. Problem → Lösung
+4. visuelle Showcase / Demo-Websites
+5. Pakete / Leistungen
+6. Prozess (einfach & klar)
+7. Vertrauen / Vorteile
+8. Abschluss-CTA
+
+WICHTIG:
+keine Standard-Block-Abfolge → mehr Flow und Story
+
+---
+
+## 7. Premium Demo + Pakete Sektion
+
+Erstelle eine moderne Sektion:
+
+### Links:
+
+* animierte Website-Demos
+* Geräteframes (Browser / Laptop / Mobile)
+* leichte Bewegung / Scroll / Wechsel
+
+### Rechts:
+
+* Pakete
+* modern, minimal, hochwertig
+* keine langweilige Tabelle
+
+OPTIONAL:
+
+* beim Hover auf Paket ändert sich die Demo links
+
+---
+
+## 8. Gesamtstil (EXTREM WICHTIG)
+
+Die Website soll:
+
+* ruhig
+* hochwertig
+* modern
+* technisch
+* souverän
+  wirken
+
+NICHT:
+
+* verspielt
+* überladen
+* standardmäßig
+* wie ein Template
+
+---
+
+## 9. Performance
+
+* alle Animationen flüssig
+* keine Laggs
+* keine schweren Effekte
+* Mobile optimiert
+
+---
+
+## Ziel:
+
+Eine Website, die sich wie eine Premium Digitalagentur anfühlt und visuell im Kopf bleibt.
+
+Der erste Eindruck (Hero + Übergang) soll außergewöhnlich sein.

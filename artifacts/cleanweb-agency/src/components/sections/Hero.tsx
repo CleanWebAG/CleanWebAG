@@ -1,20 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+/* ─── Typewriter code tag ──────────────────────────────── */
 const CODE_PHRASE = "<build trust. generate customers. />";
-const CHAR_DELAY = 58; // ms per character — slower = more premium
+const CHAR_DELAY = 58;
 
 function TypewriterCode({ onDone }: { onDone: () => void }) {
   const [typed, setTyped] = useState(0);
   const done = typed >= CODE_PHRASE.length;
+  const onDoneRef = useRef(onDone);
+  onDoneRef.current = onDone;
+  const calledDone = useRef(false);
 
   useEffect(() => {
-    if (done) { onDone(); return; }
+    if (done) {
+      if (!calledDone.current) { calledDone.current = true; onDoneRef.current(); }
+      return;
+    }
     const t = setTimeout(() => setTyped((n) => n + 1), CHAR_DELAY);
     return () => clearTimeout(t);
-  }, [typed, done, onDone]);
+  }, [typed, done]);
 
   const text = CODE_PHRASE.slice(0, typed);
   const segments: { ch: string; accent: boolean }[] = [];
@@ -23,64 +30,106 @@ function TypewriterCode({ onDone }: { onDone: () => void }) {
   }
 
   return (
-    <div className="font-mono text-[0.8rem] md:text-[0.9rem] tracking-[0.18em] text-white/30 mb-10 h-5 flex items-center justify-center">
+    <div className="font-mono text-[0.75rem] md:text-[0.82rem] tracking-[0.2em] text-white/28 h-5 flex items-center justify-center mb-8">
       {segments.map((seg, i) =>
         seg.accent ? (
-          <span key={i} className="text-electric/55">{seg.ch}</span>
+          <span key={i} className="text-electric/50">{seg.ch}</span>
         ) : (
           <span key={i}>{seg.ch}</span>
         )
       )}
       {!done && (
-        <span className="inline-block w-px h-[1.1em] bg-electric/50 ml-0.5 animate-pulse align-middle" />
+        <span className="inline-block w-px h-[1em] bg-electric/45 ml-0.5 animate-pulse align-middle" />
       )}
     </div>
   );
 }
 
-/* ── Floating wireframe browser frame ── */
-function WireframeFrame({
-  style,
-  variant = "browser",
-}: {
-  style: React.CSSProperties;
-  variant?: "browser" | "code";
-}) {
-  if (variant === "code") {
-    return (
-      <div className="absolute pointer-events-none select-none" style={style}>
-        <div className="border border-white/20 rounded-lg overflow-hidden">
-          <div className="h-5 border-b border-white/15 flex items-center px-2 gap-1.5 bg-white/3">
-            <span className="w-12 h-1.5 rounded-sm bg-electric/30" />
-          </div>
-          <div className="p-2.5 space-y-1.5 bg-white/2">
-            <div className="h-1.5 bg-electric/18 rounded-sm w-3/4" />
-            <div className="h-1.5 bg-white/10 rounded-sm w-1/2" />
-            <div className="h-1.5 bg-white/10 rounded-sm w-4/5" />
-            <div className="h-1.5 bg-electric/12 rounded-sm w-2/5" />
-            <div className="h-1.5 bg-white/8 rounded-sm w-3/5" />
-          </div>
+/* ─── Animated website creation scene (inside MacBook) ─── */
+function s(kf: string): React.CSSProperties {
+  return { animation: `${kf} 14s ease-in-out infinite`, animationFillMode: "both" };
+}
+
+function AnimatedWebsiteScene() {
+  return (
+    <div className="absolute inset-0" style={{ background: "#080f1b", overflow: "hidden" }}>
+
+      {/* Browser chrome */}
+      <div
+        className="absolute top-0 left-0 right-0 flex items-center gap-1.5 px-3 border-b border-white/8"
+        style={{ height: 22, background: "#101828", flexShrink: 0 }}
+      >
+        <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: "rgba(255,95,87,0.55)" }} />
+        <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: "rgba(254,188,46,0.55)" }} />
+        <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: "rgba(40,200,64,0.55)" }} />
+        <div style={{ marginLeft: 8, flex: 1, maxWidth: 150, height: 12, borderRadius: 12, background: "rgba(255,255,255,0.06)", display: "flex", alignItems: "center", paddingLeft: 8 }}>
+          <span style={{ fontSize: 6, color: "rgba(255,255,255,0.22)", fontFamily: "monospace" }}>cleanweb.agency</span>
         </div>
       </div>
-    );
-  }
-  return (
-    <div className="absolute pointer-events-none select-none" style={style}>
-      <div className="border border-white/20 rounded-lg overflow-hidden">
-        <div className="h-6 border-b border-white/15 flex items-center px-2 gap-1 bg-white/3">
-          <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
-          <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
-          <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
-          <span className="ml-2 flex-1 h-2 rounded-sm bg-white/12" />
+
+      {/* Content below chrome */}
+      <div style={{ position: "absolute", top: 22, left: 0, right: 0, bottom: 0, overflow: "hidden" }}>
+
+        {/* Website nav */}
+        <div
+          className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 border-b border-white/5"
+          style={{ ...s("macNav"), height: 28, background: "rgba(8,15,27,0.98)" }}
+        >
+          <div style={{ width: 52, height: 8, borderRadius: 3, background: "rgba(255,255,255,0.6)" }} />
+          <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+            <div style={{ width: 26, height: 6, borderRadius: 3, background: "rgba(255,255,255,0.18)" }} />
+            <div style={{ width: 26, height: 6, borderRadius: 3, background: "rgba(255,255,255,0.18)" }} />
+            <div style={{ width: 42, height: 14, borderRadius: 4, background: "#2563eb" }} />
+          </div>
         </div>
-        <div className="p-3 space-y-2 bg-white/2">
-          <div className="h-7 bg-electric/8 rounded-sm" />
-          <div className="h-1.5 bg-white/10 rounded-sm w-3/4" />
-          <div className="h-1.5 bg-white/8 rounded-sm w-1/2" />
-          <div className="mt-2 grid grid-cols-3 gap-1">
-            <div className="h-7 bg-white/6 rounded-sm" />
-            <div className="h-7 bg-white/6 rounded-sm" />
-            <div className="h-7 bg-white/6 rounded-sm" />
+
+        {/* Hero section background */}
+        <div
+          className="absolute"
+          style={{
+            ...s("macHeroBg"),
+            top: 28, left: 0, right: 0, bottom: "30%",
+            background: "linear-gradient(140deg, #080e1c 0%, #0d1530 60%, #0f1e3d 100%)",
+          }}
+        >
+          {/* Subtle center glow */}
+          <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 55% 60% at 30% 50%, rgba(37,99,235,0.05) 0%, transparent 100%)", pointerEvents: "none" }} />
+
+          {/* Left text content */}
+          <div className="absolute" style={{ ...s("macHeadline"), top: "16%", left: "7%", right: "37%", opacity: 0 }}>
+            <div style={{ width: 38, height: 4, borderRadius: 3, background: "rgba(37,99,235,0.6)", marginBottom: 8 }} />
+            <div style={{ height: 9, borderRadius: 3, background: "rgba(255,255,255,0.82)", marginBottom: 5 }} />
+            <div style={{ width: "80%", height: 9, borderRadius: 3, background: "rgba(255,255,255,0.65)", marginBottom: 10 }} />
+            <div style={{ width: "62%", height: 6, borderRadius: 3, background: "rgba(255,255,255,0.22)", marginBottom: 4 }} />
+            <div style={{ width: "48%", height: 6, borderRadius: 3, background: "rgba(255,255,255,0.14)" }} />
+          </div>
+
+          {/* CTA buttons */}
+          <div className="absolute flex" style={{ ...s("macBtn"), bottom: "20%", left: "7%", gap: 8, opacity: 0 }}>
+            <div style={{ width: 58, height: 18, borderRadius: 5, background: "#2563eb" }} />
+            <div style={{ width: 50, height: 18, borderRadius: 5, background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
+          </div>
+
+          {/* Right image placeholder */}
+          <div className="absolute" style={{ ...s("macHeadline"), top: "10%", right: "3%", width: "28%", bottom: "6%", borderRadius: 6, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", opacity: 0 }} />
+
+          {/* Dot grid */}
+          <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.06) 1px, transparent 0)", backgroundSize: "22px 22px", opacity: 0.6, pointerEvents: "none" }} />
+        </div>
+
+        {/* Feature cards section — light */}
+        <div
+          className="absolute left-0 right-0 bottom-0"
+          style={{ ...s("macCards"), height: "30%", background: "#f8fafc", padding: "8px 10px 0" }}
+        >
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 6 }}>
+            {[0, 1, 2].map((i) => (
+              <div key={i} style={{ background: "white", borderRadius: 5, padding: "6px 7px", border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}>
+                <div style={{ width: 14, height: 14, borderRadius: 4, background: "#dbeafe", marginBottom: 5 }} />
+                <div style={{ height: 5, borderRadius: 3, background: "#e2e8f0", marginBottom: 3 }} />
+                <div style={{ height: 5, width: "68%", borderRadius: 3, background: "#f1f5f9" }} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -88,256 +137,202 @@ function WireframeFrame({
   );
 }
 
+/* ─── MacBook frame ────────────────────────────────────── */
+function MacBook() {
+  return (
+    <motion.div
+      className="relative mx-auto w-full"
+      style={{ maxWidth: 620 }}
+      initial={{ opacity: 0, y: 44, scale: 0.97 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 1.4, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {/* ── Screen lid ── */}
+      <div
+        style={{
+          background: "linear-gradient(180deg, #2e2e33 0%, #1d1d22 100%)",
+          borderRadius: "14px 14px 2px 2px",
+          padding: "12px 12px 0",
+          boxShadow:
+            "0 36px 88px rgba(0,0,0,0.88), 0 0 0 1px rgba(255,255,255,0.09), inset 0 1px 0 rgba(255,255,255,0.11)",
+          position: "relative",
+        }}
+      >
+        {/* Camera */}
+        <div style={{ position: "absolute", top: 6, left: "50%", transform: "translateX(-50%)", width: 5, height: 5, borderRadius: "50%", background: "#252529", border: "1px solid rgba(255,255,255,0.06)" }} />
+
+        {/* Lid glow from screen */}
+        <div style={{ position: "absolute", inset: 0, borderRadius: "14px 14px 0 0", background: "radial-gradient(ellipse at 50% 8%, rgba(37,99,235,0.08) 0%, transparent 55%)", pointerEvents: "none" }} />
+
+        {/* Screen viewport */}
+        <div style={{ borderRadius: "6px 6px 0 0", overflow: "hidden", aspectRatio: "16/10", position: "relative" }}>
+          <AnimatedWebsiteScene />
+
+          {/* Subtle screen reflection */}
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(255,255,255,0.025) 0%, transparent 50%)", pointerEvents: "none", zIndex: 10 }} />
+        </div>
+      </div>
+
+      {/* ── Hinge ── */}
+      <div style={{ height: 3, background: "linear-gradient(90deg, #18181c, #424248, #18181c)" }} />
+
+      {/* ── Keyboard base ── */}
+      <div
+        style={{
+          background: "linear-gradient(180deg, #26262a 0%, #1c1c20 100%)",
+          height: 24,
+          borderRadius: "0 0 10px 10px",
+          boxShadow: "0 12px 36px rgba(0,0,0,0.72), 0 0 0 1px rgba(255,255,255,0.04)",
+          position: "relative",
+        }}
+      >
+        <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 100, height: 8, borderRadius: 4, background: "#2a2a2e", border: "1px solid rgba(255,255,255,0.05)" }} />
+      </div>
+
+      {/* ── Ground glow ── */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: -30,
+          left: "10%",
+          right: "10%",
+          height: 44,
+          background: "radial-gradient(ellipse at 50% 100%, rgba(37,99,235,0.13) 0%, transparent 70%)",
+          filter: "blur(16px)",
+          pointerEvents: "none",
+        }}
+      />
+    </motion.div>
+  );
+}
+
+/* ─── Hero section ─────────────────────────────────────── */
 export function Hero() {
   const [headlineVisible, setHeadlineVisible] = useState(false);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-navy-950">
+    <section className="relative min-h-screen flex flex-col items-center overflow-hidden bg-navy-950 pt-20">
 
       {/* ── Dot grid ── */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: "radial-gradient(circle at 1px 1px, rgba(37,99,235,0.08) 1px, transparent 0)",
           backgroundSize: "38px 38px",
-          WebkitMaskImage: "radial-gradient(ellipse 90% 85% at 50% 50%, black 20%, transparent 100%)",
-          maskImage: "radial-gradient(ellipse 90% 85% at 50% 50%, black 20%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 90% 80% at 50% 45%, black 15%, transparent 100%)",
+          maskImage: "radial-gradient(ellipse 90% 80% at 50% 45%, black 15%, transparent 100%)",
         }}
       />
 
-      {/* ── Central radial depth glow ── */}
+      {/* ── Central depth glow ── */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 70% 55% at 50% 42%, rgba(37,99,235,0.065) 0%, transparent 100%)" }}
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 65% 50% at 50% 38%, rgba(37,99,235,0.06) 0%, transparent 100%)" }}
       />
 
-      {/* ── Static depth orbs ── */}
-      <div className="absolute top-[-10%] left-[-8%] w-[560px] h-[560px] bg-electric/4 blur-[110px] rounded-full pointer-events-none z-0" />
-      <div className="absolute bottom-[-8%] right-[-6%] w-[420px] h-[420px] bg-[#1d4ed8]/4 blur-[100px] rounded-full pointer-events-none z-0" />
+      {/* ── Ambient corner orbs ── */}
+      <div className="absolute top-[-12%] left-[-6%] w-[500px] h-[500px] bg-electric/4 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-6%] right-[-4%] w-[380px] h-[380px] bg-[#1d4ed8]/4 blur-[90px] rounded-full pointer-events-none" />
 
       {/* ── Hero background image ── */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={`${import.meta.env.BASE_URL}images/hero-bg.png`}
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full object-cover opacity-15"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/75 via-navy-950/82 to-navy-950" />
+      <div className="absolute inset-0">
+        <img src={`${import.meta.env.BASE_URL}images/hero-bg.png`} alt="" aria-hidden className="w-full h-full object-cover opacity-12" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/85 to-navy-950" />
       </div>
 
-      {/* ── Floating wireframe frames (background ambiance) ── */}
-      <WireframeFrame
-        variant="browser"
-        style={{
-          top: "14%",
-          left: "2%",
-          width: 240,
-          opacity: 0.048,
-          animation: "bgFloat1 13s ease-in-out infinite",
-        }}
-      />
-      <WireframeFrame
-        variant="browser"
-        style={{
-          top: "22%",
-          right: "2%",
-          width: 200,
-          opacity: 0.038,
-          animation: "bgFloat2 15s ease-in-out infinite",
-          animationDelay: "-5s",
-        }}
-      />
-      <WireframeFrame
-        variant="code"
-        style={{
-          bottom: "22%",
-          left: "5%",
-          width: 172,
-          opacity: 0.032,
-          animation: "bgFloat3 18s ease-in-out infinite",
-          animationDelay: "-9s",
-        }}
-      />
-      <WireframeFrame
-        variant="code"
-        style={{
-          bottom: "18%",
-          right: "4%",
-          width: 150,
-          opacity: 0.028,
-          animation: "bgFloat1 20s ease-in-out infinite",
-          animationDelay: "-12s",
-        }}
+      {/* ── Cinematic entry scan line (fires once) ── */}
+      <motion.div
+        className="absolute left-0 right-0 pointer-events-none z-30"
+        style={{ height: 1, background: "linear-gradient(90deg, transparent 0%, rgba(37,99,235,0.35) 40%, rgba(255,255,255,0.12) 50%, rgba(37,99,235,0.35) 60%, transparent 100%)" }}
+        initial={{ top: "0%", opacity: 1 }}
+        animate={{ top: "105%", opacity: 0.3 }}
+        transition={{ duration: 1.8, delay: 0.1, ease: "linear" }}
       />
 
       {/* ── Top accent line ── */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/30 to-transparent z-10" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/28 to-transparent z-10" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+      {/* ── Content — two-column split ── */}
+      <div className="relative z-10 w-full flex items-center min-h-[calc(100vh-80px)] px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-12">
 
-        {/* ── Logo — brand centerpiece ── */}
-        <motion.div
-          className="flex justify-center mb-10"
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="relative inline-flex items-center justify-center">
-
-            {/* Outermost atmospheric haze — barely visible, white-tinted */}
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                inset: "-140px -180px",
-                background:
-                  "radial-gradient(ellipse at 50% 55%, rgba(255,255,255,0.04) 0%, rgba(37,99,235,0.025) 45%, transparent 70%)",
-              }}
-            />
-
-            {/* Mid ambient light — soft overhead simulation */}
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                inset: "-70px -90px",
-                background:
-                  "radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.055) 0%, rgba(37,99,235,0.03) 55%, transparent 75%)",
-              }}
-            />
-
-            {/* Ground reflection — faint blue-white pooling below */}
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                bottom: "-18px",
-                left: "-60px",
-                right: "-60px",
-                height: "28px",
-                background:
-                  "radial-gradient(ellipse at 50% 100%, rgba(37,99,235,0.10) 0%, transparent 68%)",
-                filter: "blur(4px)",
-              }}
-            />
-
-            {/* Futuristic outer ring — barely visible */}
-            <div
-              className="absolute pointer-events-none rounded-full"
-              style={{
-                inset: "-56px",
-                border: "1px solid rgba(37,99,235,0.055)",
-              }}
-            />
-            {/* Inner ring */}
-            <div
-              className="absolute pointer-events-none rounded-full"
-              style={{
-                inset: "-28px",
-                border: "1px solid rgba(255,255,255,0.04)",
-              }}
-            />
-
-            {/* Logo with very slow float */}
+          {/* ── Left: Text ── */}
+          <div className="flex flex-col items-start">
+            {/* Typewriter */}
             <motion.div
-              animate={{ y: [0, -4, 0] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <img
-                src={`${import.meta.env.BASE_URL}cleanweb-logo-final.png`}
-                alt="CleanWeb Agency"
-                className="w-auto max-h-[130px] md:max-h-[180px] lg:max-h-[220px]"
-                style={{
-                  filter:
-                    "drop-shadow(0 12px 48px rgba(255,255,255,0.06)) drop-shadow(0 4px 16px rgba(37,99,235,0.12))",
-                }}
-              />
+              <TypewriterCode onDone={() => setHeadlineVisible(true)} />
+            </motion.div>
 
-              {/* One-time shimmer sweep — delayed until logo is fully in */}
-              <div className="absolute inset-0 z-20 overflow-hidden pointer-events-none">
+            {/* Headline */}
+            <AnimatePresence>
+              {headlineVisible && (
+                <motion.h1
+                  key="hl"
+                  className="text-4xl sm:text-5xl xl:text-[3.5rem] font-extrabold text-white tracking-tight leading-[1.06] mb-5"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  Wir bauen keine Websites.
+                  <br />
+                  <span className="text-electric">Wir bauen Wettbewerbsvorteile.</span>
+                </motion.h1>
+              )}
+            </AnimatePresence>
+
+            {/* Sub-content */}
+            <AnimatePresence>
+              {headlineVisible && (
                 <motion.div
-                  className="absolute inset-y-0 w-2/5 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
-                  initial={{ x: "-100%" }}
-                  animate={{ x: "320%" }}
-                  transition={{ duration: 1.3, delay: 1.4, ease: "easeInOut" }}
-                />
-              </div>
-            </motion.div>
+                  key="sub"
+                  className="w-full"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <p className="text-base md:text-lg text-white/44 mb-8 leading-relaxed max-w-md">
+                    Strategisches Design. Schnelle Umsetzung. Messbare Ergebnisse — für Unternehmen, die keine Kompromisse machen.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-start gap-3 mb-10">
+                    <Button
+                      size="lg"
+                      className="w-full sm:w-auto group"
+                      onClick={() => document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })}
+                    >
+                      Kostenlose Beratung
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="glass"
+                      className="w-full sm:w-auto"
+                      onClick={() => document.getElementById("pakete")?.scrollIntoView({ behavior: "smooth" })}
+                    >
+                      Pakete ansehen
+                    </Button>
+                  </div>
+
+                  {/* Stats */}
+                  <div className="flex flex-wrap gap-x-7 gap-y-2 text-sm text-white/28 font-medium border-t border-white/8 pt-6">
+                    <span><span className="text-white/55 font-semibold">50+</span> Projekte</span>
+                    <span>Ø <span className="text-white/55 font-semibold">3×</span> mehr Anfragen</span>
+                    <span><span className="text-white/55 font-semibold">100 %</span> Zufriedenheit</span>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
-        </motion.div>
 
-        {/* ── Typewriter code tag ── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-        >
-          <TypewriterCode onDone={() => setHeadlineVisible(true)} />
-        </motion.div>
+          {/* ── Right: MacBook ── */}
+          <div className="flex justify-center lg:justify-end">
+            <MacBook />
+          </div>
 
-        {/* ── Main headline — appears after typewriter ── */}
-        <AnimatePresence>
-          {headlineVisible && (
-            <motion.h1
-              key="headline"
-              className="text-5xl md:text-6xl lg:text-[5.25rem] font-extrabold text-white tracking-tight mb-6 text-balance mx-auto max-w-5xl leading-[1.05]"
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              Wir bauen keine Websites.
-              <br />
-              <span className="text-electric">Wir bauen Wettbewerbsvorteile.</span>
-            </motion.h1>
-          )}
-        </AnimatePresence>
-
-        {/* ── Sub-content — appears after headline ── */}
-        <AnimatePresence>
-          {headlineVisible && (
-            <motion.div
-              key="content"
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <p className="mt-4 text-lg md:text-xl text-white/48 max-w-xl mx-auto mb-12 leading-relaxed">
-                Strategisches Design. Schnelle Umsetzung. Messbare Ergebnisse —
-                für Unternehmen, die keine Kompromisse machen.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-                <Button
-                  size="lg"
-                  className="w-full sm:w-auto group"
-                  onClick={() =>
-                    document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  Kostenlose Beratung
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="glass"
-                  className="w-full sm:w-auto"
-                  onClick={() =>
-                    document.getElementById("pakete")?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  Pakete ansehen
-                </Button>
-              </div>
-
-              <div className="border-t border-white/8 pt-8 flex flex-wrap justify-center gap-x-10 gap-y-4 text-sm text-white/32 font-medium">
-                <span><span className="text-white/62 font-semibold">50+</span> Projekte</span>
-                <span className="hidden sm:inline text-white/12">·</span>
-                <span>Ø <span className="text-white/62 font-semibold">3×</span> mehr Anfragen</span>
-                <span className="hidden sm:inline text-white/12">·</span>
-                <span><span className="text-white/62 font-semibold">100 %</span> Zufriedenheit</span>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        </div>
       </div>
     </section>
   );
