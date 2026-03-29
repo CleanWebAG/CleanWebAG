@@ -23,20 +23,20 @@ export function AnimatedChartBackground() {
       >
         <defs>
           <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#2563EB" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
+            <stop offset="0%" stopColor="#22C55E" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#22C55E" stopOpacity="0" />
           </linearGradient>
         </defs>
 
         <motion.path
           d={CHART_PATH}
-          stroke="#2563EB"
+          stroke="#22C55E"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
           initial={{ pathLength: prefersReducedMotion ? 1 : 0 }}
           animate={shouldAnimate || (isInView && prefersReducedMotion) ? { pathLength: 1 } : { pathLength: 0 }}
-          transition={prefersReducedMotion ? { duration: 0 } : { duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+          transition={prefersReducedMotion ? { duration: 0 } : { duration: 5, ease: [0.21, 0.47, 0.32, 0.98] }}
         />
 
         <motion.path
@@ -44,7 +44,7 @@ export function AnimatedChartBackground() {
           fill={`url(#${gradientId})`}
           initial={{ opacity: prefersReducedMotion ? 1 : 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={prefersReducedMotion ? { duration: 0 } : { duration: 1.5, delay: 0.8, ease: "easeOut" }}
+          transition={prefersReducedMotion ? { duration: 0 } : { duration: 1.5, delay: 2.5, ease: "easeOut" }}
         />
       </svg>
     </div>
