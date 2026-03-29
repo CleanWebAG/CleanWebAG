@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/ui/fade-in";
+import { AnimatedChartBackground } from "@/components/ui/animated-chart-bg";
 
 export function WhyUs() {
   const stats = [
@@ -25,8 +26,9 @@ export function WhyUs() {
   ];
 
   return (
-    <section className="relative bg-navy-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+    <section className="relative bg-navy-950 overflow-hidden">
+      <AnimatedChartBackground />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
         <FadeIn>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div>
