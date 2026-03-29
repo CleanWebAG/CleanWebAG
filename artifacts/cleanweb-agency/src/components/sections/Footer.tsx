@@ -23,9 +23,9 @@ export function Footer() {
             <Link href="/impressum" className="hover:text-white transition-colors">
               Impressum
             </Link>
-            <a href="#" className="hover:text-white transition-colors">
+            <Link href="/agb" className="hover:text-white transition-colors">
               AGB
-            </a>
+            </Link>
           </div>
         </div>
 
