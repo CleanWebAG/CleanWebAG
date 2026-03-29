@@ -67,12 +67,6 @@ function BackgroundCode() {
   );
 }
 
-const STATS = [
-  { value: "50+", label: "Projekte" },
-  { value: "3×", label: "mehr Anfragen" },
-  { value: "100 %", label: "Zufriedenheit" },
-];
-
 export function Hero() {
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -247,37 +241,16 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.9 }}
           style={{
-            display: "flex",
-            gap: 32,
             marginTop: 44,
-            flexWrap: "wrap",
-            justifyContent: "center",
+            textAlign: "center",
+            fontFamily: "'Montserrat', sans-serif",
+            fontSize: "0.85rem",
+            fontWeight: 500,
+            color: "rgba(255,255,255,0.45)",
+            letterSpacing: "0.04em",
           }}
         >
-          {STATS.map(({ value, label }) => (
-            <div key={label} style={{ textAlign: "center" }}>
-              <div
-                style={{
-                  fontSize: "1.5rem",
-                  fontWeight: 800,
-                  color: "white",
-                  fontFamily: "'Montserrat', sans-serif",
-                  lineHeight: 1,
-                }}
-              >
-                {value}
-              </div>
-              <div
-                style={{
-                  fontSize: "0.75rem",
-                  color: "rgba(255,255,255,0.5)",
-                  marginTop: 4,
-                }}
-              >
-                {label}
-              </div>
-            </div>
-          ))}
+          Vertrauen von Unternehmen aus ganz Deutschland
         </motion.div>
       </div>
 
