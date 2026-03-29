@@ -11,7 +11,7 @@ const PACKAGES = [
     id: "starter",
     name: "Starter",
     tagline: "Visitenkarte im Netz",
-    price: "1.490",
+    price: "999",
     note: "Einmalpreis, netto",
     badge: null,
     features: [
@@ -26,7 +26,7 @@ const PACKAGES = [
     id: "business",
     name: "Business",
     tagline: "Ihr digitaler Vertriebskanal",
-    price: "2.990",
+    price: "2.290",
     note: "Einmalpreis, netto",
     badge: "Beliebteste Wahl",
     features: [
@@ -41,7 +41,7 @@ const PACKAGES = [
     id: "premium",
     name: "Premium",
     tagline: "Ihre digitale Marke",
-    price: "ab 4.990",
+    price: "4.490",
     note: "Individuelles Angebot",
     badge: null,
     features: [
