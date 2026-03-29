@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, Clock } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { SectionDivider } from "@/components/ui/section-divider";
 import { Button } from "@/components/ui/button";
@@ -10,46 +10,59 @@ const PACKAGES = [
   {
     id: "starter",
     name: "Starter",
-    tagline: "Visitenkarte im Netz",
+    tagline: "Professioneller Einstieg",
+    subtitle: "Perfekt für kleine Unternehmen, die online sichtbar werden wollen",
     price: "999",
     note: "Einmalpreis, netto",
     badge: null,
+    deliveryTime: "ca. 2 Wochen",
     features: [
-      "Bis zu 5 Seiten",
-      "Mobile-optimiertes Design",
-      "Kontaktformular",
-      "SSL & Hosting-Setup",
-      "2 Wochen Lieferzeit",
+      "Bis zu 5 Unterseiten",
+      "Individuelles Webdesign",
+      "Mobile-optimiert (Responsive)",
+      "Kontaktformular mit E-Mail-Anbindung",
+      "SSL-Zertifikat & Hosting-Setup",
+      "Grundlegende SEO-Einrichtung",
+      "Impressum & Datenschutz",
+      "Google Maps Integration",
     ],
   },
   {
     id: "business",
     name: "Business",
-    tagline: "Ihr digitaler Vertriebskanal",
+    tagline: "Dein digitaler Vertriebskanal",
+    subtitle: "Für Unternehmen, die aktiv Kunden über ihre Website gewinnen wollen",
     price: "2.290",
     note: "Einmalpreis, netto",
     badge: "Beliebteste Wahl",
+    deliveryTime: "ca. 3 Wochen",
     features: [
-      "Bis zu 10 Seiten",
-      "SEO-Grundoptimierung",
-      "Blog & News-Bereich",
-      "Google Analytics",
-      "3 Wochen Lieferzeit",
+      "Bis zu 10 Unterseiten",
+      "Strategisches Webdesign mit Conversion-Fokus",
+      "SEO-Optimierung für Top-Rankings",
+      "Blog- & News-Bereich",
+      "Google Analytics & Search Console",
+      "Call-to-Action Optimierung",
+      "Social Media Integration",
     ],
   },
   {
     id: "premium",
     name: "Premium",
-    tagline: "Ihre digitale Marke",
+    tagline: "Maximale Performance",
+    subtitle: "Für Unternehmen, die skalieren und individuell wachsen wollen",
     price: "4.490",
     note: "Individuelles Angebot",
     badge: null,
+    deliveryTime: "ca. 4 Wochen",
     features: [
-      "Individuelles Design",
-      "E-Commerce möglich",
-      "CMS-Integration",
-      "Laufende Betreuung",
-      "4 Wochen Lieferzeit",
+      "Unbegrenzte Seitenanzahl",
+      "Maßgeschneidertes Premium-Design",
+      "Erweiterte SEO-Strategie",
+      "E-Commerce / Shop-Funktionalität",
+      "Performance-Optimierung (Core Web Vitals)",
+      "Mehrsprachigkeit möglich",
+      "Individuelle Funktionsentwicklung",
     ],
   },
 ];
@@ -236,7 +249,7 @@ function PackageCard({
         </div>
       )}
 
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex items-start justify-between mb-2">
         <div>
           <p className="text-xs font-bold tracking-[0.15em] uppercase text-electric/60 mb-1">
             {pkg.tagline}
@@ -249,7 +262,11 @@ function PackageCard({
         </div>
       </div>
 
-      <ul className="space-y-2 mb-5">
+      <p className="text-xs text-white/40 leading-relaxed mb-4">
+        {pkg.subtitle}
+      </p>
+
+      <ul className="space-y-2 mb-4">
         {pkg.features.map((f) => (
           <li key={f} className="flex items-center gap-2.5 text-sm text-white/60">
             <Check size={13} className="text-electric shrink-0" />
@@ -257,6 +274,11 @@ function PackageCard({
           </li>
         ))}
       </ul>
+
+      <div className="flex items-center gap-2 text-xs text-white/35 border-t border-white/8 pt-3 mb-4">
+        <Clock size={12} className="text-electric/50 shrink-0" />
+        <span>Lieferzeit: <span className="text-white/50 font-medium">{pkg.deliveryTime}</span></span>
+      </div>
 
       <Button
         variant={highlighted ? "primary" : "glass"}
