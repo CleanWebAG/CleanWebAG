@@ -47,8 +47,10 @@ export function Problem() {
             {items.map((item, i) => (
               <FadeIn key={i} delay={i * 0.12} direction="left">
                 <div className="flex gap-8 items-start group">
-                  <div className="text-4xl md:text-5xl font-extrabold text-electric/20 font-display w-24 flex-shrink-0 pt-1 group-hover:text-electric/40 transition-colors duration-500 leading-none">
-                    {item.stat}
+                  <div className="text-4xl md:text-5xl font-extrabold text-electric/50 font-display w-32 md:w-36 flex-shrink-0 group-hover:text-electric/70 transition-colors duration-500 leading-none whitespace-nowrap h-[1.15em] flex items-center">
+                    <span className={item.stat === "∞" ? "text-[1.4em] leading-none" : ""}>
+                      {item.stat}
+                    </span>
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-navy-950 mb-2">{item.title}</h3>
