@@ -5,22 +5,22 @@ export function WhyUs() {
     {
       number: "50+",
       label: "Projekte",
-      desc: "Erfolgreich umgesetzt",
+      desc: "für Unternehmen in ganz Deutschland",
     },
     {
-      number: "3×",
-      label: "Mehr Anfragen",
-      desc: "Im Schnitt nach Relaunch",
+      number: "Bis zu 3x",
+      label: "mehr Anfragen",
+      desc: "durch optimierte Websites",
     },
     {
       number: "2–4",
-      label: "Wochen",
-      desc: "Bis zur Live-Website",
+      label: "Wochen Umsetzung",
+      desc: "schnell und effizient",
     },
     {
-      number: "100%",
-      label: "Zufriedenheit",
-      desc: "Kundenstimmen",
+      number: "Messbare",
+      label: "Ergebnisse",
+      desc: "statt leere Versprechen",
     },
   ];
 
@@ -31,7 +31,7 @@ export function WhyUs() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div>
               <span className="text-xs font-bold tracking-[0.2em] uppercase text-electric/60 mb-3 block">
-                CleanWeb in Zahlen
+                Ergebnisse, die zählen
               </span>
               <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
                 Ergebnisse, die
@@ -50,9 +50,9 @@ export function WhyUs() {
         {/* Stats grid with gap-px separator effect */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/8 rounded-2xl overflow-hidden">
           {stats.map((stat, i) => (
-            <FadeIn key={i} delay={i * 0.08}>
-              <div className="bg-navy-950 px-8 py-12 lg:py-16 flex flex-col items-start group hover:bg-navy-900/50 transition-colors duration-300">
-                <div className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-electric mb-3 font-display tracking-tight leading-none group-hover:scale-105 transition-transform duration-300 origin-left">
+            <FadeIn key={i} delay={i * 0.08} className="h-full">
+              <div className="bg-navy-950 px-8 py-12 lg:py-16 flex flex-col items-start group hover:bg-navy-900/50 transition-colors duration-300 h-full">
+                <div className={`font-extrabold text-electric mb-3 font-display tracking-tight leading-none group-hover:scale-105 transition-transform duration-300 origin-left ${stat.number.length > 4 ? "text-3xl md:text-4xl lg:text-5xl" : "text-5xl md:text-6xl lg:text-7xl"}`}>
                   {stat.number}
                 </div>
                 <div className="text-base font-bold text-white mb-1">{stat.label}</div>
