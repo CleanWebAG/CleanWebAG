@@ -2,7 +2,6 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/sections/Hero";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Problem } from "@/components/sections/Problem";
-import { Portfolio } from "@/components/sections/Portfolio";
 import { Services } from "@/components/sections/Services";
 import { Pakete } from "@/components/sections/Pakete";
 import { Process } from "@/components/sections/Process";
@@ -17,7 +16,6 @@ export default function Home() {
       <Hero />
       <WhyUs />
       <Problem />
-      <Portfolio />
       <Services />
       <Pakete />
       <Process />

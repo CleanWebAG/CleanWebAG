@@ -14,7 +14,6 @@ export function Navigation() {
 
   const navLinks = [
     { name: "Leistungen", href: "#leistungen" },
-    { name: "Referenzen", href: "#referenzen" },
     { name: "Prozess", href: "#prozess" },
   ];
 
