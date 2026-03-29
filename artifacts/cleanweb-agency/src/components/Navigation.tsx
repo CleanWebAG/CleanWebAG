@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { openCalendly } from "@/lib/calendly";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -93,7 +94,7 @@ export function Navigation() {
 
             {/* CTA Button */}
             <button
-              onClick={() => scrollTo("#kontakt")}
+              onClick={() => openCalendly()}
               style={{
                 padding: "9px 20px",
                 background: "#2563eb",
@@ -118,7 +119,7 @@ export function Navigation() {
                 (e.currentTarget as HTMLElement).style.background = "#2563eb";
               }}
             >
-              Kostenlose Beratung
+              Kostenlose Beratung sichern
             </button>
           </nav>
 
@@ -183,10 +184,13 @@ export function Navigation() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.4 }}
-              onClick={() => { setMobileMenuOpen(false); scrollTo("#kontakt"); }}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openCalendly();
+              }}
               style={{ padding: "14px 32px", background: "#2563eb", color: "white", border: "none", borderRadius: 10, fontSize: "1rem", fontWeight: 600, cursor: "pointer" }}
             >
-              Kostenlose Beratung
+              Kostenlose Beratung sichern
             </motion.button>
 
             <p style={{ fontSize: "0.65rem", color: "rgba(255,255,255,0.18)", letterSpacing: "0.2em", textTransform: "uppercase", fontFamily: "monospace" }}>

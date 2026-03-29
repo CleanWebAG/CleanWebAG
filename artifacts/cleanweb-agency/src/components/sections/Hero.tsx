@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { openCalendly } from "@/lib/calendly";
 
 const BG_CODE = [
   { text: "const convert = (visitors: number) => customers", x: "3%", dur: 28, delay: 0 },
@@ -184,7 +185,7 @@ export function Hero() {
           style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}
         >
           <button
-            onClick={() => scrollTo("kontakt")}
+            onClick={() => openCalendly()}
             style={{
               padding: "15px 32px",
               background: "#2563EB",
@@ -212,7 +213,7 @@ export function Hero() {
               e.currentTarget.style.background = "#2563EB";
             }}
           >
-            Kostenlose Beratung <ArrowRight size={17} />
+            Kostenlose Beratung sichern <ArrowRight size={17} />
           </button>
           <button
             onClick={() => scrollTo("pakete")}
