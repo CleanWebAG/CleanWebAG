@@ -20,9 +20,9 @@ export function Footer() {
             <Link href="/datenschutz" className="hover:text-white transition-colors">
               Datenschutz
             </Link>
-            <a href="#" className="hover:text-white transition-colors">
+            <Link href="/impressum" className="hover:text-white transition-colors">
               Impressum
-            </a>
+            </Link>
             <a href="#" className="hover:text-white transition-colors">
               AGB
             </a>
