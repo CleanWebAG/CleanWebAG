@@ -1,158 +1,79 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { openCalendly } from "@/lib/calendly";
 
-function WebsiteUIBackground() {
-  const reduceMotion = useReducedMotion();
+const BG_CODE = [
+  { text: "const convert = (visitors: number) => customers", x: "3%", dur: 28, delay: 0 },
+  { text: "import { growth, trust } from '@cleanweb/agency'", x: "54%", dur: 32, delay: 4 },
+  { text: "function buildCompetitiveAdvantage(brand: SMB) {", x: "16%", dur: 26, delay: 9 },
+  { text: "  return { revenue: revenue * 3, clients: ++leads }", x: "16%", dur: 26, delay: 9.55 },
+  { text: "}", x: "16%", dur: 26, delay: 10.1 },
+  { text: "<Hero headline='Wettbewerbsvorteil' premium={true} />", x: "40%", dur: 30, delay: 15 },
+  { text: "const satisfaction: Percentage = 100", x: "64%", dur: 24, delay: 7 },
+  { text: "api.design({ fast: true, premium: true, measurable: true })", x: "6%", dur: 35, delay: 20 },
+  { text: "type SMBGoal = { ambition: 'max'; results: 'guaranteed' }", x: "38%", dur: 27, delay: 2 },
+  { text: "export const WebSuccess = buildTrust(brand) => results", x: "58%", dur: 31, delay: 18 },
+  { text: "// converting visitors into loyal customers", x: "22%", dur: 29, delay: 13 },
+  { text: "const leads = await Agency.generateResults(website)", x: "48%", dur: 33, delay: 25 },
+];
 
-  const cursorPath = {
-    x: [220, 340, 340, 180, 180, 420, 420, 260, 260, 220],
-    y: [120, 120, 200, 200, 310, 310, 160, 160, 260, 120],
-  };
+const STATIC_CODE = [
+  { text: "const trust = design()", top: "18%", left: "3%", opacity: 0.05 },
+  { text: "return premium", top: "42%", left: "78%", opacity: 0.04 },
+  { text: "<Website />", top: "65%", left: "12%", opacity: 0.045 },
+  { text: "async build()", top: "80%", left: "62%", opacity: 0.04 },
+  { text: "type Success", top: "30%", left: "85%", opacity: 0.038 },
+];
 
-  const cursorDuration = reduceMotion ? 0 : 32;
-
+function BackgroundCode() {
   return (
-    <div
-      className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-      style={{ zIndex: 1 }}
-      aria-hidden="true"
-    >
-      <div style={{ position: "relative", width: 560, height: 380, opacity: 0.07 }}>
-        <svg
-          viewBox="0 0 560 380"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ width: "100%", height: "100%", position: "absolute", inset: 0 }}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none select-none" style={{ zIndex: 0 }}>
+      {BG_CODE.map((line, i) => (
+        <motion.div
+          key={i}
+          style={{
+            position: "absolute",
+            left: line.x,
+            fontFamily: "'Fira Code', 'JetBrains Mono', monospace",
+            fontSize: 10,
+            color: "rgba(37,99,235,0.06)",
+            whiteSpace: "nowrap",
+            letterSpacing: "0.02em",
+          }}
+          initial={{ y: "110vh" }}
+          animate={{ y: "-20vh" }}
+          transition={{ duration: line.dur, delay: line.delay, repeat: Infinity, ease: "linear" }}
         >
-          <rect x="0.5" y="0.5" width="559" height="379" rx="12" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
-
-          <rect x="0" y="0" width="560" height="36" rx="12" fill="rgba(255,255,255,0.04)" />
-          <line x1="0" y1="36" x2="560" y2="36" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
-          <circle cx="22" cy="18" r="4.5" fill="rgba(255,100,100,0.4)" />
-          <circle cx="38" cy="18" r="4.5" fill="rgba(255,200,50,0.4)" />
-          <circle cx="54" cy="18" r="4.5" fill="rgba(80,200,80,0.4)" />
-          <rect x="120" y="10" width="200" height="16" rx="8" fill="rgba(255,255,255,0.06)" />
-
-          <rect x="30" y="52" width="40" height="8" rx="2" fill="rgba(255,255,255,0.15)" />
-          <rect x="340" y="52" width="50" height="8" rx="2" fill="rgba(255,255,255,0.1)" />
-          <rect x="400" y="52" width="50" height="8" rx="2" fill="rgba(255,255,255,0.1)" />
-          <rect x="460" y="52" width="50" height="8" rx="2" fill="rgba(255,255,255,0.1)" />
-
-          <rect x="30" y="85" width="260" height="14" rx="3" fill="rgba(255,255,255,0.12)" />
-          <rect x="30" y="108" width="200" height="10" rx="2" fill="rgba(255,255,255,0.06)" />
-          <rect x="30" y="128" width="240" height="10" rx="2" fill="rgba(255,255,255,0.04)" />
-
-          <rect x="30" y="160" width="100" height="32" rx="6" fill="rgba(37,99,235,0.25)" />
-          <rect x="48" y="172" width="64" height="8" rx="2" fill="rgba(255,255,255,0.2)" />
-
-          <rect x="30" y="220" width="155" height="120" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
-          <rect x="42" y="234" width="80" height="8" rx="2" fill="rgba(255,255,255,0.1)" />
-          <rect x="42" y="250" width="130" height="6" rx="2" fill="rgba(255,255,255,0.05)" />
-          <rect x="42" y="262" width="110" height="6" rx="2" fill="rgba(255,255,255,0.04)" />
-          <rect x="42" y="280" width="60" height="6" rx="2" fill="rgba(37,99,235,0.2)" />
-
-          <rect x="200" y="220" width="155" height="120" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
-          <rect x="212" y="234" width="90" height="8" rx="2" fill="rgba(255,255,255,0.1)" />
-          <rect x="212" y="250" width="120" height="6" rx="2" fill="rgba(255,255,255,0.05)" />
-          <rect x="212" y="262" width="100" height="6" rx="2" fill="rgba(255,255,255,0.04)" />
-          <rect x="212" y="280" width="60" height="6" rx="2" fill="rgba(37,99,235,0.2)" />
-
-          <rect x="370" y="220" width="155" height="120" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
-          <rect x="382" y="234" width="70" height="8" rx="2" fill="rgba(255,255,255,0.1)" />
-          <rect x="382" y="250" width="125" height="6" rx="2" fill="rgba(255,255,255,0.05)" />
-          <rect x="382" y="262" width="105" height="6" rx="2" fill="rgba(255,255,255,0.04)" />
-          <rect x="382" y="280" width="60" height="6" rx="2" fill="rgba(37,99,235,0.2)" />
-        </svg>
-
-        {!reduceMotion && (
-          <>
-            <motion.div
-              style={{
-                position: "absolute",
-                width: 155,
-                height: 120,
-                left: 30,
-                top: 220,
-                borderRadius: 8,
-                background: "rgba(37,99,235,0.06)",
-              }}
-              animate={{ opacity: [0, 0, 0.8, 0.8, 0, 0, 0, 0, 0, 0] }}
-              transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div
-              style={{
-                position: "absolute",
-                width: 100,
-                height: 32,
-                left: 30,
-                top: 160,
-                borderRadius: 6,
-                background: "rgba(37,99,235,0.1)",
-              }}
-              animate={{ opacity: [0, 0, 0, 0, 0, 0.6, 0.6, 0, 0, 0] }}
-              transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div
-              style={{
-                position: "absolute",
-                width: 155,
-                height: 120,
-                left: 370,
-                top: 220,
-                borderRadius: 8,
-                background: "rgba(37,99,235,0.06)",
-              }}
-              animate={{ opacity: [0, 0, 0, 0, 0, 0, 0, 0.8, 0.8, 0] }}
-              transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
-            />
-          </>
-        )}
-
-        {!reduceMotion && (
-          <motion.div
-            style={{ position: "absolute", width: 0, height: 0 }}
-            animate={cursorPath}
-            transition={{
-              duration: cursorDuration,
-              repeat: Infinity,
-              ease: "easeInOut",
-              times: [0, 0.12, 0.2, 0.3, 0.38, 0.5, 0.6, 0.7, 0.82, 1],
-            }}
-          >
-            <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
-              <path
-                d="M1 1L1 14.5L4.5 11L8.5 18L10.5 17L6.5 10L11.5 10L1 1Z"
-                fill="rgba(255,255,255,0.7)"
-                stroke="rgba(255,255,255,0.9)"
-                strokeWidth="0.8"
-              />
-            </svg>
-          </motion.div>
-        )}
-
-        {!reduceMotion && (
-          <motion.div
-            style={{
-              position: "absolute",
-              right: 10,
-              top: 50,
-              width: 3,
-              height: 20,
-              borderRadius: 2,
-              background: "rgba(255,255,255,0.15)",
-            }}
-            animate={{ y: [0, 30, 0] }}
-            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-          />
-        )}
-      </div>
+          {line.text}
+        </motion.div>
+      ))}
+      {STATIC_CODE.map((f, i) => (
+        <div
+          key={"s" + i}
+          style={{
+            position: "absolute",
+            top: f.top,
+            left: f.left,
+            fontFamily: "monospace",
+            fontSize: 9,
+            color: `rgba(37,99,235,${f.opacity})`,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {f.text}
+        </div>
+      ))}
     </div>
   );
 }
 
+const STATS = [
+  { value: "50+", label: "Projekte" },
+  { value: "3×", label: "mehr Anfragen" },
+  { value: "100 %", label: "Zufriedenheit" },
+];
+
 export function Hero() {
-  const reduceMotion = useReducedMotion();
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
@@ -178,22 +99,20 @@ export function Hero() {
         />
       </div>
 
-      <WebsiteUIBackground />
+      <BackgroundCode />
 
-      {!reduceMotion && (
-        <motion.div
-          className="absolute left-0 right-0 top-0 pointer-events-none"
-          style={{
-            height: 1,
-            background:
-              "linear-gradient(90deg, transparent, rgba(37,99,235,0.28) 40%, rgba(255,255,255,0.09) 50%, rgba(37,99,235,0.28) 60%, transparent)",
-            zIndex: 30,
-          }}
-          initial={{ y: 0, opacity: 1 }}
-          animate={{ y: "105vh", opacity: 0.15 }}
-          transition={{ duration: 2.2, delay: 0.1, ease: "linear" }}
-        />
-      )}
+      <motion.div
+        className="absolute left-0 right-0 pointer-events-none"
+        style={{
+          height: 1,
+          background:
+            "linear-gradient(90deg, transparent, rgba(37,99,235,0.28) 40%, rgba(255,255,255,0.09) 50%, rgba(37,99,235,0.28) 60%, transparent)",
+          zIndex: 30,
+        }}
+        initial={{ top: "0%", opacity: 1 }}
+        animate={{ top: "105%", opacity: 0.15 }}
+        transition={{ duration: 2.2, delay: 0.1, ease: "linear" }}
+      />
 
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/25 to-transparent pointer-events-none" />
 
@@ -326,38 +245,39 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
+          transition={{ duration: 0.7, delay: 0.9 }}
           style={{
-            marginTop: 40,
             display: "flex",
-            alignItems: "center",
-            gap: 6,
+            gap: 32,
+            marginTop: 44,
+            flexWrap: "wrap",
+            justifyContent: "center",
           }}
         >
-          <div
-            style={{
-              width: 20,
-              height: 1,
-              background: "rgba(37,99,235,0.3)",
-            }}
-          />
-          <span
-            style={{
-              fontSize: "0.78rem",
-              color: "rgba(255,255,255,0.4)",
-              letterSpacing: "0.04em",
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
-            Vertrauen von Unternehmen aus ganz Deutschland
-          </span>
-          <div
-            style={{
-              width: 20,
-              height: 1,
-              background: "rgba(37,99,235,0.3)",
-            }}
-          />
+          {STATS.map(({ value, label }) => (
+            <div key={label} style={{ textAlign: "center" }}>
+              <div
+                style={{
+                  fontSize: "1.5rem",
+                  fontWeight: 800,
+                  color: "white",
+                  fontFamily: "'Montserrat', sans-serif",
+                  lineHeight: 1,
+                }}
+              >
+                {value}
+              </div>
+              <div
+                style={{
+                  fontSize: "0.75rem",
+                  color: "rgba(255,255,255,0.5)",
+                  marginTop: 4,
+                }}
+              >
+                {label}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
 
@@ -370,7 +290,7 @@ export function Hero() {
         aria-hidden="true"
       >
         <motion.div
-          animate={reduceMotion ? {} : { y: [0, 6, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
           <ChevronDown size={22} style={{ color: "rgba(255,255,255,0.2)" }} />

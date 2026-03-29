@@ -99,7 +99,7 @@ Premium single-page marketing website in German for CleanWeb Agency (web design 
 - **Fonts**: Montserrat (headings), Inter (body)
 - **Logo**: `public/cleanweb-logo-final.png`
 - **Section order**: Hero → WhyUs → Problem → Portfolio → Services → Pakete → Process → Testimonials → CTA → Footer
-- **Hero**: Clean full-viewport layout with subtle WebsiteUIBackground (SVG wireframe with animated cursor, hover highlights, scrollbar), large typography, two CTAs ("Kostenlose Beratung sichern" + "Pakete ansehen"), trust line ("Vertrauen von Unternehmen aus ganz Deutschland"), bouncing chevron. All animations use transform-based motion with `useReducedMotion` support.
+- **Hero**: Clean full-viewport layout with floating BackgroundCode, large typography, two CTAs ("Kostenlose Beratung" + "Pakete ansehen"), stats row (50+, 3×, 100%), bouncing chevron. Uses transform-based animations for performance.
 - **Navigation**: Blur nav bar with mobile hamburger menu, scroll-aware, sticky
 - **Key files**: `src/components/sections/Hero.tsx`, `src/components/Navigation.tsx`, `src/pages/Home.tsx`, `src/index.css`
 
