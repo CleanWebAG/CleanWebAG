@@ -2,28 +2,122 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { openCalendly } from "@/lib/calendly";
 
-const BG_CODE = [
-  { text: "const convert = (visitors: number) => customers", x: "3%", dur: 28, delay: 0 },
-  { text: "import { growth, trust } from '@cleanweb/agency'", x: "54%", dur: 32, delay: 4 },
-  { text: "function buildCompetitiveAdvantage(brand: SMB) {", x: "16%", dur: 26, delay: 9 },
-  { text: "  return { revenue: revenue * 3, clients: ++leads }", x: "16%", dur: 26, delay: 9.55 },
-  { text: "}", x: "16%", dur: 26, delay: 10.1 },
-  { text: "<Hero headline='Wettbewerbsvorteil' premium={true} />", x: "40%", dur: 30, delay: 15 },
-  { text: "const satisfaction: Percentage = 100", x: "64%", dur: 24, delay: 7 },
-  { text: "api.design({ fast: true, premium: true, measurable: true })", x: "6%", dur: 35, delay: 20 },
-  { text: "type SMBGoal = { ambition: 'max'; results: 'guaranteed' }", x: "38%", dur: 27, delay: 2 },
-  { text: "export const WebSuccess = buildTrust(brand) => results", x: "58%", dur: 31, delay: 18 },
-  { text: "// converting visitors into loyal customers", x: "22%", dur: 29, delay: 13 },
-  { text: "const leads = await Agency.generateResults(website)", x: "48%", dur: 33, delay: 25 },
+type Token = { t: string; c: string };
+
+const C = {
+  kw: "#C586C0",
+  str: "#CE9178",
+  typ: "#4EC9B0",
+  cmt: "#6A9955",
+  tag: "#E06C75",
+  fn: "#DCDCAA",
+  var: "#9CDCFE",
+  op: "#D4D4D4",
+  num: "#B5CEA8",
+  attr: "#9CDCFE",
+  prop: "#9CDCFE",
+};
+
+const BG_CODE: { tokens: Token[]; x: string; dur: number; delay: number }[] = [
+  { tokens: [
+    { t: "const", c: C.kw }, { t: " ", c: C.op }, { t: "convert", c: C.var }, { t: " = (", c: C.op },
+    { t: "visitors", c: C.var }, { t: ": ", c: C.op }, { t: "number", c: C.typ }, { t: ") => ", c: C.op },
+    { t: "customers", c: C.var },
+  ], x: "3%", dur: 28, delay: 0 },
+  { tokens: [
+    { t: "import", c: C.kw }, { t: " { ", c: C.op }, { t: "growth", c: C.var }, { t: ", ", c: C.op },
+    { t: "trust", c: C.var }, { t: " } ", c: C.op }, { t: "from", c: C.kw },
+    { t: " '@cleanweb/agency'", c: C.str },
+  ], x: "54%", dur: 32, delay: 4 },
+  { tokens: [
+    { t: "function", c: C.kw }, { t: " ", c: C.op }, { t: "buildCompetitiveAdvantage", c: C.fn },
+    { t: "(", c: C.op }, { t: "brand", c: C.var }, { t: ": ", c: C.op }, { t: "SMB", c: C.typ },
+    { t: ") {", c: C.op },
+  ], x: "16%", dur: 26, delay: 9 },
+  { tokens: [
+    { t: "  ", c: C.op }, { t: "return", c: C.kw }, { t: " { ", c: C.op }, { t: "revenue", c: C.prop },
+    { t: ": ", c: C.op }, { t: "revenue", c: C.var }, { t: " * ", c: C.op }, { t: "3", c: C.num },
+    { t: ", ", c: C.op }, { t: "clients", c: C.prop }, { t: ": ++", c: C.op }, { t: "leads", c: C.var },
+    { t: " }", c: C.op },
+  ], x: "16%", dur: 26, delay: 9.55 },
+  { tokens: [
+    { t: "}", c: C.op },
+  ], x: "16%", dur: 26, delay: 10.1 },
+  { tokens: [
+    { t: "<", c: C.op }, { t: "Hero", c: C.tag }, { t: " ", c: C.op }, { t: "headline", c: C.attr },
+    { t: "=", c: C.op }, { t: "'Wettbewerbsvorteil'", c: C.str }, { t: " ", c: C.op },
+    { t: "premium", c: C.attr }, { t: "={", c: C.op }, { t: "true", c: C.kw }, { t: "}", c: C.op },
+    { t: " />", c: C.op },
+  ], x: "40%", dur: 30, delay: 15 },
+  { tokens: [
+    { t: "const", c: C.kw }, { t: " ", c: C.op }, { t: "satisfaction", c: C.var }, { t: ": ", c: C.op },
+    { t: "Percentage", c: C.typ }, { t: " = ", c: C.op }, { t: "100", c: C.num },
+  ], x: "64%", dur: 24, delay: 7 },
+  { tokens: [
+    { t: "api", c: C.var }, { t: ".", c: C.op }, { t: "design", c: C.fn }, { t: "({ ", c: C.op },
+    { t: "fast", c: C.prop }, { t: ": ", c: C.op }, { t: "true", c: C.kw }, { t: ", ", c: C.op },
+    { t: "premium", c: C.prop }, { t: ": ", c: C.op }, { t: "true", c: C.kw }, { t: ", ", c: C.op },
+    { t: "measurable", c: C.prop }, { t: ": ", c: C.op }, { t: "true", c: C.kw }, { t: " })", c: C.op },
+  ], x: "6%", dur: 35, delay: 20 },
+  { tokens: [
+    { t: "type", c: C.kw }, { t: " ", c: C.op }, { t: "SMBGoal", c: C.typ }, { t: " = { ", c: C.op },
+    { t: "ambition", c: C.prop }, { t: ": ", c: C.op }, { t: "'max'", c: C.str }, { t: "; ", c: C.op },
+    { t: "results", c: C.prop }, { t: ": ", c: C.op }, { t: "'guaranteed'", c: C.str },
+    { t: " }", c: C.op },
+  ], x: "38%", dur: 27, delay: 2 },
+  { tokens: [
+    { t: "export", c: C.kw }, { t: " ", c: C.op }, { t: "const", c: C.kw }, { t: " ", c: C.op },
+    { t: "WebSuccess", c: C.var }, { t: " = ", c: C.op }, { t: "buildTrust", c: C.fn },
+    { t: "(", c: C.op }, { t: "brand", c: C.var }, { t: ") => ", c: C.op },
+    { t: "results", c: C.var },
+  ], x: "58%", dur: 31, delay: 18 },
+  { tokens: [
+    { t: "// converting visitors into loyal customers", c: C.cmt },
+  ], x: "22%", dur: 29, delay: 13 },
+  { tokens: [
+    { t: "const", c: C.kw }, { t: " ", c: C.op }, { t: "leads", c: C.var }, { t: " = ", c: C.op },
+    { t: "await", c: C.kw }, { t: " ", c: C.op }, { t: "Agency", c: C.typ }, { t: ".", c: C.op },
+    { t: "generateResults", c: C.fn }, { t: "(", c: C.op }, { t: "website", c: C.var },
+    { t: ")", c: C.op },
+  ], x: "48%", dur: 33, delay: 25 },
 ];
 
-const STATIC_CODE = [
-  { text: "const trust = design()", top: "18%", left: "3%", opacity: 0.05 },
-  { text: "return premium", top: "42%", left: "78%", opacity: 0.04 },
-  { text: "<Website />", top: "65%", left: "12%", opacity: 0.045 },
-  { text: "async build()", top: "80%", left: "62%", opacity: 0.04 },
-  { text: "type Success", top: "30%", left: "85%", opacity: 0.038 },
+const STATIC_CODE: { tokens: Token[]; top: string; left: string; opacity: number }[] = [
+  { tokens: [
+    { t: "const", c: C.kw }, { t: " ", c: C.op }, { t: "trust", c: C.var }, { t: " = ", c: C.op },
+    { t: "design", c: C.fn }, { t: "()", c: C.op },
+  ], top: "18%", left: "3%", opacity: 0.09 },
+  { tokens: [
+    { t: "return", c: C.kw }, { t: " ", c: C.op }, { t: "premium", c: C.var },
+  ], top: "42%", left: "78%", opacity: 0.07 },
+  { tokens: [
+    { t: "<", c: C.op }, { t: "Website", c: C.tag }, { t: " />", c: C.op },
+  ], top: "65%", left: "12%", opacity: 0.08 },
+  { tokens: [
+    { t: "async", c: C.kw }, { t: " ", c: C.op }, { t: "build", c: C.fn }, { t: "()", c: C.op },
+  ], top: "80%", left: "62%", opacity: 0.07 },
+  { tokens: [
+    { t: "type", c: C.kw }, { t: " ", c: C.op }, { t: "Success", c: C.typ },
+  ], top: "30%", left: "85%", opacity: 0.065 },
 ];
+
+const BG_OPACITY = 0.14;
+const MONO_FONT = "'Fira Code', 'JetBrains Mono', monospace";
+
+function renderTokens(tokens: Token[], opacity: number) {
+  return tokens.map((tk, j) => {
+    const [r, g, b] = [
+      parseInt(tk.c.slice(1, 3), 16),
+      parseInt(tk.c.slice(3, 5), 16),
+      parseInt(tk.c.slice(5, 7), 16),
+    ];
+    return (
+      <span key={j} style={{ color: `rgba(${r},${g},${b},${opacity})` }}>
+        {tk.t}
+      </span>
+    );
+  });
+}
 
 function BackgroundCode() {
   return (
@@ -34,9 +128,8 @@ function BackgroundCode() {
           style={{
             position: "absolute",
             left: line.x,
-            fontFamily: "'Fira Code', 'JetBrains Mono', monospace",
+            fontFamily: MONO_FONT,
             fontSize: 10,
-            color: "rgba(37,99,235,0.06)",
             whiteSpace: "nowrap",
             letterSpacing: "0.02em",
           }}
@@ -44,7 +137,7 @@ function BackgroundCode() {
           animate={{ y: "-20vh" }}
           transition={{ duration: line.dur, delay: line.delay, repeat: Infinity, ease: "linear" }}
         >
-          {line.text}
+          {renderTokens(line.tokens, BG_OPACITY)}
         </motion.div>
       ))}
       {STATIC_CODE.map((f, i) => (
@@ -54,13 +147,12 @@ function BackgroundCode() {
             position: "absolute",
             top: f.top,
             left: f.left,
-            fontFamily: "monospace",
+            fontFamily: MONO_FONT,
             fontSize: 9,
-            color: `rgba(37,99,235,${f.opacity})`,
             whiteSpace: "nowrap",
           }}
         >
-          {f.text}
+          {renderTokens(f.tokens, f.opacity)}
         </div>
       ))}
     </div>
