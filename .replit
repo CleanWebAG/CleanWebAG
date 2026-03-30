@@ -28,4 +28,3 @@ timeoutMs = 20000
 [userenv]
 
 [userenv.shared]
-BREVO_API_KEY = "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"
