@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "wouter";
 import { BookingModal } from "@/components/sections/BookingModal";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
+  const [location, navigate] = useLocation();
+
+  const isHome = location === "/" || location === "";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -33,12 +37,48 @@ export function Navigation() {
 
   const HEADER_OFFSET = 80;
 
-  const scrollTo = (href: string) => {
-    const id = href.replace("#", "");
+  const scrollToElement = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
       const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
       window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
+  const handleNavClick = (href: string) => {
+    const id = href.replace("#", "");
+    if (isHome) {
+      scrollToElement(id);
+    } else {
+      sessionStorage.setItem("scrollTarget", id);
+      navigate("/");
+    }
+  };
+
+  useEffect(() => {
+    if (!isHome) return;
+    const target = sessionStorage.getItem("scrollTarget");
+    if (!target) return;
+    sessionStorage.removeItem("scrollTarget");
+    let attempts = 0;
+    const interval = setInterval(() => {
+      const el = document.getElementById(target);
+      if (el) {
+        clearInterval(interval);
+        const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+        window.scrollTo({ top, behavior: "smooth" });
+      } else if (++attempts > 40) {
+        clearInterval(interval);
+      }
+    }, 50);
+    return () => clearInterval(interval);
+  }, [isHome]);
+
+  const handleLogoClick = () => {
+    if (isHome) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
     }
   };
 
@@ -82,7 +122,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
 
-          <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="flex-shrink-0 relative z-10 group" aria-label="CleanWeb Agency">
+          <a href="/" onClick={(e) => { e.preventDefault(); handleLogoClick(); }} className="flex-shrink-0 relative z-10 group" aria-label="CleanWeb Agency">
             <img
               src={`${import.meta.env.BASE_URL}cleanweb-logo-final.png`}
               alt="CleanWeb Agency"
@@ -99,7 +139,7 @@ export function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
+                onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                 className="relative group"
                 style={{
                   fontSize: "0.8125rem",
@@ -205,7 +245,7 @@ export function Navigation() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 + 0.1, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  onClick={(e: React.MouseEvent) => { e.preventDefault(); setMobileMenuOpen(false); scrollTo(link.href); }}
+                  onClick={(e: React.MouseEvent) => { e.preventDefault(); setMobileMenuOpen(false); handleNavClick(link.href); }}
                   style={{ fontSize: "1.5rem", fontWeight: 700, color: "rgba(255,255,255,0.75)", textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
                 >
                   {link.name}
