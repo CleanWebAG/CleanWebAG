@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { openCalendly } from "@/lib/calendly";
+import { useLocation } from "wouter";
 
 type Token = { t: string; c: string };
 
@@ -160,6 +160,7 @@ function BackgroundCode() {
 }
 
 export function Hero() {
+  const [, navigate] = useLocation();
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
@@ -271,7 +272,7 @@ export function Hero() {
           style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}
         >
           <button
-            onClick={() => openCalendly()}
+            onClick={() => navigate("/anfrage")}
             style={{
               padding: "15px 32px",
               background: "#2563EB",

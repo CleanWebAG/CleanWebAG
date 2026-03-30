@@ -111,4 +111,26 @@
   .gradient-text-blue {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-electric to-blue-400;
   }
+
+  .booking-cta-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  @media (min-width: 640px) {
+    .booking-cta-layout {
+      grid-template-columns: 1fr auto auto;
+      align-items: stretch;
+    }
+
+    .booking-cta-card {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .booking-contact-card {
+      min-width: 160px;
+    }
+  }
 }

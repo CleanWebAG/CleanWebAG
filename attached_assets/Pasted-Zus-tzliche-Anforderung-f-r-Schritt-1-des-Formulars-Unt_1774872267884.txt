@@ -1,0 +1,44 @@
+Zusätzliche Anforderung für Schritt 1 des Formulars:
+
+Unterhalb der ersten Auswahlmöglichkeiten soll zusätzlich ein hochwertiger Terminbuchungs-Bereich integriert werden, inspiriert vom beigefügten Beispiel, aber komplett im Stil meiner CleanWeb Agency Website.
+
+Ziel:
+Nutzer sollen alternativ direkt einen Beratungstermin buchen können, ohne die Website zu verlassen. Es soll wirken wie ein eigenes, in meine Website integriertes Terminbuchungssystem im Stil von Calendly – aber vollständig in meinem Branding, meinem Dark Premium Design und meiner bestehenden UI.
+
+Wichtige Anforderungen:
+- Kein sichtbares Fremdbranding
+- Optisch wie ein natürlicher Bestandteil meiner Website
+- Premium, clean, modern, vertrauenswürdig
+- Gleiche Designlogik wie meine Website: Farben, Rundungen, Abstände, Typografie, Borders, Schatten, Hover-States
+
+Layout:
+- Im ersten Schritt unterhalb bzw. neben dem Formular einen kompakten Kontakt-/Terminbereich integrieren
+- Eine hochwertige Card im Stil des Beispiels mit:
+  - einem klaren CTA zur Terminbuchung
+  - kurzer erklärender Headline
+  - kurzer unterstützender Text
+- Direkt daneben bzw. daneben angeordnet zwei Kontakt-Infos mit Icons:
+  - info@cleanwebag.de
+  - +49 1772047113
+
+Inhalt der Termin-Card:
+- Headline: „Buchen Sie sich direkt einen Beratungstermin“
+- Text: „Kostenlos & unverbindlich. Wir helfen Ihnen weiter.“
+- CTA-Button z. B.: „Termin buchen“
+
+Funktional:
+- Der Button soll eine eigene Terminbuchungs-Ansicht öffnen oder ein modales Booking-Interface starten
+- Diese Terminbuchung soll wie ein eigenes Calendly-System wirken, im gleichen Stil wie meine Website
+- Falls eine vollständige Eigenentwicklung zu aufwendig ist, dann zuerst die UI komplett custom bauen und so vorbereiten, dass später echte Kalenderlogik / Termin-Slots / Google-Kalender-Anbindung integriert werden kann
+- Struktur so anlegen, dass später echte freie Termine, Uhrzeiten und Bestätigungen eingebunden werden können
+
+Design:
+- Dark Premium Look
+- Hochwertige Icons
+- Subtile Glows / Schatten / Hover-Effekte
+- Sauberer Kartenstil wie im Screenshot
+- Stark conversion-orientiert und vertrauenswürdig
+
+Wichtig:
+Der Terminbereich soll nicht nach Standard-Kontaktbox aussehen, sondern wie ein hochwertiges eigenes Mini-Booking-Element auf Agentur-Niveau.
+Bitte setze das so um, dass es optisch wie ein eigenes internes CleanWeb-Buchungssystem wirkt. Wenn die vollständige Backend-Logik nicht direkt umgesetzt wird, dann baue zuerst die komplette Premium-UI und die saubere technische Struktur für eine spätere echte Terminbuchung mit Kalender-Anbindung.

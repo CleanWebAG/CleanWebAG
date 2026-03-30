@@ -6,6 +6,7 @@ import Home from "@/pages/Home";
 import Datenschutz from "@/pages/Datenschutz";
 import Impressum from "@/pages/Impressum";
 import AGB from "@/pages/AGB";
+import Anfrage from "@/pages/Anfrage";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient({
@@ -21,6 +22,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/anfrage" component={Anfrage} />
       <Route path="/datenschutz" component={Datenschutz} />
       <Route path="/impressum" component={Impressum} />
       <Route path="/agb" component={AGB} />
