@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BookingModal } from "@/components/sections/BookingModal";
@@ -14,18 +15,35 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    if (showBooking || mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = prev;
+    }
+    return () => { document.body.style.overflow = prev; };
+  }, [showBooking, mobileMenuOpen]);
+
   const navLinks = [
     { name: "Leistungen", href: "#leistungen" },
     { name: "Pakete", href: "#pakete" },
     { name: "Prozess", href: "#prozess" },
   ];
 
+  const HEADER_OFFSET = 80;
+
   const scrollTo = (href: string) => {
     const id = href.replace("#", "");
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
   };
 
   return (
+    <>
     <header
       className="fixed top-0 inset-x-0 z-50"
       style={{
@@ -64,7 +82,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
 
-          <a href="#" className="flex-shrink-0 relative z-10 group" aria-label="CleanWeb Agency">
+          <a href="/" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="flex-shrink-0 relative z-10 group" aria-label="CleanWeb Agency">
             <img
               src={`${import.meta.env.BASE_URL}cleanweb-logo-final.png`}
               alt="CleanWeb Agency"
@@ -185,7 +203,7 @@ export function Navigation() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 + 0.1, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  onClick={() => { setMobileMenuOpen(false); scrollTo(link.href); }}
+                  onClick={(e: React.MouseEvent) => { e.preventDefault(); setMobileMenuOpen(false); scrollTo(link.href); }}
                   style={{ fontSize: "1.5rem", fontWeight: 700, color: "rgba(255,255,255,0.75)", textDecoration: "none", fontFamily: "Montserrat, sans-serif" }}
                 >
                   {link.name}
@@ -221,7 +239,11 @@ export function Navigation() {
           </motion.div>
         )}
       </AnimatePresence>
-      {showBooking && <BookingModal onClose={() => setShowBooking(false)} />}
     </header>
+    {showBooking && createPortal(
+      <BookingModal onClose={() => setShowBooking(false)} />,
+      document.body
+    )}
+    </>
   );
 }

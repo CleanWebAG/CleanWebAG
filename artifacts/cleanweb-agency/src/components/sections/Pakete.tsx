@@ -284,9 +284,13 @@ function PackageCard({
         variant={highlighted ? "primary" : "glass"}
         size="sm"
         className="w-full"
-        onClick={() =>
-          document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })
-        }
+        onClick={() => {
+          const el = document.getElementById("kontakt");
+          if (el) {
+            const top = el.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        }}
       >
         Jetzt anfragen
       </Button>

@@ -161,8 +161,13 @@ function BackgroundCode() {
 
 export function Hero() {
   const [, navigate] = useLocation();
-  const scrollTo = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-navy-950">
