@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { type Variants, motion } from "framer-motion";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -74,12 +74,12 @@ export const StaggerItem = ({
   children: ReactNode;
   className?: string;
 }) => {
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 16 },
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.45, ease: [0.21, 0.47, 0.32, 0.98] },
+      transition: { duration: 0.45, ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number] },
     },
   };
 

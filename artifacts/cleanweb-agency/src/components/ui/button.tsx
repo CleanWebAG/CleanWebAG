@@ -1,30 +1,42 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { type HTMLMotionProps, motion, AnimatePresence } from "framer-motion";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type ConflictingProps = "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart";
+export interface ButtonProps extends Omit<HTMLMotionProps<"button">, "ref" | ConflictingProps> {
   variant?: "primary" | "secondary" | "outline" | "ghost" | "glass";
   size?: "sm" | "md" | "lg" | "icon";
+}
+
+const variantClasses = {
+  primary: "bg-electric text-white shadow-lg shadow-electric/25 hover:bg-electric-hover hover:shadow-xl hover:shadow-electric/30 hover:-translate-y-0.5",
+  secondary: "bg-white text-navy-950 shadow-md hover:bg-gray-50 hover:-translate-y-0.5",
+  outline: "border-2 border-electric text-electric hover:bg-electric/10",
+  ghost: "text-white/80 hover:text-white hover:bg-white/10",
+  glass: "bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 hover:-translate-y-0.5",
+};
+
+const sizeClasses = {
+  sm: "h-9 px-4 text-sm",
+  md: "h-11 px-6 text-base font-medium",
+  lg: "h-14 px-8 text-lg font-semibold",
+  icon: "h-10 w-10 justify-center",
+};
+
+export function buttonVariants({
+  variant = "primary",
+  size = "md",
+}: { variant?: ButtonProps["variant"]; size?: ButtonProps["size"] } = {}) {
+  return cn(
+    "relative inline-flex items-center justify-center rounded-xl transition-all duration-300 ease-out disabled:opacity-50 disabled:pointer-events-none overflow-hidden",
+    variantClasses[variant ?? "primary"],
+    sizeClasses[size ?? "md"],
+  );
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", children, onClick, ...props }, ref) => {
     const [ripples, setRipples] = React.useState<{ x: number; y: number; id: number }[]>([]);
-
-    const variants = {
-      primary: "bg-electric text-white shadow-lg shadow-electric/25 hover:bg-electric-hover hover:shadow-xl hover:shadow-electric/30 hover:-translate-y-0.5",
-      secondary: "bg-white text-navy-950 shadow-md hover:bg-gray-50 hover:-translate-y-0.5",
-      outline: "border-2 border-electric text-electric hover:bg-electric/10",
-      ghost: "text-white/80 hover:text-white hover:bg-white/10",
-      glass: "bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 hover:-translate-y-0.5"
-    };
-
-    const sizes = {
-      sm: "h-9 px-4 text-sm",
-      md: "h-11 px-6 text-base font-medium",
-      lg: "h-14 px-8 text-lg font-semibold",
-      icon: "h-10 w-10 justify-center",
-    };
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       const rect = e.currentTarget.getBoundingClientRect();
@@ -47,9 +59,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         whileTap={{ scale: 0.96 }}
         onClick={handleClick}
         className={cn(
-          "relative inline-flex items-center justify-center rounded-xl transition-all duration-300 ease-out disabled:opacity-50 disabled:pointer-events-none overflow-hidden",
-          variants[variant],
-          sizes[size],
+          buttonVariants({ variant, size }),
           className
         )}
         {...props}

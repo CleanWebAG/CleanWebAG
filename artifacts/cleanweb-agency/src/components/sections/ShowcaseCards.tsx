@@ -1,3 +1,4 @@
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface CaseCard {
@@ -382,7 +383,7 @@ function PreviewGastro() {
   );
 }
 
-const PREVIEW_MAP: Record<string, () => JSX.Element> = {
+const PREVIEW_MAP: Record<string, () => React.JSX.Element> = {
   tax: PreviewTax,
   auto: PreviewAuto,
   cleaning: PreviewCleaning,
