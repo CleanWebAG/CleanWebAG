@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Shield, Sparkles, CheckCircle2 } from "lucide-react";
+import { useLocation } from "wouter";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "@/components/ui/button";
 import { SectionDivider } from "@/components/ui/section-divider";
-import { openCalendly } from "@/lib/calendly";
 
 const trustBadges = [
   { icon: Clock, label: "Antwort in 24h", description: "Schnelle Reaktionszeit garantiert" },
@@ -19,6 +19,7 @@ const benefits = [
 ];
 
 export function CtaSection() {
+  const [, navigate] = useLocation();
   return (
     <section id="kontakt" className="py-32 bg-navy-950 relative overflow-hidden">
       <SectionDivider position="top" fillColor="fill-light-bg" />
@@ -49,7 +50,7 @@ export function CtaSection() {
               <Button
                 size="lg"
                 className="group text-lg px-14 py-6 shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_50px_rgba(37,99,235,0.6)] transition-shadow duration-300"
-                onClick={() => openCalendly()}
+                onClick={() => navigate("/anfrage")}
               >
                 Kostenlose Beratung sichern
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
