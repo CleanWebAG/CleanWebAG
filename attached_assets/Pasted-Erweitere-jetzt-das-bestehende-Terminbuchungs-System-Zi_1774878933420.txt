@@ -1,0 +1,54 @@
+Erweitere jetzt das bestehende Terminbuchungs-System.
+
+Ziel:
+Wenn ein Besucher einen Termin bucht, soll das System vollständig funktionieren – ähnlich wie bereits beim Anfrageformular.
+
+Anforderungen:
+
+1. Interne Benachrichtigung an mich
+- Sobald ein Termin erfolgreich gebucht wurde, soll automatisch eine E-Mail an info@cleanwebag.de gesendet werden
+- Versand über das bestehende Brevo Setup
+- Betreff z. B.: „Neuer Termin über Website gebucht“
+- Inhalt sauber strukturiert mit allen relevanten Terminangaben:
+  - Vorname / Nachname
+  - E-Mail
+  - Telefon (falls vorhanden)
+  - gebuchtes Datum
+  - gebuchte Uhrzeit
+  - ggf. weitere Angaben aus der Buchung
+
+2. Automatische Bestätigungs-E-Mail an den Besucher
+- Nach erfolgreicher Terminbuchung soll der Besucher automatisch eine professionelle HTML E-Mail an seine eingegebene E-Mail-Adresse erhalten
+- Design im Stil meiner CleanWeb Agency Website
+- hochwertig, modern, dark / premium
+- Inhalt:
+  - Bestätigung, dass der Termin erfolgreich gebucht wurde
+  - Datum und Uhrzeit des Termins
+  - kurzer Hinweis, dass wir uns auf das Gespräch freuen
+  - Kontaktmöglichkeit bei Rückfragen
+  - professioneller Footer mit:
+    - CleanWeb Agency
+    - info@cleanwebag.de
+    - +49 1772047113
+- Nur senden, wenn die Terminbuchung erfolgreich war
+
+3. Header CTA anpassen
+- Der Header Button „Termin buchen“ soll exakt dieselbe Funktion auslösen wie die Terminbuchungs-Card auf der Formularseite
+- Also entweder:
+  - dieselbes Booking Modal öffnen
+  - oder auf dieselbe Terminbuchungsansicht weiterleiten
+- Es darf keine zweite separate Logik geben, sondern beide CTAs sollen dieselbe Funktion / denselben Flow verwenden
+
+4. Technisch
+- Verwende das bestehende Brevo Setup und vorhandene Serverstruktur
+- Kein Fake-Submit
+- Erfolgsmeldung nach erfolgreicher Buchung
+- Fehlerhandling sauber einbauen
+- Alle Daten validieren
+- Lösung wartbar und sauber in die bestehende Struktur integrieren
+
+Wichtig:
+Bitte nicht nur UI bauen, sondern die Terminbuchung funktional vollständig machen:
+- interne E-Mail an mich
+- HTML Bestätigungsmail an den Besucher
+- gleicher Flow für den Header-CTA „Termin buchen“
