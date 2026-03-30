@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
-  publish = "dist/public"
-  functions = "netlify/functions"
+  publish = "artifacts/cleanweb-agency/dist/public"
+  functions = "artifacts/cleanweb-agency/netlify/functions"
 
 [build.environment]
   PORT = "3000"
