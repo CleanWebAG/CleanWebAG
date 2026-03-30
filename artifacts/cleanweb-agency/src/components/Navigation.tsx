@@ -169,6 +169,8 @@ export function Navigation() {
         </div>
       </div>
 
+    </header>
+    {typeof document !== "undefined" && createPortal(
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -178,7 +180,7 @@ export function Navigation() {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 md:hidden flex flex-col justify-center items-center gap-10"
-            style={{ background: "rgba(9,15,28,0.98)", backdropFilter: "blur(32px)" }}
+            style={{ zIndex: 60, background: "rgba(9,15,28,0.98)", backdropFilter: "blur(32px)" }}
           >
             <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(37,99,235,0.3) 50%, transparent)" }} />
 
@@ -238,8 +240,9 @@ export function Navigation() {
             </p>
           </motion.div>
         )}
-      </AnimatePresence>
-    </header>
+      </AnimatePresence>,
+      document.body
+    )}
     {showBooking && createPortal(
       <BookingModal onClose={() => setShowBooking(false)} />,
       document.body
