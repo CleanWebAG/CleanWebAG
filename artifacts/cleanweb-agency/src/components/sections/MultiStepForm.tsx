@@ -263,6 +263,8 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
   const [data, setData] = useState<FormData>(INITIAL);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const goTo = (next: number) => {
     setDir(next > step ? 1 : -1);
@@ -299,10 +301,30 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!validateFinal()) return;
-    console.log("Form submitted:", JSON.stringify(data, null, 2));
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError("");
+    try {
+      const baseUrl = import.meta.env.BASE_URL || "/";
+      const apiBase = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
+      const res = await fetch(`${apiBase}/api/send-email`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error((err as { error?: string }).error || "Fehler beim Senden");
+      }
+      setSubmitted(true);
+    } catch (e) {
+      setSubmitError(
+        e instanceof Error ? e.message : "Verbindungsfehler. Bitte versuchen Sie es erneut."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -549,26 +571,33 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
             Weiter <ArrowRight size={15} />
           </motion.button>
         ) : (
-          <motion.button
-            type="button"
-            onClick={handleSubmit}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-1.5 text-sm font-semibold"
-            style={{
-              padding: "10px 22px",
-              borderRadius: 10,
-              border: "none",
-              background: "#2563EB",
-              color: "white",
-              cursor: "pointer",
-              boxShadow: "0 4px 16px rgba(37,99,235,0.3)",
-              fontFamily: "'Montserrat', sans-serif",
-              transition: "background 0.2s",
-            }}
-          >
-            Jetzt anfragen <Send size={14} />
-          </motion.button>
+          <div className="flex flex-col items-end gap-2">
+            {submitError && (
+              <p style={{ color: "#ef4444", fontSize: 13, margin: 0 }}>{submitError}</p>
+            )}
+            <motion.button
+              type="button"
+              onClick={handleSubmit}
+              disabled={submitting}
+              whileHover={{ scale: submitting ? 1 : 1.03 }}
+              whileTap={{ scale: submitting ? 1 : 0.97 }}
+              className="flex items-center gap-1.5 text-sm font-semibold"
+              style={{
+                padding: "10px 22px",
+                borderRadius: 10,
+                border: "none",
+                background: submitting ? "rgba(37,99,235,0.5)" : "#2563EB",
+                color: "white",
+                cursor: submitting ? "wait" : "pointer",
+                boxShadow: "0 4px 16px rgba(37,99,235,0.3)",
+                fontFamily: "'Montserrat', sans-serif",
+                transition: "background 0.2s",
+                opacity: submitting ? 0.7 : 1,
+              }}
+            >
+              {submitting ? "Wird gesendet..." : "Jetzt anfragen"} {!submitting && <Send size={14} />}
+            </motion.button>
+          </div>
         )}
       </div>
 

@@ -98,10 +98,15 @@ Premium single-page marketing website in German for CleanWeb Agency (web design 
 - **Colors**: dark navy (#0B1220), electric blue (#2563EB), light (#F8FAFC)
 - **Fonts**: Montserrat (headings), Inter (body)
 - **Logo**: `public/cleanweb-logo-final.png`
-- **Section order**: Hero → WhyUs → Problem → Portfolio → Services → Pakete → Process → Testimonials → CTA → Footer
-- **Hero**: Clean full-viewport layout with floating BackgroundCode, large typography, two CTAs ("Kostenlose Beratung" + "Pakete ansehen"), stats row (50+, 3×, 100%), bouncing chevron. Uses transform-based animations for performance.
-- **Navigation**: Blur nav bar with mobile hamburger menu, scroll-aware, sticky
-- **Key files**: `src/components/sections/Hero.tsx`, `src/components/Navigation.tsx`, `src/pages/Home.tsx`, `src/index.css`
+- **Section order**: Hero → WhyUs → Problem → Services → Pakete → Process → Testimonials → CTA → Footer
+- **Hero**: Clean full-viewport layout with syntax-highlighted BackgroundCode, large typography, two CTAs ("Kostenlose Beratung sichern" + "Pakete ansehen"), trust line, bouncing chevron. Uses transform-based animations for performance.
+- **Navigation**: Premium floating blur nav with "Leistungen", "Pakete", "Prozess" links + "Termin buchen" CTA (opens Calendly). Mobile hamburger menu, scroll-aware.
+- **Multi-step inquiry form** at `/anfrage`: 5-step form (Goal → Services → Project → Timeline → Contact). Submits via `POST /api/send-email` to Brevo transactional email API. Includes loading state, error handling, and success confirmation.
+- **Legal pages**: `/datenschutz` (DSGVO), `/impressum` (§5 TMG), `/agb`
+- **Calendly integration**: All CTA buttons open Calendly popup widget
+- **Favicon**: CW icon in 32×32, 180×180, 512×512 PNG
+- **Key files**: `src/components/sections/Hero.tsx`, `src/components/Navigation.tsx`, `src/pages/Home.tsx`, `src/components/sections/MultiStepForm.tsx`
+- **Environment**: `BREVO_API_KEY` required for email sending
 
 ### `scripts` (`@workspace/scripts`)
 
