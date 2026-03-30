@@ -1,0 +1,94 @@
+Ersetze den aktuellen Hero-CTA auf meiner Website durch ein hochwertiges, mehrstufiges Anfrage-Formular im Stil meiner bestehenden CleanWeb Agency Website.
+
+Das neue Element soll wirken, als wäre es von Anfang an Teil meiner Website gewesen – nicht wie ein eingebautes Fremdelement. Es muss sich optisch perfekt in mein bestehendes Branding, meine Farben, Typografie, Abstände, Rundungen, Schatten, Hover-Effekte und den generellen Premium-Look einfügen.
+
+Ziel:
+Das Formular soll modern, schnell, vertrauenswürdig und conversionstark wirken. Es soll Nutzer spielerisch und ohne Friction durch die Anfrage führen – inspiriert vom beigefügten Beispiel, aber komplett in meinem eigenen Stil umgesetzt.
+
+Layout:
+- Zweispaltiger Bereich im Hero
+- Links: mehrstufiges Formular
+- Rechts: visuell starker Showcase-Bereich mit Website-Beispielen / Referenzkarten ähnlich dem Screenshot
+- Desktop zuerst optimieren, mobil aber ebenfalls sauber und hochwertig umsetzen
+- Sanfte Animationen und weiche Übergänge zwischen den Schritten
+
+Formularstruktur:
+Schritt 1
+Frage: „Was ist das primäre Ziel?“
+Antworten:
+- Online besser gefunden werden
+- Mehr Neukunden gewinnen
+- Mehr Fachkräfte gewinnen
+- Etwas anderes
+
+Schritt 2
+Frage: „Welche Leistungen benötigen Sie?“
+Antworten:
+- Webdesign
+- Web Entwicklung
+- Foto/Video
+- SEO
+- SEA
+- Wartung
+
+Schritt 3
+Frage: „Um welches Projekt geht es?“
+Felder:
+- Webseite (optional)
+- Unternehmen
+
+Schritt 4
+Frage: „Wann soll die Webseite fertig werden?“
+Antworten:
+- Am besten schon gestern
+- Kein Zeitdruck
+
+Schritt 5
+Frage: „Wie können wir Sie erreichen?“
+Felder:
+- Vorname
+- Nachname
+- E-Mail
+- Telefon
+- Datenschutz Checkbox mit Verlinkung zur Datenschutzerklärung
+
+UI / UX Anforderungen:
+- Oben eine schmale Trust-Leiste mit:
+  - Antwort in 24 Std.
+  - 100% unverbindlich
+  - Erste Preiseinschätzung
+- Klar erkennbare aktive Auswahlzustände
+- Zurück- und Weiter-Buttons
+- Fortschritt visuell nachvollziehbar
+- Letzter Button: „Jetzt anfragen“
+- Formular soll sich schnell und hochwertig anfühlen
+- Fokus auf Conversion, Klarheit und Vertrauen
+
+Showcase rechts:
+- Nutze rechts hochwertige Website-Beispiele / Case Cards wie im Screenshot
+- Die Karten sollen je nach Schritt wechseln oder dezent animiert aktualisiert werden
+- Jede Karte soll wie ein echtes Referenzprojekt wirken
+- Inhalt z. B. Projekttitel, kurze starke Aussage / Testimonial, Screenshot-Vorschau, kleine Logos oder Branchenhinweise
+- Stil: premium, modern, passend zu CleanWeb
+- Kein Überladen, sondern clean und hochwertig
+
+Design:
+- Dark / Premium / modern
+- Sehr saubere Abstände
+- Edle Borders
+- Subtile Schatten
+- Dezente Animationen
+- Hochwertige Hover- und Active-States
+- Alles visuell konsistent mit meiner aktuellen Website
+
+Technisch:
+- Nutze die bestehende Struktur und Komponentenlogik meiner Website
+- Baue das Formular sauber, wartbar und responsive
+- Validierung im letzten Schritt
+- Formular-Daten strukturiert verarbeitbar machen
+- Bereite den Submit so vor, dass später automatisierte Bestätigungs-E-Mails einfach ergänzt werden können
+
+Wichtig:
+Bitte nicht nur funktional umsetzen, sondern auf Agentur-Niveau gestalten. Es soll hochwertig, elegant und verkaufsstark wirken.
+
+Arbeite direkt im bestehenden Designsystem meiner Website weiter und entscheide eigenständig sinnvolle Details für Spacing, Microinteractions, States und Mobile-Verhalten, solange alles hochwertig, stimmig und conversion-orientiert bleibt.
