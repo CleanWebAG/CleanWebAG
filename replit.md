@@ -106,7 +106,9 @@ Premium single-page marketing website in German for CleanWeb Agency (web design 
 - **Booking system**: BookingModal with calendar date picker, time slot selection, and contact form. Submits via `POST /api/send-booking`. Header "Termin buchen" CTA and Anfrage page BookingCTA both open BookingModal. Calendly integration remains as fallback in codebase.
 - **Favicon**: CW icon in 32×32, 180×180, 512×512 PNG
 - **Key files**: `src/components/sections/Hero.tsx`, `src/components/Navigation.tsx`, `src/pages/Home.tsx`, `src/components/sections/MultiStepForm.tsx`
-- **Environment**: `BREVO_API_KEY` required for email sending
+- **Netlify Functions**: `netlify/functions/send-email.ts` and `netlify/functions/send-booking.ts` — serverless functions for form submissions via Brevo API. Frontend calls `/api/send-email` and `/api/send-booking`; `netlify.toml` redirects these to `/.netlify/functions/*`. In Replit dev, the API server handles these routes.
+- **netlify.toml**: Build config (`publish: dist/public`, `functions: netlify/functions`, `node_bundler: esbuild`), API redirects, SPA fallback redirect. Build env sets `PORT=3000` and `BASE_PATH=/` for Vite.
+- **Environment variables (Netlify dashboard)**: `BREVO_API_KEY` — required for email sending via Brevo transactional email API
 
 ### `scripts` (`@workspace/scripts`)
 
