@@ -56,7 +56,7 @@ Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` 
 
 - Entry: `src/index.ts` — reads `PORT`, starts Express
 - App setup: `src/app.ts` — mounts CORS, JSON/urlencoded parsing, routes at `/api`
-- Routes: `src/routes/index.ts` mounts sub-routers; `src/routes/health.ts` exposes `GET /health` (full path: `/api/health`); `src/routes/send-email.ts` handles `POST /api/send-email` for contact form submissions via Brevo Transactional Email API (requires `BREVO_API_KEY` env var)
+- Routes: `src/routes/index.ts` mounts sub-routers; `src/routes/health.ts` exposes `GET /health` (full path: `/api/health`); `src/routes/send-email.ts` handles `POST /api/send-email` for contact form submissions via Brevo Transactional Email API (requires `BREVO_API_KEY` env var); `src/routes/send-booking.ts` handles `POST /api/send-booking` for booking appointment submissions (internal notification + visitor confirmation email via Brevo)
 - Depends on: `@workspace/db`, `@workspace/api-zod`
 - `pnpm --filter @workspace/api-server run dev` — run the dev server
 - `pnpm --filter @workspace/api-server run build` — production esbuild bundle (`dist/index.cjs`)
@@ -100,10 +100,10 @@ Premium single-page marketing website in German for CleanWeb Agency (web design 
 - **Logo**: `public/cleanweb-logo-final.png`
 - **Section order**: Hero → WhyUs → Problem → Services → Pakete → Process → Testimonials → CTA → Footer
 - **Hero**: Clean full-viewport layout with syntax-highlighted BackgroundCode, large typography, two CTAs ("Kostenlose Beratung sichern" + "Pakete ansehen"), trust line, bouncing chevron. Uses transform-based animations for performance.
-- **Navigation**: Premium floating blur nav with "Leistungen", "Pakete", "Prozess" links + "Termin buchen" CTA (opens Calendly). Mobile hamburger menu, scroll-aware.
+- **Navigation**: Premium floating blur nav with "Leistungen", "Pakete", "Prozess" links + "Termin buchen" CTA (opens BookingModal). Mobile hamburger menu, scroll-aware.
 - **Multi-step inquiry form** at `/anfrage`: 5-step form (Goal → Services → Project → Timeline → Contact). Submits via `POST /api/send-email` to Brevo transactional email API. Includes loading state, error handling, and success confirmation.
 - **Legal pages**: `/datenschutz` (DSGVO), `/impressum` (§5 TMG), `/agb`
-- **Calendly integration**: All CTA buttons open Calendly popup widget
+- **Booking system**: BookingModal with calendar date picker, time slot selection, and contact form. Submits via `POST /api/send-booking`. Header "Termin buchen" CTA and Anfrage page BookingCTA both open BookingModal. Calendly integration remains as fallback in codebase.
 - **Favicon**: CW icon in 32×32, 180×180, 512×512 PNG
 - **Key files**: `src/components/sections/Hero.tsx`, `src/components/Navigation.tsx`, `src/pages/Home.tsx`, `src/components/sections/MultiStepForm.tsx`
 - **Environment**: `BREVO_API_KEY` required for email sending

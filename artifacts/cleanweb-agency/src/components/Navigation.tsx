@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { openCalendly } from "@/lib/calendly";
+import { BookingModal } from "@/components/sections/BookingModal";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showBooking, setShowBooking] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -111,7 +112,7 @@ export function Navigation() {
             ))}
 
             <button
-              onClick={() => openCalendly()}
+              onClick={() => setShowBooking(true)}
               style={{
                 padding: scrolled ? "7px 16px" : "8px 18px",
                 background: "rgba(37,99,235,0.15)",
@@ -198,7 +199,7 @@ export function Navigation() {
               transition={{ delay: 0.35, duration: 0.4 }}
               onClick={() => {
                 setMobileMenuOpen(false);
-                openCalendly();
+                setShowBooking(true);
               }}
               style={{
                 padding: "12px 28px",
@@ -220,6 +221,7 @@ export function Navigation() {
           </motion.div>
         )}
       </AnimatePresence>
+      {showBooking && <BookingModal onClose={() => setShowBooking(false)} />}
     </header>
   );
 }

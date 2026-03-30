@@ -103,7 +103,10 @@ export function BookingModal({ onClose }: { onClose: () => void }) {
     setBookingStep("details");
   };
 
-  const validateAndSubmit = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const validateAndSubmit = async () => {
     const errs: Record<string, string> = {};
     if (!booking.name.trim()) errs.name = "Pflichtfeld";
     if (!booking.email.trim()) errs.email = "Pflichtfeld";
@@ -112,8 +115,37 @@ export function BookingModal({ onClose }: { onClose: () => void }) {
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
 
-    console.log("Booking submitted:", JSON.stringify(booking, null, 2));
-    setBookingStep("confirmed");
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/send-booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(booking),
+      });
+
+      let result: { error?: string; success?: boolean } = {};
+      try {
+        result = await response.json();
+      } catch {
+        if (!response.ok) {
+          setSubmitError("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
+          return;
+        }
+      }
+
+      if (!response.ok) {
+        setSubmitError(result.error || "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
+        return;
+      }
+
+      setBookingStep("confirmed");
+    } catch {
+      setSubmitError("Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formatDate = (dateStr: string) => {
@@ -378,30 +410,50 @@ export function BookingModal({ onClose }: { onClose: () => void }) {
                   ))}
                 </div>
 
+                {submitError && (
+                  <div
+                    style={{
+                      marginTop: 12,
+                      padding: "10px 14px",
+                      borderRadius: 10,
+                      background: "rgba(239,68,68,0.08)",
+                      border: "1px solid rgba(239,68,68,0.2)",
+                      color: "rgba(239,68,68,0.85)",
+                      fontSize: "0.75rem",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {submitError}
+                  </div>
+                )}
+
                 <motion.button
                   onClick={validateAndSubmit}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={isSubmitting ? {} : { scale: 1.02 }}
+                  whileTap={isSubmitting ? {} : { scale: 0.98 }}
+                  disabled={isSubmitting}
                   style={{
                     width: "100%",
                     marginTop: 16,
                     padding: "12px 20px",
                     borderRadius: 12,
-                    background: "#2563EB",
+                    background: isSubmitting ? "rgba(37,99,235,0.5)" : "#2563EB",
                     color: "white",
                     border: "none",
                     fontSize: "0.9rem",
                     fontWeight: 700,
-                    cursor: "pointer",
+                    cursor: isSubmitting ? "not-allowed" : "pointer",
                     fontFamily: "'Montserrat', sans-serif",
                     boxShadow: "0 4px 20px rgba(37,99,235,0.3)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     gap: 8,
+                    opacity: isSubmitting ? 0.7 : 1,
+                    transition: "opacity 0.2s, background 0.2s",
                   }}
                 >
-                  Termin bestätigen <CheckCircle2 size={16} />
+                  {isSubmitting ? "Wird gesendet…" : "Termin bestätigen"} {!isSubmitting && <CheckCircle2 size={16} />}
                 </motion.button>
               </motion.div>
             ) : bookingStep === "time" ? (
