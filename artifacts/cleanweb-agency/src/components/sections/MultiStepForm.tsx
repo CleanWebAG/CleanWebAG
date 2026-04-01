@@ -5,12 +5,6 @@ import {
   Users,
   UserPlus,
   HelpCircle,
-  Palette,
-  Code,
-  Camera,
-  TrendingUp,
-  Target,
-  Wrench,
   Clock,
   CalendarCheck,
   ArrowLeft,
@@ -26,7 +20,6 @@ import {
 
 interface FormData {
   goal: string;
-  services: string[];
   website: string;
   company: string;
   timeline: string;
@@ -39,7 +32,6 @@ interface FormData {
 
 const INITIAL: FormData = {
   goal: "",
-  services: [],
   website: "",
   company: "",
   timeline: "",
@@ -57,15 +49,6 @@ const GOALS = [
   { id: "andere", label: "Etwas anderes", icon: HelpCircle },
 ];
 
-const SERVICES = [
-  { id: "webdesign", label: "Webdesign", icon: Palette },
-  { id: "webdev", label: "Web Entwicklung", icon: Code },
-  { id: "fotovideo", label: "Foto/Video", icon: Camera },
-  { id: "seo", label: "SEO", icon: TrendingUp },
-  { id: "sea", label: "SEA", icon: Target },
-  { id: "wartung", label: "Wartung", icon: Wrench },
-];
-
 const TIMELINES = [
   { id: "asap", label: "Am besten schon gestern", icon: Zap },
   { id: "nopressure", label: "Kein Zeitdruck", icon: CalendarCheck },
@@ -73,7 +56,6 @@ const TIMELINES = [
 
 const STEP_TITLES = [
   "Was ist das primäre Ziel?",
-  "Welche Leistungen benötigen Sie?",
   "Um welches Projekt geht es?",
   "Wann soll die Webseite fertig werden?",
   "Wie können wir Sie erreichen?",
@@ -277,12 +259,10 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
       case 0:
         return !!data.goal;
       case 1:
-        return data.services.length > 0;
-      case 2:
         return !!data.company;
-      case 3:
+      case 2:
         return !!data.timeline;
-      case 4:
+      case 3:
         return true;
       default:
         return false;
@@ -319,7 +299,6 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
           email: data.email,
           phone: data.phone,
           goal: GOALS.find((g) => g.id === data.goal)?.label || data.goal,
-          services: data.services.map((s) => SERVICES.find((sv) => sv.id === s)?.label || s),
           website: data.website,
           company: data.company,
           timeline: TIMELINES.find((t) => t.id === data.timeline)?.label || data.timeline,
@@ -379,7 +358,7 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
   return (
     <div>
       <TrustBar />
-      <StepIndicator current={step} total={5} />
+      <StepIndicator current={step} total={4} />
 
       <h2
         className="text-center text-base sm:text-lg font-bold text-white mb-5"
@@ -414,25 +393,6 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
             )}
 
             {step === 1 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {SERVICES.map((s) => (
-                  <SelectionCard
-                    key={s.id}
-                    label={s.label}
-                    icon={s.icon}
-                    selected={data.services.includes(s.id)}
-                    onClick={() => {
-                      const next = data.services.includes(s.id)
-                        ? data.services.filter((x) => x !== s.id)
-                        : [...data.services, s.id];
-                      setData({ ...data, services: next });
-                    }}
-                  />
-                ))}
-              </div>
-            )}
-
-            {step === 2 && (
               <div className="flex flex-col gap-4">
                 <FormInput
                   label="Webseite (optional)"
@@ -450,7 +410,7 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
               </div>
             )}
 
-            {step === 3 && (
+            {step === 2 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {TIMELINES.map((t) => (
                   <SelectionCard
@@ -464,7 +424,7 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
               </div>
             )}
 
-            {step === 4 && (
+            {step === 3 && (
               <div className="flex flex-col gap-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <FormInput
@@ -571,7 +531,7 @@ export function MultiStepForm({ onStepChange }: { onStepChange?: (step: number) 
           <div />
         )}
 
-        {step < 4 ? (
+        {step < 3 ? (
           <motion.button
             type="button"
             onClick={() => canNext() && goTo(step + 1)}

@@ -10,7 +10,6 @@ interface EmailRequestBody {
   email: string;
   phone: string;
   goal: string;
-  services: string[];
   website: string;
   company: string;
   timeline: string;
@@ -31,9 +30,6 @@ function validateBody(body: unknown): body is EmailRequestBody {
     typeof b.phone === "string" &&
     typeof b.goal === "string" &&
     b.goal.trim().length > 0 &&
-    Array.isArray(b.services) &&
-    b.services.length > 0 &&
-    b.services.every((s: unknown) => typeof s === "string" && (s as string).trim().length > 0) &&
     typeof b.website === "string" &&
     typeof b.company === "string" &&
     b.company.trim().length > 0 &&
@@ -43,9 +39,6 @@ function validateBody(body: unknown): body is EmailRequestBody {
 }
 
 function buildHtmlContent(data: EmailRequestBody): string {
-  const servicesFormatted =
-    data.services.length > 0 ? data.services.join(", ") : "Keine angegeben";
-
   return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
       <h2 style="color: #2563EB; border-bottom: 2px solid #2563EB; padding-bottom: 10px;">
@@ -75,18 +68,14 @@ function buildHtmlContent(data: EmailRequestBody): string {
           <td style="padding: 12px 8px; color: #111827;">${escapeHtml(data.goal || "Nicht angegeben")}</td>
         </tr>
         <tr style="border-bottom: 1px solid #e5e7eb; background-color: #f9fafb;">
-          <td style="padding: 12px 8px; font-weight: bold; color: #374151;">Leistungen</td>
-          <td style="padding: 12px 8px; color: #111827;">${escapeHtml(servicesFormatted)}</td>
-        </tr>
-        <tr style="border-bottom: 1px solid #e5e7eb;">
           <td style="padding: 12px 8px; font-weight: bold; color: #374151;">Website</td>
           <td style="padding: 12px 8px; color: #111827;">${escapeHtml(data.website || "Nicht angegeben")}</td>
         </tr>
-        <tr style="border-bottom: 1px solid #e5e7eb; background-color: #f9fafb;">
+        <tr style="border-bottom: 1px solid #e5e7eb;">
           <td style="padding: 12px 8px; font-weight: bold; color: #374151;">Unternehmen</td>
           <td style="padding: 12px 8px; color: #111827;">${escapeHtml(data.company || "Nicht angegeben")}</td>
         </tr>
-        <tr style="border-bottom: 1px solid #e5e7eb;">
+        <tr style="border-bottom: 1px solid #e5e7eb; background-color: #f9fafb;">
           <td style="padding: 12px 8px; font-weight: bold; color: #374151;">Zeitrahmen</td>
           <td style="padding: 12px 8px; color: #111827;">${escapeHtml(data.timeline || "Nicht angegeben")}</td>
         </tr>
@@ -99,9 +88,6 @@ function buildHtmlContent(data: EmailRequestBody): string {
  * Builds the HTML content for the customer confirmation email.
  */
 function buildConfirmationHtml(data: EmailRequestBody): string {
-  const servicesFormatted =
-    data.services.length > 0 ? data.services.join(", ") : "Keine angegeben";
-
   return `
 <!DOCTYPE html PUBLIC "-//W3C//90//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -175,12 +161,6 @@ function buildConfirmationHtml(data: EmailRequestBody): string {
                       </tr>
                       <tr>
                         <td style="padding: 16px; border-bottom: 1px solid #1f2937;">
-                          <span style="color: #6b7280; font-size: 13px; display: block; margin-bottom: 4px;">Leistungen</span>
-                          <span style="color: #e5e7eb; font-size: 15px;">${escapeHtml(servicesFormatted)}</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 16px; border-bottom: 1px solid #1f2937;">
                           <span style="color: #6b7280; font-size: 13px; display: block; margin-bottom: 4px;">Unternehmen</span>
                           <span style="color: #e5e7eb; font-size: 15px;">${escapeHtml(data.company || "–")}</span>
                         </td>
@@ -242,9 +222,6 @@ function buildConfirmationHtml(data: EmailRequestBody): string {
  * Builds the plain text content for the customer confirmation email.
  */
 function buildConfirmationPlainText(data: EmailRequestBody): string {
-  const servicesFormatted =
-    data.services.length > 0 ? data.services.join(", ") : "Keine angegeben";
-
   return `
 Hallo ${data.firstName},
 
@@ -252,7 +229,6 @@ vielen Dank für Ihr Interesse an einer Zusammenarbeit mit der CleanWeb Agency. 
 
 Zusammenfassung Ihrer Angaben:
 - Ziel: ${data.goal}
-- Leistungen: ${servicesFormatted}
 - Unternehmen: ${data.company || "–"}
 - Zeitrahmen: ${data.timeline}
 
