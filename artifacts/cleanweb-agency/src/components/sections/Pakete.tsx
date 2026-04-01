@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, Clock } from "lucide-react";
+import { Check, Clock, Star } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { SectionDivider } from "@/components/ui/section-divider";
 import { Button } from "@/components/ui/button";
@@ -8,61 +8,61 @@ import { Button } from "@/components/ui/button";
 /* ── Package data ── */
 const PACKAGES = [
   {
-    id: "starter",
-    name: "Starter",
-    tagline: "Professioneller Einstieg",
-    subtitle: "Perfekt für kleine Unternehmen, die online sichtbar werden wollen",
+    id: "sichtbar",
+    name: "SICHTBAR",
+    tagline: "Dein professioneller Auftritt",
+    subtitle: "Für Betriebe, die endlich professionell online präsent sein wollen.",
     price: "999",
-    note: "Einmalpreis, netto",
+    note: "ab · netto",
     badge: null,
-    deliveryTime: "ca. 2 Wochen",
+    deliveryTime: "ca. 1–2 Wochen",
     features: [
-      "Bis zu 5 Unterseiten",
-      "Individuelles Webdesign",
-      "Mobile-optimiert (Responsive)",
-      "Kontaktformular mit E-Mail-Anbindung",
-      "SSL-Zertifikat & Hosting-Setup",
-      "Grundlegende SEO-Einrichtung",
-      "Impressum & Datenschutz",
-      "Google Maps Integration",
+      "Moderne, professionelle Website (bis 3–5 Seiten)",
+      "Perfekt auf Smartphones optimiert",
+      "Klare Darstellung deiner Leistungen",
+      "Kontaktformular für direkte Anfragen",
+      "WhatsApp-Button integriert",
+      "Rechtssicher (Impressum & Datenschutz)",
+      "Grundlage, damit deine Website bei Google gefunden werden kann",
     ],
   },
   {
-    id: "business",
-    name: "Business",
+    id: "anfragen",
+    name: "ANFRAGEN",
     tagline: "Dein digitaler Vertriebskanal",
-    subtitle: "Für Unternehmen, die aktiv Kunden über ihre Website gewinnen wollen",
+    subtitle: "Für Unternehmen, die aktiv Kunden über ihre Website gewinnen wollen.",
     price: "2.290",
-    note: "Einmalpreis, netto",
-    badge: "Beliebteste Wahl",
-    deliveryTime: "ca. 3 Wochen",
+    note: "ab · netto",
+    badge: "Meistgewählt",
+    deliveryTime: "ca. 2–3 Wochen",
     features: [
-      "Bis zu 10 Unterseiten",
-      "Strategisches Webdesign mit Conversion-Fokus",
-      "SEO-Optimierung für Top-Rankings",
-      "Blog- & News-Bereich",
-      "Google Analytics & Search Console",
-      "Call-to-Action Optimierung",
-      "Social Media Integration",
+      "Individuelle Website (bis 6–10 Seiten)",
+      "Struktur, die gezielt Anfragen erzeugt",
+      "Starker erster Eindruck (Vertrauen beim Kunden)",
+      "Optimiert für Smartphones & schnelle Ladezeiten",
+      "Klare Handlungsaufforderungen (Anruf / Anfrage / Kontakt)",
+      "Darstellung von Leistungen und Referenzen",
+      "Integration von Google (z.\u00A0B. Maps, Bewertungen)",
+      "Erweiterte Grundlage für bessere Auffindbarkeit",
     ],
   },
   {
-    id: "premium",
-    name: "Premium",
-    tagline: "Maximale Performance",
-    subtitle: "Für Unternehmen, die skalieren und individuell wachsen wollen",
+    id: "dominanz",
+    name: "DOMINANZ",
+    tagline: "Maximale Wirkung",
+    subtitle: "Für Unternehmen, die sich klar vom Wettbewerb abheben und wachsen wollen.",
     price: "4.490",
-    note: "Individuelles Angebot",
+    note: "ab · netto",
     badge: null,
-    deliveryTime: "ca. 4 Wochen",
+    deliveryTime: "ca. 3–5 Wochen",
     features: [
-      "Unbegrenzte Seitenanzahl",
-      "Maßgeschneidertes Premium-Design",
-      "Erweiterte SEO-Strategie",
-      "E-Commerce / Shop-Funktionalität",
-      "Performance-Optimierung (Core Web Vitals)",
-      "Mehrsprachigkeit möglich",
-      "Individuelle Funktionsentwicklung",
+      "Individuelles Premium-Design",
+      "Strategischer Aufbau für maximale Wirkung",
+      "Hochwertige Darstellung für starke Außenwirkung",
+      "Erweiterte Inhalte (z.\u00A0B. Team, Karriere, Referenzen)",
+      "Fokus auf hochwertige Kundenanfragen",
+      "Erweiterte Struktur für bessere Sichtbarkeit",
+      "Möglichkeit für spezielle Funktionen (z.\u00A0B. Buchung, Shop)",
     ],
   },
 ];
@@ -87,10 +87,9 @@ function BrowserChrome({ children }: { children: React.ReactNode }) {
 
 /* ── Demo scenes inside the browser ── */
 
-function StarterDemo() {
+function SichtbarDemo() {
   return (
     <div className="bg-[#F8FAFC] min-h-0 h-full">
-      {/* Nav */}
       <div className="flex items-center justify-between px-4 py-2.5 bg-white border-b border-slate-200/80">
         <div className="h-3 w-20 bg-slate-800 rounded-sm opacity-70" />
         <div className="flex gap-3">
@@ -99,13 +98,11 @@ function StarterDemo() {
           <div className="h-5 w-14 bg-blue-600 rounded opacity-80" />
         </div>
       </div>
-      {/* Hero */}
       <div className="px-4 py-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="h-3 w-3/5 bg-slate-700 rounded-sm mb-2 opacity-70" />
         <div className="h-2 w-2/5 bg-slate-500 rounded-sm mb-4 opacity-50" />
         <div className="h-6 w-24 bg-blue-600 rounded opacity-80" />
       </div>
-      {/* 3-card row */}
       <div className="px-4 py-4 grid grid-cols-3 gap-2">
         {[0, 1, 2].map((i) => (
           <div key={i} className="bg-white rounded border border-slate-200 p-2 space-y-1.5">
@@ -115,7 +112,6 @@ function StarterDemo() {
           </div>
         ))}
       </div>
-      {/* Footer */}
       <div className="px-4 py-3 bg-slate-100 border-t border-slate-200 flex justify-between items-center">
         <div className="h-2 w-20 bg-slate-300 rounded-sm opacity-60" />
         <div className="h-2 w-16 bg-slate-300 rounded-sm opacity-50" />
@@ -124,10 +120,9 @@ function StarterDemo() {
   );
 }
 
-function BusinessDemo() {
+function AnfragenDemo() {
   return (
     <div className="bg-white min-h-0 h-full">
-      {/* Nav */}
       <div className="flex items-center justify-between px-4 py-2.5 bg-navy-950 border-b border-white/10">
         <div className="h-3 w-20 bg-white/70 rounded-sm" />
         <div className="flex gap-3">
@@ -136,7 +131,6 @@ function BusinessDemo() {
           <div className="h-5 w-14 bg-blue-600 rounded opacity-90" />
         </div>
       </div>
-      {/* Asymmetric hero */}
       <div className="grid grid-cols-5 bg-navy-950 px-4 py-5 gap-3">
         <div className="col-span-3 space-y-2">
           <div className="h-2 w-16 bg-blue-500/50 rounded-sm" />
@@ -150,7 +144,6 @@ function BusinessDemo() {
         </div>
         <div className="col-span-2 bg-white/6 rounded border border-white/10" />
       </div>
-      {/* Feature strip */}
       <div className="px-4 py-4 grid grid-cols-3 gap-2">
         {[0, 1, 2].map((i) => (
           <div key={i} className="space-y-1.5">
@@ -161,7 +154,6 @@ function BusinessDemo() {
           </div>
         ))}
       </div>
-      {/* Testimonial strip */}
       <div className="mx-4 mb-4 px-3 py-2 bg-blue-50 rounded border border-blue-100 space-y-1">
         <div className="h-1.5 w-full bg-slate-300 rounded-sm" />
         <div className="h-1.5 w-4/5 bg-slate-300 rounded-sm" />
@@ -171,10 +163,9 @@ function BusinessDemo() {
   );
 }
 
-function PremiumDemo() {
+function DominanzDemo() {
   return (
     <div className="bg-navy-950 min-h-0 h-full">
-      {/* Nav */}
       <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/8">
         <div className="h-3 w-20 bg-white/75 rounded-sm" />
         <div className="flex gap-3">
@@ -183,7 +174,6 @@ function PremiumDemo() {
           <div className="h-5 w-14 bg-blue-600 rounded" />
         </div>
       </div>
-      {/* Dark bold hero */}
       <div className="px-4 py-5 space-y-2" style={{ background: "linear-gradient(135deg, #0B1220 0%, #111827 100%)" }}>
         <div className="h-1.5 w-12 bg-blue-500/60 rounded-sm" />
         <div className="h-4 w-4/5 bg-white/85 rounded-sm" />
@@ -194,7 +184,6 @@ function PremiumDemo() {
           <div className="h-5 w-14 bg-white/8 rounded border border-white/15" />
         </div>
       </div>
-      {/* Service grid */}
       <div className="px-4 py-3 grid grid-cols-2 gap-2">
         {[0, 1, 2, 3].map((i) => (
           <div key={i} className="bg-white/4 rounded border border-white/8 p-2 space-y-1">
@@ -204,7 +193,6 @@ function PremiumDemo() {
           </div>
         ))}
       </div>
-      {/* CTA strip */}
       <div className="mx-4 mb-3 h-8 bg-blue-600/15 rounded border border-blue-500/20 flex items-center justify-between px-3">
         <div className="h-2 w-24 bg-white/40 rounded-sm" />
         <div className="h-4 w-12 bg-blue-600 rounded" />
@@ -214,9 +202,9 @@ function PremiumDemo() {
 }
 
 const DEMOS: Record<string, React.ReactNode> = {
-  starter: <StarterDemo />,
-  business: <BusinessDemo />,
-  premium: <PremiumDemo />,
+  sichtbar: <SichtbarDemo />,
+  anfragen: <AnfragenDemo />,
+  dominanz: <DominanzDemo />,
 };
 
 /* ── Package card ── */
@@ -229,21 +217,21 @@ function PackageCard({
   isActive: boolean;
   onHover: () => void;
 }) {
-  const highlighted = pkg.id === "business";
+  const highlighted = pkg.id === "anfragen";
 
   return (
     <motion.div
       onMouseEnter={onHover}
       className={`relative rounded-2xl p-6 cursor-default transition-all duration-300 ${
         highlighted
-          ? "border border-electric/35 bg-electric/5"
+          ? "border-2 border-electric/50 bg-electric/[0.07] shadow-[0_0_30px_-5px_rgba(37,99,235,0.2)]"
           : "border border-white/8 bg-white/3"
       } ${isActive ? "ring-1 ring-electric/40 scale-[1.015]" : "hover:border-white/18"}`}
     >
-      {/* Popular badge */}
       {pkg.badge && (
-        <div className="absolute -top-3 left-5">
-          <span className="text-[10px] font-bold tracking-[0.15em] uppercase bg-electric text-white px-3 py-1 rounded-full">
+        <div className="absolute -top-3.5 left-5">
+          <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.15em] uppercase bg-electric text-white px-3.5 py-1.5 rounded-full shadow-lg shadow-electric/25">
+            <Star size={10} className="fill-current" />
             {pkg.badge}
           </span>
         </div>
@@ -268,8 +256,8 @@ function PackageCard({
 
       <ul className="space-y-2 mb-4">
         {pkg.features.map((f) => (
-          <li key={f} className="flex items-center gap-2.5 text-sm text-white/60">
-            <Check size={13} className="text-electric shrink-0" />
+          <li key={f} className="flex items-start gap-2.5 text-sm text-white/60">
+            <Check size={13} className="text-electric shrink-0 mt-0.5" />
             {f}
           </li>
         ))}
@@ -283,7 +271,7 @@ function PackageCard({
       <Button
         variant={highlighted ? "primary" : "glass"}
         size="sm"
-        className="w-full"
+        className={`w-full ${highlighted ? "shadow-lg shadow-electric/20" : ""}`}
         onClick={() => {
           const el = document.getElementById("kontakt");
           if (el) {
@@ -300,13 +288,12 @@ function PackageCard({
 
 /* ── Main section ── */
 export function Pakete() {
-  const [active, setActive] = useState("business");
+  const [active, setActive] = useState("anfragen");
 
   return (
     <section id="pakete" className="relative bg-navy-950 py-32 overflow-hidden">
       <SectionDivider position="top" fillColor="fill-white" />
 
-      {/* Background accent */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -316,7 +303,6 @@ export function Pakete() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
         <FadeIn>
           <div className="mb-16 lg:mb-20">
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-electric/55 mb-3 block">
@@ -337,10 +323,8 @@ export function Pakete() {
           </div>
         </FadeIn>
 
-        {/* Two-column layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-          {/* Left — Browser mockup (sticky) */}
           <FadeIn direction="left">
             <div className="lg:sticky lg:top-24">
               <BrowserChrome>
@@ -360,7 +344,6 @@ export function Pakete() {
                 </div>
               </BrowserChrome>
 
-              {/* Active package label */}
               <div className="mt-4 flex items-center gap-2 text-sm text-white/35">
                 <span className="w-1.5 h-1.5 rounded-full bg-electric/60" />
                 <span>
@@ -373,9 +356,8 @@ export function Pakete() {
             </div>
           </FadeIn>
 
-          {/* Right — Package cards */}
           <FadeIn direction="right" delay={0.1}>
-            <div className="space-y-4">
+            <div className="space-y-5">
               {PACKAGES.map((pkg) => (
                 <PackageCard
                   key={pkg.id}
